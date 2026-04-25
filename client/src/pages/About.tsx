@@ -6,12 +6,14 @@ import Footer from "@/components/Footer";
 import { Link } from "wouter";
 
 const team = [
-  { name: "Dwayne Hitchens", role: "Specific NZ — Operations Lead" },
-  { name: "Jaxon Ameda", role: "Installation Team" },
-  { name: "Jacob Gerken", role: "Installation Team" },
-  { name: "Michael Solomona", role: "Installation Team" },
-  { name: "Jack Johnston", role: "Installation Team" },
-  { name: "Ante Gerken", role: "Installation Team" },
+  { name: "Dwyane Hitchens", role: "NZ Branch Manager" },
+  { name: "John Hitchens", role: "Warehouse Manager / Truck Driver" },
+  { name: "Jaxon Amadea", role: "Site Supervisor" },
+  { name: "Elliott Talagi", role: "North Island Senior Installer" },
+  { name: "Kyle Sinclair", role: "South Island Senior Installer" },
+  { name: "Jayden Tupou", role: "Warehouse / Offsider" },
+  { name: "Michael Solomona", role: "Offsider" },
+  { name: "Jack Johnston", role: "Offsider" },
 ];
 
 export default function About() {
@@ -152,7 +154,7 @@ export default function About() {
           >
             SPECIFIC NZ TEAM
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
             {team.map((member) => (
               <div
                 key={member.name}

@@ -57,19 +57,21 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Locations */}
           <div>
-            <p className="section-label mb-5">New Zealand</p>
+            <p className="section-label mb-5">NZ Locations</p>
             <ul className="space-y-3 text-sm" style={{ color: "oklch(0.75 0.02 240)", fontFamily: "'DM Sans', sans-serif" }}>
-              <li>Auckland, New Zealand</li>
-              <li>
-                <a href="mailto:nz@specificgroup.com" className="transition-colors" style={{ color: "oklch(0.75 0.02 240)" }}>
+              <li style={{ fontWeight: 600, color: "white" }}>Auckland (Head Office)</li>
+              <li style={{ color: "oklch(0.62 0.025 240)" }}>1/31 Ha Crescent, Wiri</li>
+              <li style={{ fontWeight: 600, color: "white", paddingTop: "0.25rem" }}>Christchurch</li>
+              <li style={{ color: "oklch(0.62 0.025 240)" }}>2/925 Halswell Junction Rd, Islington</li>
+              <li style={{ fontWeight: 600, color: "white", paddingTop: "0.25rem" }}>Central Otago</li>
+              <li style={{ color: "oklch(0.62 0.025 240)" }}>14 Venning Crescent, Cromwell 9310</li>
+              <li style={{ fontWeight: 600, color: "white", paddingTop: "0.25rem" }}>Otago / Southland</li>
+              <li style={{ color: "oklch(0.62 0.025 240)" }}>57 Ellis Street, Otautahi</li>
+              <li style={{ paddingTop: "0.5rem" }}>
+                <a href="mailto:nz@specificgroup.com" className="transition-colors" style={{ color: "oklch(0.63 0.18 38)" }}>
                   nz@specificgroup.com
-                </a>
-              </li>
-              <li>
-                <a href="https://specificgroup.com.au" target="_blank" rel="noopener noreferrer" className="transition-colors" style={{ color: "oklch(0.60 0.12 185)" }}>
-                  specificgroup.com.au →
                 </a>
               </li>
             </ul>

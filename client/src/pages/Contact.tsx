@@ -87,11 +87,37 @@ export default function Contact() {
             <div>
               <div className="space-y-10">
                 <div>
-                  <p className="section-label mb-3">New Zealand</p>
-                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", color: "oklch(0.72 0.025 240)", lineHeight: 1.65 }}>
-                    Auckland, New Zealand<br />
-                    <a href="mailto:nz@specificgroup.com" style={{ color: "oklch(0.63 0.18 38)" }}>nz@specificgroup.com</a>
-                  </p>
+                  <p className="section-label mb-3">New Zealand Locations</p>
+                  <div className="space-y-5">
+                    <div>
+                      <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.875rem", color: "white", letterSpacing: "0.05em", textTransform: "uppercase", marginBottom: "0.25rem" }}>Auckland (Head Office)</p>
+                      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "oklch(0.72 0.025 240)", lineHeight: 1.8 }}>
+                        <strong style={{ color: "white" }}>Dwyane Hitchens</strong><br />
+                        NZ Branch Manager<br />
+                        1/31 Ha Crescent, Wiri, Auckland<br />
+                        <a href="tel:+64204243242" style={{ color: "oklch(0.63 0.18 38)" }}>M: +64 204 243 242</a><br />
+                        <a href="mailto:dwayne.h@specificgroup.co.nz" style={{ color: "oklch(0.63 0.18 38)" }}>dwayne.h@specificgroup.co.nz</a>
+                      </p>
+                    </div>
+                    <div>
+                      <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.875rem", color: "white", letterSpacing: "0.05em", textTransform: "uppercase", marginBottom: "0.25rem" }}>Christchurch</p>
+                      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "oklch(0.72 0.025 240)", lineHeight: 1.65 }}>
+                        2/925 Halswell Junction Road<br />Islington, Christchurch
+                      </p>
+                    </div>
+                    <div>
+                      <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.875rem", color: "white", letterSpacing: "0.05em", textTransform: "uppercase", marginBottom: "0.25rem" }}>Central Otago</p>
+                      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "oklch(0.72 0.025 240)", lineHeight: 1.65 }}>
+                        14 Venning Crescent<br />Cromwell 9310
+                      </p>
+                    </div>
+                    <div>
+                      <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.875rem", color: "white", letterSpacing: "0.05em", textTransform: "uppercase", marginBottom: "0.25rem" }}>Otago / Southland</p>
+                      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "oklch(0.72 0.025 240)", lineHeight: 1.65 }}>
+                        57 Ellis Street, Otautahi
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <div>
                   <p className="section-label mb-3">Australia (Head Office)</p>
