@@ -474,7 +474,7 @@ export default function Home() {
                 lineHeight: 0.9,
               }}
             >
-              TWO DISTINCT
+              FOUR DISTINCT
               <br />
               <span style={{ color: "oklch(0.63 0.18 38)" }}>CAPABILITIES.</span>
             </h2>
@@ -492,6 +492,18 @@ export default function Home() {
                   title: "Corporate & Office Relocations",
                   body: "End-to-end commercial moves for offices, schools, and institutions. Planned, managed, and executed with zero operational disruption.",
                   color: "oklch(0.60 0.12 185)",
+                },
+                {
+                  num: "03",
+                  title: "Detailed Joinery & FF&E Installations",
+                  body: "Precision installation of bespoke joinery and high-specification FF&E packages. Delivered to exacting tolerances on programme-critical timelines.",
+                  color: "oklch(0.72 0.14 145)",
+                },
+                {
+                  num: "04",
+                  title: "AV Installations & OS&E Installations",
+                  body: "End-to-end installation of audio visual systems and operating supplies & equipment. Coordinated delivery, placement, and commissioning across all project types.",
+                  color: "oklch(0.65 0.15 280)",
                 },
               ].map((s) => (
                 <div
