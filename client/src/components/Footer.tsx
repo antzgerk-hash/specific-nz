@@ -68,7 +68,7 @@ export default function Footer() {
               <li style={{ fontWeight: 600, color: "white", paddingTop: "0.25rem" }}>Central Otago</li>
               <li style={{ color: "oklch(0.62 0.025 240)" }}>14 Venning Crescent, Cromwell 9310</li>
               <li style={{ fontWeight: 600, color: "white", paddingTop: "0.25rem" }}>Otago / Southland</li>
-              <li style={{ color: "oklch(0.62 0.025 240)" }}>57 Ellis Street, Otautahi</li>
+              <li style={{ color: "oklch(0.62 0.025 240)" }}>57 Ellis Street, Otautau</li>
               <li style={{ paddingTop: "0.5rem" }}>
                 <a href="mailto:nz@specificgroup.com" className="transition-colors" style={{ color: "oklch(0.63 0.18 38)" }}>
                   nz@specificgroup.com
@@ -85,9 +85,17 @@ export default function Footer() {
           <p className="text-xs" style={{ color: "oklch(0.45 0.02 240)", fontFamily: "'DM Sans', sans-serif" }}>
             © {new Date().getFullYear()} Specific Group. All rights reserved.
           </p>
-          <p className="text-xs" style={{ color: "oklch(0.45 0.02 240)", fontFamily: "'DM Sans', sans-serif" }}>
-            Part of the Specific Group — Australia & New Zealand
-          </p>
+          <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+            <p className="text-xs" style={{ color: "oklch(0.45 0.02 240)", fontFamily: "'DM Sans', sans-serif" }}>
+              Part of the Specific Group — Australia & New Zealand
+            </p>
+            <p className="text-xs" style={{ color: "oklch(0.45 0.02 240)", fontFamily: "'DM Sans', sans-serif" }}>
+              NZBN: 94 29048495585
+            </p>
+            <p className="text-xs" style={{ color: "oklch(0.45 0.02 240)", fontFamily: "'DM Sans', sans-serif" }}>
+              SiteSafe NZ &nbsp;·&nbsp; ISO 45001:2018 &nbsp;·&nbsp; ISO 9001:2015 &nbsp;·&nbsp; ISO 14001:2015
+            </p>
+          </div>
         </div>
       </div>
     </footer>

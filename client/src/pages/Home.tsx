@@ -1,332 +1,299 @@
 /*
- * Home Page — Dark Authority Design
- * Sections: Hero, Stats Bar, Services, Featured Projects, Clients/Partners, CTA
- * Palette: Navy #0B1829 / Orange #E8652A / Teal #0D9488
- * Typography: Barlow Condensed (headings) + DM Sans (body)
+ * Home Page — Dark Authority Design (ELEVATED)
+ * Philosophy: Depth through layering. Asymmetric grids. Typography at scale.
+ * Edge-to-edge photo sections that bleed into content. Authority signals as design elements.
+ * Colours: oklch(0.16 0.035 240) navy | oklch(0.63 0.18 38) orange | oklch(0.60 0.12 185) teal
+ * Type: Barlow Condensed 800 headings | DM Sans body
  */
-import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
+import { useEffect, useRef, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
-// Animated counter hook
-function useCounter(target: number, duration = 2000, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    let startTime: number | null = null;
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      setCount(Math.floor(progress * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [target, duration, start]);
-  return count;
-}
-
-// Intersection observer hook
-function useInView(threshold = 0.3) {
+// Scroll-reveal hook
+function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) { setInView(true); observer.disconnect(); }
-    }, { threshold });
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setInView(true); obs.disconnect(); } }, { threshold });
+    obs.observe(el);
+    return () => obs.disconnect();
   }, [threshold]);
   return { ref, inView };
 }
 
-const services = [
-  {
-    number: "01",
-    title: "FF&E Delivery & Installation",
-    desc: "Full-scope furniture, fixtures and equipment delivery, QC, staging, and precision installation across hospitality, commercial, and public venues.",
-  },
-  {
-    number: "02",
-    title: "Commercial Installations",
-    desc: "Workstations, AV, joinery, whitegoods, and specialist fit-out items installed by dedicated teams with programme accountability.",
-  },
-  {
-    number: "03",
-    title: "Relocations",
-    desc: "Corporate and commercial relocations managed end-to-end — from pre-move planning through to post-move stabilisation and close-out.",
-  },
-  {
-    number: "04",
-    title: "Logistics Management",
-    desc: "Warehousing, receipt, QC, sequencing, and delivery coordination across multiple suppliers and sites — one point of accountability.",
-  },
+const stats = [
+  { value: "2,740+", label: "FF&E Items Installed", sub: "One NZ Stadium" },
+  { value: "519", label: "Hotel Rooms Fitted", sub: "Auckland CBD alone" },
+  { value: "4", label: "NZ Locations", sub: "AKL · CHC · Otago · Southland" },
+  { value: "15+", label: "Years Experience", sub: "Specific Group" },
 ];
 
 const projects = [
   {
-    name: "One NZ Stadium — Te Kaha",
-    location: "Christchurch",
-    sector: "Stadium / Public Venue",
-    scope: "FF&E delivery & installation",
-    stats: "2,740 items · 55+ truckloads · 20+ site days",
-    image: "/manus-storage/stadium_seats_completed_4cbc7ed4.png",
+    name: "One NZ Stadium",
+    sub: "Te Kaha, Christchurch",
+    tag: "FF&E · Stadium",
+    stat: "2,740+ items",
+    img: "/manus-storage/tekaha_joinery_suite_e199cc08.webp",
     href: "/projects",
+    accent: "oklch(0.63 0.18 38)",
   },
   {
-    name: "Indigo Auckland",
-    location: "Auckland CBD",
-    sector: "Hospitality / Hotel",
-    scope: "Full FF&E installation",
-    stats: "Multi-floor hotel room FF&E",
-    image: "/manus-storage/indigo_room2_9aeecf11.jpg",
+    name: "Hotel Indigo Auckland",
+    sub: "51 Albert Street, CBD",
+    tag: "FF&E · Hospitality",
+    stat: "225 rooms",
+    img: "/manus-storage/indigo_room2_9aeecf11.jpg",
     href: "/projects",
+    accent: "oklch(0.60 0.12 185)",
   },
   {
     name: "Skyline Gondola",
-    location: "Queenstown",
-    sector: "Tourism / Hospitality",
-    scope: "FF&E delivery & installation",
-    stats: "High-altitude specialist delivery",
-    image: "/manus-storage/skyline_restaurant_d6985091.webp",
+    sub: "Queenstown",
+    tag: "Logistics · High-Altitude",
+    stat: "Crane-lift install",
+    img: "/manus-storage/skyline_terrace_crane_e82076ee.webp",
     href: "/projects",
+    accent: "oklch(0.63 0.18 38)",
   },
 ];
 
 export default function Home() {
-  const statsRef = useInView(0.2);
-  const c1 = useCounter(2740, 2200, statsRef.inView);
-  const c2 = useCounter(55, 1800, statsRef.inView);
-  const c3 = useCounter(20, 1600, statsRef.inView);
-  const c4 = useCounter(60, 2000, statsRef.inView);
+  const statsSection = useInView();
+  const projectsSection = useInView(0.1);
+  const servicesSection = useInView(0.1);
+  const credSection = useInView(0.1);
 
   return (
-    <div className="min-h-screen" style={{ background: "oklch(0.16 0.035 240)" }}>
+    <div className="min-h-screen" style={{ background: "oklch(0.16 0.035 240)", overflowX: "hidden" }}>
       <Navigation />
 
-      {/* ── HERO ── */}
+      {/* ─── HERO ─── full-viewport, photo right, text left, diagonal cut */}
       <section
-        className="relative min-h-screen flex items-end pb-20 lg:pb-28 overflow-hidden"
-        style={{ background: "oklch(0.10 0.03 240)" }}
+        className="relative min-h-screen flex items-end"
+        style={{ background: "oklch(0.11 0.03 240)" }}
       >
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <img
-            src="/manus-storage/stadium_interior_completed_2b57613a.png"
-            alt="One NZ Stadium — Te Kaha"
-            className="w-full h-full object-cover"
-            style={{ opacity: 0.35 }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background: "linear-gradient(to top, oklch(0.10 0.03 240) 30%, oklch(0.10 0.03 240 / 0.6) 60%, oklch(0.10 0.03 240 / 0.3) 100%)",
-            }}
-          />
-        </div>
+        {/* Background photo — full bleed right side */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url('/manus-storage/tekaha_joinery_suite_e199cc08.webp')",
+            backgroundSize: "cover",
+            backgroundPosition: "center right",
+            opacity: 0.22,
+          }}
+        />
+        {/* Left dark gradient overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(105deg, oklch(0.10 0.03 240) 45%, transparent 75%)",
+          }}
+        />
+        {/* Diagonal orange accent bar */}
+        <div
+          className="absolute left-0 top-0 bottom-0 w-1"
+          style={{ background: "oklch(0.63 0.18 38)" }}
+        />
 
-        <div className="container relative z-10">
+        <div className="container relative z-10 pb-20 pt-40 lg:pb-28 lg:pt-48">
           <div className="max-w-4xl">
-            <p className="section-label mb-5 fade-up">Specific New Zealand</p>
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-12 h-px" style={{ background: "oklch(0.63 0.18 38)" }} />
+              <span
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 600,
+                  fontSize: "0.7rem",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "oklch(0.63 0.18 38)",
+                }}
+              >
+                Specific New Zealand
+              </span>
+            </div>
+
+            {/* Main headline — massive, tight */}
             <h1
-              className="fade-up-1 mb-6"
               style={{
                 fontFamily: "'Barlow Condensed', sans-serif",
                 fontWeight: 800,
-                fontSize: "clamp(3.5rem, 9vw, 7.5rem)",
-                lineHeight: 0.95,
+                fontSize: "clamp(4.5rem, 12vw, 10rem)",
                 color: "white",
-                letterSpacing: "-0.02em",
+                lineHeight: 0.9,
+                letterSpacing: "-0.01em",
               }}
             >
-              WHEN THE DEADLINE<br />
-              <span style={{ color: "oklch(0.63 0.18 38)" }}>IS IMMOVABLE.</span>
+              WHEN THE
+              <br />
+              <span style={{ color: "oklch(0.63 0.18 38)" }}>DEADLINE</span>
+              <br />
+              IS IMMOVABLE.
             </h1>
+
             <p
-              className="fade-up-2 mb-10 max-w-xl"
+              className="mt-8 max-w-lg"
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: "1.125rem",
-                color: "oklch(0.75 0.02 240)",
-                lineHeight: 1.65,
+                fontSize: "1.0625rem",
+                color: "oklch(0.68 0.025 240)",
+                lineHeight: 1.7,
               }}
             >
-              Specialist FF&E delivery, installation, and commercial logistics across New Zealand. Trusted by leading hotel developers, construction firms, and fit-out managers.
+              Specialist FF&amp;E delivery, installation, and commercial logistics across New Zealand.
+              Trusted by leading hotel developers, construction firms, and fit-out managers.
             </p>
-            <div className="fade-up-3 flex flex-wrap gap-4">
+
+            <div className="flex flex-wrap gap-4 mt-10">
               <Link
                 href="/projects"
                 style={{
                   background: "oklch(0.63 0.18 38)",
                   color: "white",
                   fontFamily: "'DM Sans', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "0.8rem",
-                  letterSpacing: "0.08em",
+                  fontWeight: 700,
+                  fontSize: "0.75rem",
+                  letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  padding: "0.85rem 2rem",
+                  padding: "1rem 2.5rem",
                   display: "inline-block",
-                  transition: "background 0.2s",
                 }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "oklch(0.55 0.18 38)"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "oklch(0.63 0.18 38)"; }}
               >
                 View Our Projects
               </Link>
               <Link
                 href="/contact"
                 style={{
-                  background: "transparent",
+                  border: "1px solid oklch(1 0 0 / 0.25)",
                   color: "white",
                   fontFamily: "'DM Sans', sans-serif",
                   fontWeight: 600,
-                  fontSize: "0.8rem",
-                  letterSpacing: "0.08em",
+                  fontSize: "0.75rem",
+                  letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  padding: "0.85rem 2rem",
+                  padding: "1rem 2.5rem",
                   display: "inline-block",
-                  border: "1.5px solid oklch(1 0 0 / 0.3)",
-                  transition: "border-color 0.2s, background 0.2s",
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = "oklch(0.63 0.18 38)";
-                  el.style.background = "oklch(0.63 0.18 38 / 0.1)";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = "oklch(1 0 0 / 0.3)";
-                  el.style.background = "transparent";
                 }}
               >
                 Get in Touch
               </Link>
             </div>
           </div>
-        </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 right-8 lg:right-12 hidden lg:flex flex-col items-center gap-2">
+          {/* Scroll indicator */}
           <div
-            style={{
-              width: "1px",
-              height: "60px",
-              background: "linear-gradient(to bottom, transparent, oklch(0.63 0.18 38))",
-            }}
-          />
-          <p className="section-label" style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}>
-            Scroll
-          </p>
-        </div>
-      </section>
-
-      {/* ── STATS BAR ── */}
-      <section
-        ref={statsRef.ref}
-        style={{ background: "oklch(0.12 0.03 240)", borderTop: "1px solid oklch(1 0 0 / 0.08)", borderBottom: "1px solid oklch(1 0 0 / 0.08)" }}
-      >
-        <div className="container py-14 lg:py-16">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x divide-white/10">
-            {[
-              { value: c1, suffix: "+", label: "Items Delivered & Installed" },
-              { value: c2, suffix: "+", label: "Truckloads Coordinated" },
-              { value: c3, suffix: "+", label: "Site Days on Te Kaha" },
-              { value: c4, suffix: "+", label: "Suppliers Managed" },
-            ].map((stat, i) => (
-              <div key={i} className="lg:px-10 text-center lg:text-left">
-                <div className="stat-number">{stat.value.toLocaleString()}{stat.suffix}</div>
-                <p
-                  className="mt-2 text-sm"
-                  style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.62 0.025 240)" }}
-                >
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SERVICES ── */}
-      <section className="py-20 lg:py-28">
-        <div className="container">
-          <div className="mb-14">
-            <p className="section-label mb-4">What We Do</p>
-            <h2
-              className="heading-accent"
-              style={{
-                fontFamily: "'Barlow Condensed', sans-serif",
-                fontWeight: 700,
-                fontSize: "clamp(2.5rem, 5vw, 4rem)",
-                color: "white",
-              }}
-            >
-              SPECIALIST LOGISTICS<br />FOR COMPLEX PROJECTS
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ background: "oklch(1 0 0 / 0.06)" }}>
-            {services.map((s) => (
-              <div
-                key={s.number}
-                className="group p-8 lg:p-10 transition-colors duration-200"
-                style={{ background: "oklch(0.16 0.035 240)" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "oklch(0.20 0.04 240)"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "oklch(0.16 0.035 240)"; }}
-              >
-                <p
-                  className="mb-4"
-                  style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.15em", color: "oklch(0.63 0.18 38)" }}
-                >
-                  {s.number}
-                </p>
-                <h3
-                  className="mb-3"
-                  style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "1.6rem", color: "white" }}
-                >
-                  {s.title}
-                </h3>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", color: "oklch(0.65 0.025 240)", lineHeight: 1.65 }}>
-                  {s.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 text-right">
-            <Link
-              href="/services"
+            className="absolute bottom-10 right-8 hidden lg:flex flex-col items-center gap-2"
+            style={{ opacity: 0.4 }}
+          >
+            <span
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 600,
-                fontSize: "0.8rem",
-                letterSpacing: "0.08em",
+                fontSize: "0.6rem",
+                letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                color: "oklch(0.63 0.18 38)",
+                color: "white",
+                writingMode: "vertical-rl",
               }}
             >
-              All Services →
-            </Link>
+              Scroll
+            </span>
+            <div className="w-px h-12" style={{ background: "white" }} />
           </div>
         </div>
       </section>
 
-      {/* ── FEATURED PROJECTS ── */}
+      {/* ─── STATS TICKER — full-width orange band ─── */}
+      <div
+        ref={statsSection.ref}
+        style={{
+          background: "oklch(0.63 0.18 38)",
+          borderTop: "none",
+        }}
+      >
+        <div
+          className="container"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: 0,
+          }}
+        >
+          {stats.map((s, i) => (
+            <div
+              key={s.value}
+              className="py-8 px-6"
+              style={{
+                borderRight: i < 3 ? "1px solid oklch(1 0 0 / 0.2)" : "none",
+                opacity: statsSection.inView ? 1 : 0,
+                transform: statsSection.inView ? "translateY(0)" : "translateY(20px)",
+                transition: `opacity 0.5s ease ${i * 0.1}s, transform 0.5s ease ${i * 0.1}s`,
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "'Barlow Condensed', sans-serif",
+                  fontWeight: 800,
+                  fontSize: "clamp(2rem, 4vw, 3.5rem)",
+                  color: "white",
+                  lineHeight: 1,
+                }}
+              >
+                {s.value}
+              </p>
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "0.75rem",
+                  color: "oklch(1 0 0 / 0.85)",
+                  marginTop: "0.25rem",
+                  letterSpacing: "0.04em",
+                }}
+              >
+                {s.label}
+              </p>
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "0.7rem",
+                  color: "oklch(1 0 0 / 0.55)",
+                  marginTop: "0.1rem",
+                }}
+              >
+                {s.sub}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ─── PROJECTS — asymmetric staggered grid ─── */}
       <section
+        ref={projectsSection.ref}
         className="py-20 lg:py-28"
-        style={{ background: "oklch(0.13 0.032 240)" }}
+        style={{ background: "oklch(0.14 0.032 240)" }}
       >
         <div className="container">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
+          <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
             <div>
-              <p className="section-label mb-4">Recent Work</p>
+              <p className="section-label mb-3">Selected Projects</p>
               <h2
                 style={{
                   fontFamily: "'Barlow Condensed', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                  fontWeight: 800,
+                  fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
                   color: "white",
+                  lineHeight: 0.9,
                 }}
               >
-                FEATURED PROJECTS
+                DELIVERED
+                <br />
+                <span style={{ color: "oklch(0.60 0.12 185)" }}>ON PROGRAMME.</span>
               </h2>
             </div>
             <Link
@@ -334,64 +301,113 @@ export default function Home() {
               style={{
                 fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 600,
-                fontSize: "0.8rem",
-                letterSpacing: "0.08em",
+                fontSize: "0.75rem",
+                letterSpacing: "0.1em",
                 textTransform: "uppercase",
                 color: "oklch(0.63 0.18 38)",
-                whiteSpace: "nowrap",
+                flexShrink: 0,
               }}
             >
               All Projects →
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Asymmetric 3-column grid — first card tall, others shorter */}
+          <div
+            className="grid gap-px"
+            style={{
+              gridTemplateColumns: "repeat(3, 1fr)",
+              background: "oklch(1 0 0 / 0.05)",
+            }}
+          >
             {projects.map((p, i) => (
-              <Link key={i} href={p.href}>
+              <Link
+                key={p.name}
+                href={p.href}
+                style={{ display: "block", textDecoration: "none" }}
+              >
                 <div
-                  className="group relative overflow-hidden"
-                  style={{ aspectRatio: "4/3", cursor: "pointer" }}
+                  className="relative overflow-hidden group"
+                  style={{
+                    aspectRatio: i === 0 ? "3/4" : "4/5",
+                    opacity: projectsSection.inView ? 1 : 0,
+                    transform: projectsSection.inView ? "translateY(0)" : "translateY(30px)",
+                    transition: `opacity 0.6s ease ${i * 0.15}s, transform 0.6s ease ${i * 0.15}s`,
+                  }}
                 >
                   <img
-                    src={p.image}
+                    src={p.img}
                     alt={p.name}
-                    className="w-full h-full object-cover transition-transform duration-500"
-                    style={{ transform: "scale(1)" }}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLImageElement).style.transform = "scale(1.05)"; }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLImageElement).style.transform = "scale(1)"; }}
-                  />
-                  <div
-                    className="absolute inset-0 flex flex-col justify-end p-6"
+                    className="w-full h-full object-cover"
                     style={{
-                      background: "linear-gradient(to top, oklch(0.10 0.03 240 / 0.95) 0%, oklch(0.10 0.03 240 / 0.5) 50%, transparent 100%)",
+                      transition: "transform 0.7s ease",
                     }}
-                  >
-                    <p className="section-label mb-1">{p.sector}</p>
+                  />
+                  {/* Dark overlay */}
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: "linear-gradient(to top, oklch(0.08 0.025 240) 0%, transparent 55%)",
+                    }}
+                  />
+                  {/* Top tag */}
+                  <div className="absolute top-4 left-4">
+                    <span
+                      style={{
+                        fontFamily: "'DM Sans', sans-serif",
+                        fontWeight: 700,
+                        fontSize: "0.65rem",
+                        letterSpacing: "0.12em",
+                        textTransform: "uppercase",
+                        color: p.accent,
+                        background: "oklch(0.10 0.025 240 / 0.85)",
+                        padding: "0.3rem 0.65rem",
+                      }}
+                    >
+                      {p.tag}
+                    </span>
+                  </div>
+                  {/* Bottom content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <p
+                      style={{
+                        fontFamily: "'DM Sans', sans-serif",
+                        fontSize: "0.7rem",
+                        color: "oklch(0.65 0.025 240)",
+                        marginBottom: "0.25rem",
+                        letterSpacing: "0.06em",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {p.sub}
+                    </p>
                     <h3
                       style={{
                         fontFamily: "'Barlow Condensed', sans-serif",
-                        fontWeight: 700,
+                        fontWeight: 800,
                         fontSize: "1.5rem",
                         color: "white",
-                        lineHeight: 1.1,
+                        lineHeight: 1,
+                        marginBottom: "0.5rem",
                       }}
                     >
                       {p.name}
                     </h3>
-                    <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8125rem", color: "oklch(0.65 0.025 240)", marginTop: "0.25rem" }}>
-                      {p.location} · {p.scope}
-                    </p>
-                    <p
-                      style={{
-                        fontFamily: "'DM Sans', sans-serif",
-                        fontSize: "0.75rem",
-                        color: "oklch(0.63 0.18 38)",
-                        marginTop: "0.5rem",
-                        fontWeight: 600,
-                      }}
+                    <div
+                      className="flex items-center gap-2"
                     >
-                      {p.stats}
-                    </p>
+                      <div className="w-6 h-px" style={{ background: p.accent }} />
+                      <span
+                        style={{
+                          fontFamily: "'DM Sans', sans-serif",
+                          fontWeight: 600,
+                          fontSize: "0.75rem",
+                          color: p.accent,
+                        }}
+                      >
+                        {p.stat}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -400,121 +416,383 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── WHY SPECIFIC ── */}
-      <section className="py-20 lg:py-28">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="section-label mb-4">Why Specific NZ</p>
-              <h2
-                className="heading-accent mb-8"
+      {/* ─── SERVICES — dark, two-column with edge photo ─── */}
+      <section
+        ref={servicesSection.ref}
+        className="relative overflow-hidden"
+        style={{ background: "oklch(0.11 0.03 240)" }}
+      >
+        <div
+          className="grid grid-cols-1 lg:grid-cols-2"
+          style={{ minHeight: "600px" }}
+        >
+          {/* Left — text */}
+          <div
+            className="flex flex-col justify-center px-8 py-20 lg:px-16"
+            style={{
+              opacity: servicesSection.inView ? 1 : 0,
+              transform: servicesSection.inView ? "translateX(0)" : "translateX(-30px)",
+              transition: "opacity 0.7s ease, transform 0.7s ease",
+            }}
+          >
+            <p className="section-label mb-4">What We Do</p>
+            <h2
+              className="mb-8"
+              style={{
+                fontFamily: "'Barlow Condensed', sans-serif",
+                fontWeight: 800,
+                fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+                color: "white",
+                lineHeight: 0.9,
+              }}
+            >
+              TWO DISTINCT
+              <br />
+              <span style={{ color: "oklch(0.63 0.18 38)" }}>CAPABILITIES.</span>
+            </h2>
+
+            <div className="space-y-6">
+              {[
+                {
+                  num: "01",
+                  title: "Specialist Project Logistics",
+                  body: "FF&E delivery and installation for hotels, stadiums, and healthcare. High-value, programme-critical, damage-sensitive.",
+                  color: "oklch(0.63 0.18 38)",
+                },
+                {
+                  num: "02",
+                  title: "Corporate & Office Relocations",
+                  body: "End-to-end commercial moves for offices, schools, and institutions. Planned, managed, and executed with zero operational disruption.",
+                  color: "oklch(0.60 0.12 185)",
+                },
+              ].map((s) => (
+                <div
+                  key={s.num}
+                  className="flex gap-5 items-start"
+                  style={{
+                    borderLeft: `3px solid ${s.color}`,
+                    paddingLeft: "1.25rem",
+                  }}
+                >
+                  <div>
+                    <p
+                      style={{
+                        fontFamily: "'Barlow Condensed', sans-serif",
+                        fontWeight: 800,
+                        fontSize: "0.7rem",
+                        color: s.color,
+                        letterSpacing: "0.15em",
+                        marginBottom: "0.25rem",
+                      }}
+                    >
+                      {s.num}
+                    </p>
+                    <h3
+                      style={{
+                        fontFamily: "'Barlow Condensed', sans-serif",
+                        fontWeight: 700,
+                        fontSize: "1.375rem",
+                        color: "white",
+                        marginBottom: "0.4rem",
+                      }}
+                    >
+                      {s.title}
+                    </h3>
+                    <p
+                      style={{
+                        fontFamily: "'DM Sans', sans-serif",
+                        fontSize: "0.875rem",
+                        color: "oklch(0.62 0.025 240)",
+                        lineHeight: 1.65,
+                      }}
+                    >
+                      {s.body}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <Link
+              href="/services"
+              className="mt-10 inline-block"
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 700,
+                fontSize: "0.75rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "oklch(0.63 0.18 38)",
+              }}
+            >
+              Full Services →
+            </Link>
+          </div>
+
+          {/* Right — edge-to-edge photo */}
+          <div
+            className="relative hidden lg:block"
+            style={{
+              opacity: servicesSection.inView ? 1 : 0,
+              transition: "opacity 1s ease 0.2s",
+            }}
+          >
+            <img
+              src="/manus-storage/fleet_trucks_e875af64.png"
+              alt="Specific NZ fleet"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background: "linear-gradient(to right, oklch(0.11 0.03 240) 0%, transparent 30%)",
+              }}
+            />
+            {/* Floating stat card */}
+            <div
+              className="absolute bottom-10 right-10"
+              style={{
+                background: "oklch(0.63 0.18 38)",
+                padding: "1.25rem 1.75rem",
+              }}
+            >
+              <p
                 style={{
                   fontFamily: "'Barlow Condensed', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)",
+                  fontWeight: 800,
+                  fontSize: "2.5rem",
                   color: "white",
+                  lineHeight: 1,
                 }}
               >
-                THE LOGISTICS PARTNER<br />FOR DIFFICULT PROJECTS
-              </h2>
-              <div className="space-y-6">
-                {[
-                  { title: "Programme Accountability", body: "We understand that your opening date is not negotiable. Our teams are built around programme delivery, not just task completion." },
-                  { title: "Specialist Handling", body: "High-value, damage-sensitive, and awkward FF&E requires specialist teams. We do not send general freight carriers to do specialist work." },
-                  { title: "Full Chain Visibility", body: "From receipt and QC through to floor-by-floor installation and close-out documentation, we manage the complete chain." },
-                  { title: "New Zealand Capability", body: "Based in Auckland with national reach. We understand the NZ construction and hospitality market and the suppliers who operate in it." },
-                ].map((item) => (
-                  <div key={item.title} className="flex gap-4">
-                    <div
-                      className="flex-shrink-0 mt-1"
-                      style={{ width: "3px", background: "oklch(0.63 0.18 38)", alignSelf: "stretch", minHeight: "100%" }}
-                    />
-                    <div>
-                      <h4
-                        style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "1.125rem", color: "white", marginBottom: "0.25rem" }}
-                      >
-                        {item.title}
-                      </h4>
-                      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", color: "oklch(0.65 0.025 240)", lineHeight: 1.65 }}>
-                        {item.body}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="/manus-storage/skyline_restaurant_d6985091.webp"
-                alt="Skyline Gondola Queenstown — completed installation"
-                className="w-full object-cover"
-                style={{ aspectRatio: "4/5" }}
-              />
-              <div
-                className="absolute bottom-0 left-0 right-0 p-6"
-                style={{ background: "linear-gradient(to top, oklch(0.10 0.03 240) 0%, transparent 100%)" }}
+                4
+              </p>
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 600,
+                  fontSize: "0.7rem",
+                  color: "oklch(1 0 0 / 0.8)",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  marginTop: "0.2rem",
+                }}
               >
-                <p className="section-label">Skyline Gondola, Queenstown</p>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "oklch(0.75 0.02 240)", marginTop: "0.25rem" }}>
-                  FF&E delivery & installation — high-altitude specialist project
-                </p>
-              </div>
+                NZ Locations
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── CTA BAND ── */}
+      {/* ─── CREDENTIALS BAND — ISO, SiteSafe, NZBN ─── */}
       <section
-        className="py-20 lg:py-24"
-        style={{ background: "oklch(0.63 0.18 38)" }}
+        ref={credSection.ref}
+        className="py-12"
+        style={{ background: "oklch(0.13 0.032 240)", borderTop: "1px solid oklch(1 0 0 / 0.06)" }}
       >
-        <div className="container text-center">
-          <h2
-            style={{
-              fontFamily: "'Barlow Condensed', sans-serif",
-              fontWeight: 800,
-              fontSize: "clamp(2.5rem, 6vw, 5rem)",
-              color: "white",
-              lineHeight: 0.95,
-              letterSpacing: "-0.01em",
-            }}
+        <div className="container">
+          <div
+            className="grid grid-cols-2 sm:grid-cols-4 gap-px"
+            style={{ background: "oklch(1 0 0 / 0.06)" }}
           >
-            READY TO TALK<br />ABOUT YOUR PROJECT?
-          </h2>
-          <p
-            className="mt-6 mb-10 max-w-lg mx-auto"
-            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "oklch(1 0 0 / 0.8)", lineHeight: 1.65 }}
-          >
-            Whether you're planning a hotel fit-out, a stadium installation, or a complex commercial relocation — let's discuss what Specific NZ can deliver.
-          </p>
-          <Link
-            href="/contact"
-            style={{
-              background: "white",
-              color: "oklch(0.63 0.18 38)",
-              fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 700,
-              fontSize: "0.8rem",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              padding: "0.9rem 2.5rem",
-              display: "inline-block",
-              transition: "background 0.2s, color 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.background = "oklch(0.16 0.035 240)";
-              el.style.color = "white";
-            }}
-            onMouseLeave={(e) => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.background = "white";
-              el.style.color = "oklch(0.63 0.18 38)";
-            }}
-          >
-            Get in Touch
-          </Link>
+            {[
+              { code: "ISO 45001:2018", label: "WHS / Safety", color: "oklch(0.63 0.18 38)" },
+              { code: "ISO 9001:2015", label: "Quality Management", color: "oklch(0.60 0.12 185)" },
+              { code: "ISO 14001:2015", label: "Environmental", color: "oklch(0.55 0.14 155)" },
+              { code: "SiteSafe NZ", label: "Site Safety Certified", color: "oklch(0.63 0.18 38)" },
+            ].map((c, i) => (
+              <div
+                key={c.code}
+                className="px-6 py-5"
+                style={{
+                  background: "oklch(0.13 0.032 240)",
+                  opacity: credSection.inView ? 1 : 0,
+                  transform: credSection.inView ? "translateY(0)" : "translateY(15px)",
+                  transition: `opacity 0.5s ease ${i * 0.08}s, transform 0.5s ease ${i * 0.08}s`,
+                }}
+              >
+                <div className="w-6 h-0.5 mb-3" style={{ background: c.color }} />
+                <p
+                  style={{
+                    fontFamily: "'Barlow Condensed', sans-serif",
+                    fontWeight: 800,
+                    fontSize: "1rem",
+                    color: "white",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  {c.code}
+                </p>
+                <p
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: "0.75rem",
+                    color: "oklch(0.58 0.025 240)",
+                    marginTop: "0.15rem",
+                  }}
+                >
+                  {c.label}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 flex items-center justify-end gap-2">
+            <div className="w-4 h-px" style={{ background: "oklch(0.45 0.02 240)" }} />
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "0.7rem",
+                color: "oklch(0.45 0.02 240)",
+                letterSpacing: "0.06em",
+              }}
+            >
+              NZBN 94 29048495585 &nbsp;·&nbsp; Specific NZ Ltd &nbsp;·&nbsp; All certifications active 2026
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FULL-BLEED PHOTO BREAK — Te Kaha ─── */}
+      <section className="relative" style={{ height: "55vh", minHeight: "380px" }}>
+        <img
+          src="/manus-storage/tekaha_joinery_suite_e199cc08.webp"
+          alt="One NZ Stadium — Te Kaha FF&E installation"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: "center 40%" }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(to right, oklch(0.08 0.025 240 / 0.85) 0%, oklch(0.08 0.025 240 / 0.3) 60%, transparent 100%)",
+          }}
+        />
+        <div className="absolute inset-0 flex items-center">
+          <div className="container">
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 600,
+                fontSize: "0.7rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "oklch(0.63 0.18 38)",
+                marginBottom: "0.75rem",
+              }}
+            >
+              Featured Project
+            </p>
+            <h2
+              style={{
+                fontFamily: "'Barlow Condensed', sans-serif",
+                fontWeight: 800,
+                fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
+                color: "white",
+                lineHeight: 0.9,
+                maxWidth: "600px",
+              }}
+            >
+              ONE NZ STADIUM
+              <br />
+              <span style={{ color: "oklch(0.63 0.18 38)" }}>TE KAHA</span>
+            </h2>
+            <p
+              className="mt-4 max-w-sm"
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "0.9375rem",
+                color: "oklch(0.72 0.025 240)",
+                lineHeight: 1.65,
+              }}
+            >
+              2,740+ FF&amp;E items delivered and installed across Christchurch's $683M stadium. Delivered on programme for opening weekend.
+            </p>
+            <Link
+              href="/projects"
+              className="mt-6 inline-block"
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 700,
+                fontSize: "0.75rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "oklch(0.63 0.18 38)",
+              }}
+            >
+              View Project →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CTA ─── */}
+      <section
+        className="py-20 lg:py-28"
+        style={{ background: "oklch(0.16 0.035 240)" }}
+      >
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <p className="section-label mb-4">Work With Us</p>
+              <h2
+                style={{
+                  fontFamily: "'Barlow Condensed', sans-serif",
+                  fontWeight: 800,
+                  fontSize: "clamp(3rem, 6vw, 5.5rem)",
+                  color: "white",
+                  lineHeight: 0.9,
+                }}
+              >
+                TELL US
+                <br />
+                ABOUT YOUR
+                <br />
+                <span style={{ color: "oklch(0.63 0.18 38)" }}>PROJECT.</span>
+              </h2>
+            </div>
+            <div>
+              <p
+                className="mb-8"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "1rem",
+                  color: "oklch(0.65 0.025 240)",
+                  lineHeight: 1.75,
+                }}
+              >
+                Whether you're planning a hotel fit-out, a stadium installation, or a complex commercial relocation — we'd like to hear about it. Our NZ team is based in Auckland with national project reach.
+              </p>
+              <div className="flex flex-wrap gap-4 items-center">
+                <Link
+                  href="/contact"
+                  style={{
+                    background: "oklch(0.63 0.18 38)",
+                    color: "white",
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "0.75rem",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    padding: "1rem 2.5rem",
+                    display: "inline-block",
+                  }}
+                >
+                  Get in Touch
+                </Link>
+                <a
+                  href="tel:+64204243242"
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontWeight: 600,
+                    fontSize: "0.875rem",
+                    color: "oklch(0.60 0.12 185)",
+                  }}
+                >
+                  +64 204 243 242
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

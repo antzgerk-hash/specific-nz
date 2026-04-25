@@ -96,7 +96,7 @@ export default function Contact() {
                         NZ Branch Manager<br />
                         1/31 Ha Crescent, Wiri, Auckland<br />
                         <a href="tel:+64204243242" style={{ color: "oklch(0.63 0.18 38)" }}>M: +64 204 243 242</a><br />
-                        <a href="mailto:dwayne.h@specificgroup.co.nz" style={{ color: "oklch(0.63 0.18 38)" }}>dwayne.h@specificgroup.co.nz</a>
+                        <a href="mailto:dwyane.h@specificgroup.co.nz" style={{ color: "oklch(0.63 0.18 38)" }}>dwyane.h@specificgroup.co.nz</a>
                       </p>
                     </div>
                     <div>
@@ -114,7 +114,7 @@ export default function Contact() {
                     <div>
                       <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.875rem", color: "white", letterSpacing: "0.05em", textTransform: "uppercase", marginBottom: "0.25rem" }}>Otago / Southland</p>
                       <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "oklch(0.72 0.025 240)", lineHeight: 1.65 }}>
-                        57 Ellis Street, Otautahi
+                        57 Ellis Street, Otautau
                       </p>
                     </div>
                   </div>
@@ -128,7 +128,47 @@ export default function Contact() {
                     </a>
                   </p>
                 </div>
-                <div>
+                {/* NZBN */}
+                <div style={{ paddingTop: "0.5rem", borderTop: "1px solid oklch(1 0 0 / 0.08)" }}>
+                  <p className="section-label mb-3">Company Details</p>
+                  <div className="space-y-1" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "oklch(0.72 0.025 240)", lineHeight: 1.7 }}>
+                    <p><span style={{ color: "oklch(0.62 0.025 240)", fontWeight: 600 }}>NZBN</span> &nbsp;94 29048495585</p>
+                    <p><span style={{ color: "oklch(0.62 0.025 240)", fontWeight: 600 }}>Entity</span> &nbsp;Specific NZ Ltd</p>
+                  </div>
+                </div>
+
+                {/* Certifications */}
+                <div style={{ paddingTop: "0.5rem", borderTop: "1px solid oklch(1 0 0 / 0.08)" }}>
+                  <p className="section-label mb-3">Certifications</p>
+                  <div className="space-y-3">
+                    {[
+                      { code: "ISO 45001:2018", label: "WHS / Safety", desc: "Work Health & Safety Management", color: "oklch(0.63 0.18 38)" },
+                      { code: "ISO 9001:2015", label: "Quality", desc: "Quality Management System", color: "oklch(0.60 0.12 185)" },
+                      { code: "ISO 14001:2015", label: "Environment", desc: "Environmental Management", color: "oklch(0.55 0.14 155)" },
+                      { code: "SiteSafe NZ", label: "Site Safety", desc: "Site Safe New Zealand certified", color: "oklch(0.63 0.18 38)" },
+                    ].map((c) => (
+                      <div key={c.code} className="flex items-start gap-3" style={{ padding: "0.6rem 0.75rem", background: "oklch(0.20 0.04 240)" }}>
+                        <div className="w-1 self-stretch flex-shrink-0" style={{ background: c.color }} />
+                        <div>
+                          <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.75rem", color: c.color, letterSpacing: "0.08em", textTransform: "uppercase" }}>{c.code}</p>
+                          <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.9rem", color: "white" }}>{c.label}</p>
+                          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.72rem", color: "oklch(0.58 0.025 240)", lineHeight: 1.4 }}>{c.desc} — <span style={{ color: "oklch(0.55 0.12 155)" }}>Active</span></p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Operations AI */}
+                <div style={{ paddingTop: "0.5rem", borderTop: "1px solid oklch(1 0 0 / 0.08)" }}>
+                  <p className="section-label mb-3">Operations Platform</p>
+                  <div style={{ background: "oklch(0.20 0.04 240)", borderLeft: "3px solid oklch(0.60 0.12 185)", padding: "0.875rem 1rem" }}>
+                    <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "1rem", color: "white", letterSpacing: "0.04em", marginBottom: "0.35rem" }}>Operations AI Database</p>
+                    <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", color: "oklch(0.65 0.025 240)", lineHeight: 1.6 }}>Specific NZ runs a proprietary AI-powered operations database — enabling real-time project tracking, asset management, and logistics coordination across all NZ sites.</p>
+                  </div>
+                </div>
+
+                <div style={{ paddingTop: "0.5rem", borderTop: "1px solid oklch(1 0 0 / 0.08)" }}>
                   <p className="section-label mb-3">Project Types</p>
                   <ul className="space-y-2">
                     {["FF&E Delivery & Installation", "Commercial Installations", "Corporate Relocations", "Logistics Management", "Warehousing & Storage"].map((t) => (
