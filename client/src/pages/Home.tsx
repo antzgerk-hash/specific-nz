@@ -815,7 +815,7 @@ export default function Home() {
             }}
           >
             <img
-              src="/manus-storage/clients_accreditations_d3fdc27e.png"
+              src="/manus-storage/clients_logos_clean_f335d82b.png"
               alt="Specific Group — Builder, Accommodation and General Clients"
               className="w-full h-auto"
               style={{ display: "block" }}
