@@ -25,7 +25,7 @@ const projects = [
     images: [
       "/manus-storage/stadium_seats_completed_4cbc7ed4.png",
       "/manus-storage/stadium_interior_completed_2b57613a.png",
-      "/manus-storage/tekaha_joinery_suite_e199cc08.webp",
+      "/manus-storage/one_nz_stadium_logo_67bf316d.jpg",
       "/manus-storage/tekaha_bikeracks_ab337b6d.webp",
       "/manus-storage/tekaha_whiteboard_6a6f9301.webp",
     ],

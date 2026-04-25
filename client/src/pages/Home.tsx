@@ -37,7 +37,7 @@ const projects = [
     sub: "Te Kaha, Christchurch",
     tag: "FF&E · Stadium",
     stat: "2,740+ items",
-    img: "/manus-storage/tekaha_joinery_suite_e199cc08.webp",
+    img: "/manus-storage/one_nz_stadium_logo_67bf316d.jpg",
     href: "/projects",
     accent: "oklch(0.63 0.18 38)",
   },
@@ -80,7 +80,7 @@ export default function Home() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/manus-storage/tekaha_joinery_suite_e199cc08.webp')",
+            backgroundImage: "url('/manus-storage/one_nz_stadium_logo_67bf316d.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center right",
             opacity: 0.22,
@@ -702,7 +702,7 @@ export default function Home() {
       {/* ─── FULL-BLEED PHOTO BREAK — Te Kaha ─── */}
       <section className="relative" style={{ height: "55vh", minHeight: "380px" }}>
         <img
-          src="/manus-storage/tekaha_joinery_suite_e199cc08.webp"
+          src="/manus-storage/one_nz_stadium_logo_67bf316d.jpg"
           alt="One NZ Stadium — Te Kaha FF&E installation"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: "center 40%" }}
