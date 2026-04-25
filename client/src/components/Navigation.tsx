@@ -41,63 +41,13 @@ export default function Navigation() {
       }}
     >
       <div className="container flex items-center justify-between h-16 lg:h-20">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          {/* SG Monogram */}
-          <div
-            style={{
-              width: "36px",
-              height: "36px",
-              background: "oklch(0.63 0.18 38)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexShrink: 0,
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "'Barlow Condensed', sans-serif",
-                fontWeight: 800,
-                fontSize: "1rem",
-                color: "white",
-                letterSpacing: "-0.02em",
-                lineHeight: 1,
-              }}
-            >
-              SG
-            </span>
-          </div>
-          {/* Wordmark */}
-          <div className="flex flex-col leading-none">
-            <span
-              style={{
-                fontFamily: "'Barlow Condensed', sans-serif",
-                fontWeight: 800,
-                fontSize: "1.15rem",
-                color: "white",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                lineHeight: 1,
-              }}
-            >
-              SPECIFIC
-            </span>
-            <span
-              style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 400,
-                fontSize: "0.55rem",
-                color: "oklch(0.63 0.18 38)",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                lineHeight: 1,
-                marginTop: "2px",
-              }}
-            >
-              NEW ZEALAND
-            </span>
-          </div>
+        {/* Logo — approved specific. gradient wordmark */}
+        <Link href="/">
+          <img
+            src="/manus-storage/specific_gradient_logo_9dabe950.webp"
+            alt="specific."
+            style={{ height: "38px", width: "auto", objectFit: "contain" }}
+          />
         </Link>
 
         {/* Desktop Nav */}

@@ -14,12 +14,15 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <img
-              src="/manus-storage/specific_logo_d8713c63.jpg"
+              src="/manus-storage/specific_gradient_logo_9dabe950.webp"
               alt="specific."
-              className="h-8 w-auto mb-6"
+              className="h-10 w-auto mb-6"
             />
             <p className="text-sm leading-relaxed max-w-xs" style={{ color: "oklch(0.62 0.025 240)", fontFamily: "'DM Sans', sans-serif" }}>
-              Specialist FF&E delivery, installation, and commercial logistics across New Zealand. Trusted by leading hotel developers, construction firms, and fit-out managers.
+              Installation teams that warehouse, deliver and install — across New Zealand's most demanding hotel, stadium, and commercial projects.
+            </p>
+            <p className="mt-3 text-xs uppercase tracking-widest font-semibold" style={{ color: "oklch(0.63 0.18 38)", fontFamily: "'DM Sans', sans-serif" }}>
+              Specific Scope. Specific Results.
             </p>
             <div className="mt-6 flex gap-4">
               <a
