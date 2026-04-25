@@ -44,6 +44,7 @@ const SERVICES = [
       "Dedicated project manager assigned from brief through to handover",
     ],
     clients: "Commercial offices · Educational institutions · Healthcare facilities · Government tenancies",
+    link: "/relocations",
   },
   {
     num: "03",
@@ -190,9 +191,14 @@ export default function Services() {
                 <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.15em", color: "oklch(0.40 0.02 240)", marginBottom: "0.35rem" }}>
                   REPRESENTATIVE PROJECTS
                 </p>
-                <p style={{ fontSize: "0.8125rem", color: "oklch(0.52 0.02 240)", lineHeight: 1.5 }}>
+                <p style={{ fontSize: "0.8125rem", color: "oklch(0.52 0.02 240)", lineHeight: 1.5, marginBottom: (svc as any).link ? "1.25rem" : 0 }}>
                   {svc.clients}
                 </p>
+                {(svc as any).link && (
+                  <Link href={(svc as any).link} style={{ display: "inline-block", background: "oklch(0.63 0.18 38)", color: "white", textDecoration: "none", fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.12em", padding: "0.6rem 1.5rem" }}>
+                    LEARN MORE →
+                  </Link>
+                )}
               </div>
             </div>
           </section>

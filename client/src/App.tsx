@@ -10,6 +10,7 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Group from "./pages/Group";
+import Relocations from "./pages/Relocations";
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/group" component={Group} />
+      <Route path="/relocations" component={Relocations} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
