@@ -474,7 +474,7 @@ export default function Home() {
                 lineHeight: 0.9,
               }}
             >
-              FOUR DISTINCT
+              FIVE DISTINCT
               <br />
               <span style={{ color: "oklch(0.63 0.18 38)" }}>CAPABILITIES.</span>
             </h2>
@@ -504,6 +504,12 @@ export default function Home() {
                   title: "AV Installations & OS&E Installations",
                   body: "End-to-end installation of audio visual systems and operating supplies & equipment. Coordinated delivery, placement, and commissioning across all project types.",
                   color: "oklch(0.65 0.15 280)",
+                },
+                {
+                  num: "05",
+                  title: "Warehousing, Storage & Handling",
+                  body: "Secure warehousing and professional handling for FF&E, joinery, and high-value equipment. Specialist sensitive storage for fine art, premium AV, and bespoke items requiring climate-controlled or white-glove care.",
+                  color: "oklch(0.75 0.10 55)",
                 },
               ].map((s) => (
                 <div
