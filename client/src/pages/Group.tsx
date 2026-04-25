@@ -436,25 +436,62 @@ export default function Group() {
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
-      <section style={{ padding: "clamp(4rem, 6vw, 5rem) clamp(1.5rem, 6vw, 6rem)", background: "oklch(0.63 0.18 38)", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "1.5rem" }}>
-        <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: "clamp(2rem, 4vw, 3rem)", color: "white", lineHeight: 1 }}>
-          TIER ONE PROJECTS.<br />TIER ONE TEAMS.
-        </h2>
-        <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "1rem", maxWidth: "480px" }}>
-          Contact Dwyane Hitchens to discuss your next New Zealand project.
-        </p>
-        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
-          <Link href="/contact">
-            <button style={{ background: "white", color: "oklch(0.63 0.18 38)", border: "none", padding: "0.875rem 2.5rem", fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.875rem", letterSpacing: "0.1em", cursor: "pointer" }}>
-              GET IN TOUCH
-            </button>
-          </Link>
-          <Link href="/services">
-            <button style={{ background: "transparent", color: "white", border: "2px solid rgba(255,255,255,0.6)", padding: "0.875rem 2.5rem", fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.875rem", letterSpacing: "0.1em", cursor: "pointer" }}>
-              OUR CAPABILITIES
-            </button>
-          </Link>
+      {/* ─── CTA — Full-bleed silver fern photo with dark overlay ─── */}
+      <section style={{ position: "relative", overflow: "hidden", minHeight: "560px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        {/* Background photo */}
+        <img
+          src="/manus-storage/pasted_file_but1GE_image_2873955d.png"
+          alt=""
+          aria-hidden="true"
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 40%", filter: "brightness(0.35) saturate(0.8)" }}
+        />
+        {/* Gradient overlay — dark at edges, slightly lifted in centre */}
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 80% 70% at 50% 50%, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.75) 100%)" }} />
+        {/* Orange accent bar at top */}
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "4px", background: "oklch(0.63 0.18 38)" }} />
+
+        {/* Content — centred */}
+        <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "clamp(4rem, 8vw, 6rem) clamp(1.5rem, 6vw, 4rem)", maxWidth: "860px", width: "100%" }}>
+          <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.25em", color: "oklch(0.63 0.18 38)", marginBottom: "1.5rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "0.75rem" }}>
+            <span style={{ display: "inline-block", width: "2rem", height: "2px", background: "oklch(0.63 0.18 38)" }} />
+            SPECIFIC GROUP — AUSTRALIA &amp; NEW ZEALAND
+            <span style={{ display: "inline-block", width: "2rem", height: "2px", background: "oklch(0.63 0.18 38)" }} />
+          </p>
+
+          <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: "clamp(3rem, 7vw, 6.5rem)", color: "white", lineHeight: 0.88, marginBottom: "1.75rem", letterSpacing: "-0.01em" }}>
+            TIER ONE PROJECTS.<br />
+            <span style={{ color: "oklch(0.63 0.18 38)" }}>TIER ONE TEAMS.</span>
+          </h2>
+
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.0625rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "560px", margin: "0 auto 2.5rem" }}>
+            Speak to the Specific team about your next project. We respond within the business day.
+          </p>
+
+          {/* Contact row */}
+          <div style={{ display: "flex", gap: "1.5rem", justifyContent: "center", flexWrap: "wrap", marginBottom: "2.5rem" }}>
+            <a href="mailto:info@specificgroup.com.au" style={{ display: "flex", alignItems: "center", gap: "0.6rem", color: "white", textDecoration: "none", fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", fontWeight: 600, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", padding: "0.6rem 1.25rem", backdropFilter: "blur(4px)" }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              info@specificgroup.com.au
+            </a>
+            <a href="tel:1300524461" style={{ display: "flex", alignItems: "center", gap: "0.6rem", color: "white", textDecoration: "none", fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", fontWeight: 600, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", padding: "0.6rem 1.25rem", backdropFilter: "blur(4px)" }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 5a2 2 0 0 1 1.99-2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.09a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              1300 524 461
+            </a>
+          </div>
+
+          {/* Buttons */}
+          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+            <Link href="/contact">
+              <button style={{ background: "oklch(0.63 0.18 38)", color: "white", border: "none", padding: "1rem 2.75rem", fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.12em", cursor: "pointer" }}>
+                GET IN TOUCH
+              </button>
+            </Link>
+            <Link href="/services">
+              <button style={{ background: "transparent", color: "white", border: "2px solid rgba(255,255,255,0.5)", padding: "1rem 2.75rem", fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.12em", cursor: "pointer" }}>
+                OUR CAPABILITIES
+              </button>
+            </Link>
+          </div>
         </div>
       </section>
     </div>
