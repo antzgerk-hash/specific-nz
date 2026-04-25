@@ -837,6 +837,184 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── NZ CULTURAL IDENTITY ─── */}
+      <section
+        className="relative overflow-hidden"
+        style={{ background: "oklch(0.13 0.03 185)" }}
+      >
+        {/* Silver fern SVG watermark */}
+        <svg
+          viewBox="0 0 200 400"
+          className="absolute right-0 top-0 h-full opacity-[0.04] pointer-events-none"
+          style={{ width: "auto" }}
+          aria-hidden="true"
+        >
+          <path
+            d="M100 380 C100 380 20 300 20 200 C20 100 60 40 100 20 C140 40 180 100 180 200 C180 300 100 380 100 380Z"
+            fill="white"
+          />
+          {[0,1,2,3,4,5,6,7,8,9,10,11,12].map((i) => (
+            <ellipse
+              key={i}
+              cx={100 + (i % 2 === 0 ? -18 : 18)}
+              cy={340 - i * 24}
+              rx={22 - i * 0.8}
+              ry={7 - i * 0.3}
+              transform={`rotate(${i % 2 === 0 ? -18 : 18} ${100 + (i % 2 === 0 ? -18 : 18)} ${340 - i * 24})`}
+              fill="white"
+            />
+          ))}
+        </svg>
+
+        <div className="container py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
+
+            {/* Left — text content */}
+            <div className="flex flex-col justify-center pr-0 lg:pr-16 py-8">
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "0.7rem",
+                  letterSpacing: "0.18em",
+                  color: "oklch(0.63 0.18 38)",
+                  fontWeight: 600,
+                  textTransform: "uppercase",
+                  marginBottom: "1rem",
+                }}
+              >
+                — Tūhono ki Aotearoa
+              </p>
+              <h2
+                style={{
+                  fontFamily: "'Barlow Condensed', sans-serif",
+                  fontWeight: 800,
+                  fontSize: "clamp(2.4rem, 4.5vw, 4rem)",
+                  color: "white",
+                  lineHeight: 0.95,
+                  marginBottom: "1.5rem",
+                }}
+              >
+                ROOTED IN
+                <br />
+                <span style={{ color: "oklch(0.63 0.18 38)" }}>AOTEAROA.</span>
+                <br />
+                BUILT FOR
+                <br />
+                <span style={{ color: "oklch(0.60 0.12 185)" }}>THE BEST.</span>
+              </h2>
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "0.9375rem",
+                  color: "oklch(0.62 0.025 240)",
+                  lineHeight: 1.8,
+                  maxWidth: "480px",
+                  marginBottom: "2rem",
+                }}
+              >
+                Specific NZ is proudly embedded in the fabric of Aotearoa. From Auckland to Southland, our team brings the precision of a Tier One operation with the values of a New Zealand company — manaakitanga, kotahitanga, and a commitment to doing the job right, every time.
+              </p>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "2rem",
+                  flexWrap: "wrap",
+                }}
+              >
+                {[
+                  { label: "Auckland", sub: "Head of Operations" },
+                  { label: "Christchurch", sub: "South Island" },
+                  { label: "Queenstown", sub: "Otago / Southland" },
+                  { label: "Invercargill", sub: "Southland Base" },
+                ].map((loc) => (
+                  <div key={loc.label}>
+                    <p
+                      style={{
+                        fontFamily: "'Barlow Condensed', sans-serif",
+                        fontWeight: 700,
+                        fontSize: "1rem",
+                        color: "white",
+                        letterSpacing: "0.04em",
+                      }}
+                    >
+                      {loc.label}
+                    </p>
+                    <p
+                      style={{
+                        fontFamily: "'DM Sans', sans-serif",
+                        fontSize: "0.75rem",
+                        color: "oklch(0.50 0.02 240)",
+                      }}
+                    >
+                      {loc.sub}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — two stacked images */}
+            <div className="grid grid-cols-2 gap-3 py-8">
+              <div
+                className="relative overflow-hidden"
+                style={{ aspectRatio: "3/4" }}
+              >
+                <img
+                  src="/manus-storage/specific_heitiki_48927c58.png"
+                  alt="Specific NZ — Tāonga and brand identity"
+                  className="w-full h-full object-cover"
+                />
+                <div
+                  className="absolute bottom-0 left-0 right-0 p-3"
+                  style={{
+                    background: "linear-gradient(to top, oklch(0.08 0.02 185 / 0.9), transparent)",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "0.7rem",
+                      color: "oklch(0.75 0.02 240)",
+                      letterSpacing: "0.06em",
+                    }}
+                  >
+                    Tāonga · Brand Identity
+                  </p>
+                </div>
+              </div>
+              <div
+                className="relative overflow-hidden"
+                style={{ aspectRatio: "3/4" }}
+              >
+                <img
+                  src="/manus-storage/specific_truck_walkinshaw_806bd66a.png"
+                  alt="Specific NZ fleet — branded truck and van"
+                  className="w-full h-full object-cover"
+                />
+                <div
+                  className="absolute bottom-0 left-0 right-0 p-3"
+                  style={{
+                    background: "linear-gradient(to top, oklch(0.08 0.02 185 / 0.9), transparent)",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "0.7rem",
+                      color: "oklch(0.75 0.02 240)",
+                      letterSpacing: "0.06em",
+                    }}
+                  >
+                    Specific NZ Fleet · Auckland
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ─── CTA ─── */}
       <section
         className="py-20 lg:py-28"
