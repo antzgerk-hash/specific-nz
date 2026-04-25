@@ -136,18 +136,44 @@ export default function Home() {
               IS IMMOVABLE.
             </h1>
 
-            <p
-              className="mt-8 max-w-lg"
-              style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: "1.0625rem",
-                color: "oklch(0.68 0.025 240)",
-                lineHeight: 1.7,
-              }}
-            >
-              Specialist FF&amp;E delivery, installation, and commercial logistics across New Zealand.
-              Trusted by leading hotel developers, construction firms, and fit-out managers.
-            </p>
+            {/* Taglines */}
+            <div className="mt-8 max-w-xl space-y-3">
+              <p
+                style={{
+                  fontFamily: "'Barlow Condensed', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(1.1rem, 2.5vw, 1.5rem)",
+                  color: "white",
+                  letterSpacing: "0.04em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Tier One Projects.{" "}
+                <span style={{ color: "oklch(0.63 0.18 38)" }}>Tier One Teams.</span>
+              </p>
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "1rem",
+                  color: "oklch(0.68 0.025 240)",
+                  lineHeight: 1.7,
+                }}
+              >
+                Installation teams that warehouse, deliver and install — across New Zealand's most demanding hotel, stadium, and commercial projects.
+              </p>
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "0.8rem",
+                  fontWeight: 600,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "oklch(0.63 0.18 38)",
+                }}
+              >
+                Specific Scope. Specific Results.
+              </p>
+            </div>
 
             <div className="flex flex-wrap gap-4 mt-10">
               <Link

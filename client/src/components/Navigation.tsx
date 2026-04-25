@@ -42,13 +42,62 @@ export default function Navigation() {
     >
       <div className="container flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
-        <Link href="/">
-          <img
-            src="/manus-storage/specific_logo_d8713c63.jpg"
-            alt="specific."
-            className="h-8 lg:h-9 w-auto object-contain"
-            style={{ imageRendering: "crisp-edges" }}
-          />
+        <Link href="/" className="flex items-center gap-2.5 group">
+          {/* SG Monogram */}
+          <div
+            style={{
+              width: "36px",
+              height: "36px",
+              background: "oklch(0.63 0.18 38)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexShrink: 0,
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "'Barlow Condensed', sans-serif",
+                fontWeight: 800,
+                fontSize: "1rem",
+                color: "white",
+                letterSpacing: "-0.02em",
+                lineHeight: 1,
+              }}
+            >
+              SG
+            </span>
+          </div>
+          {/* Wordmark */}
+          <div className="flex flex-col leading-none">
+            <span
+              style={{
+                fontFamily: "'Barlow Condensed', sans-serif",
+                fontWeight: 800,
+                fontSize: "1.15rem",
+                color: "white",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                lineHeight: 1,
+              }}
+            >
+              SPECIFIC
+            </span>
+            <span
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 400,
+                fontSize: "0.55rem",
+                color: "oklch(0.63 0.18 38)",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                lineHeight: 1,
+                marginTop: "2px",
+              }}
+            >
+              NEW ZEALAND
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
