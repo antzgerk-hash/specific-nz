@@ -30,9 +30,9 @@ const SERVICES = [
     title: "Corporate & Office Relocations",
     subtitle: "End-to-End Commercial Moves",
     accent: "oklch(0.60 0.12 185)",
-    img: "/manus-storage/VicTeamLoadingequimentatWalkinshawrelocation2025_13007dd4.png",
-    imgAlt: "Specific team loading equipment at Walkinshaw relocation 2025",
-    imgPosition: "center 30%",
+    img: "/manus-storage/Screenshot2026-04-08014112_2df50744.png",
+    imgAlt: "Specific Relocations branded crates and dollies — proprietary crate system used on all commercial moves",
+    imgPosition: "center center",
     summary:
       "Commercial relocations require precision planning, zero operational disruption, and a team that understands the difference between moving boxes and managing a business transition. Specific NZ plans, manages, and executes corporate moves for offices, schools, and institutions — delivering continuity from day one.",
     scope: [
@@ -88,8 +88,8 @@ const SERVICES = [
     title: "Warehousing, Storage & Handling",
     subtitle: "Secure Storage for High-Value & Sensitive Items",
     accent: "oklch(0.75 0.10 55)",
-    img: "/manus-storage/pasted_file_8RFr71_image_7fe731ae.png",
-    imgAlt: "Specific warehouse — wrapped FF&E and furniture in secure storage facility",
+    img: "/manus-storage/Screenshot2026-04-08013641_37253495.png",
+    imgAlt: "Specific warehouse — timber storage vaults and forklift operations in secure facility",
     summary:
       "Premium FF&E, commissioned artworks, and high-specification AV equipment require more than a rack in a warehouse. Specific NZ provides secure, professionally managed storage with white-glove handling protocols — purpose-built for the construction and hospitality sectors where the cost of damage is measured in programme delays, not just replacement value.",
     scope: [
@@ -198,6 +198,27 @@ export default function Services() {
           </section>
         );
       })}
+
+      {/* ─── EQUIPMENT STRIP ─── branded assets gallery */}
+      <section style={{ background: "oklch(0.08 0.01 240)", padding: "0", overflow: "hidden", borderBottom: "1px solid oklch(0.16 0.02 240)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", height: "280px" }}>
+          {[
+            { src: "/manus-storage/VicTeamLoadingequimentatWalkinshawrelocation2025_13007dd4.png", pos: "center 30%", label: "WALKINSHAW RELOCATION" },
+            { src: "/manus-storage/Screenshot2026-04-08014112_2df50744.png", pos: "center center", label: "SPECIFIC RELOCATIONS CRATES" },
+            { src: "/manus-storage/Screenshot2026-04-08014047_7b0f1897.png", pos: "center center", label: "BRANDED CAGE TROLLEYS" },
+            { src: "/manus-storage/Screenshot2026-04-08013641_37253495.png", pos: "center center", label: "SECURE STORAGE FACILITY" },
+          ].map((item, i) => (
+            <div key={i} style={{ position: "relative", overflow: "hidden" }}>
+              <img src={item.src} alt={item.label} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: item.pos, filter: "brightness(0.55) saturate(0.85)" }} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, oklch(0.06 0.01 240) 0%, transparent 50%)" }} />
+              <div style={{ position: "absolute", bottom: "1rem", left: "1rem", right: "1rem" }}>
+                <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.15em", color: "oklch(0.63 0.18 38)", margin: 0 }}>{item.label}</p>
+              </div>
+              {i < 3 && <div style={{ position: "absolute", top: 0, right: 0, width: "1px", height: "100%", background: "oklch(0.16 0.02 240)" }} />}
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* ─── PROCESS ─── */}
       <section style={{ padding: "clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 6rem)", background: "oklch(0.08 0.01 240)" }}>
