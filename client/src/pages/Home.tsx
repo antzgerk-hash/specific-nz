@@ -76,6 +76,24 @@ export default function Home() {
         className="relative min-h-screen flex items-end"
         style={{ background: "oklch(0.11 0.03 240)" }}
       >
+        {/* Southern Cross constellation — subtle top-right watermark */}
+        <svg
+          viewBox="0 0 200 200"
+          className="absolute top-8 right-8 opacity-[0.08] pointer-events-none z-10"
+          style={{ width: "180px", height: "180px" }}
+          aria-hidden="true"
+        >
+          {/* Southern Cross — 4 red stars in correct relative positions */}
+          {/* Gacrux — top */}
+          <polygon points="100,18 103,28 114,28 105,34 108,44 100,38 92,44 95,34 86,28 97,28" fill="#cc2222" />
+          {/* Acrux — bottom */}
+          <polygon points="100,148 103,158 114,158 105,164 108,174 100,168 92,174 95,164 86,158 97,158" fill="#cc2222" />
+          {/* Mimosa — right */}
+          <polygon points="162,78 165,88 176,88 167,94 170,104 162,98 154,104 157,94 148,88 159,88" fill="#cc2222" />
+          {/* Delta Crucis — left */}
+          <polygon points="38,88 41,98 52,98 43,104 46,114 38,108 30,114 33,104 24,98 35,98" fill="#cc2222" />
+        </svg>
+
         {/* Background photo — full bleed right side */}
         <div
           className="absolute inset-0"
@@ -123,7 +141,7 @@ export default function Home() {
               style={{
                 fontFamily: "'Barlow Condensed', sans-serif",
                 fontWeight: 800,
-                fontSize: "clamp(4rem, 11vw, 9.5rem)",
+                fontSize: "clamp(2.8rem, 7.5vw, 6.5rem)",
                 color: "white",
                 lineHeight: 0.88,
                 letterSpacing: "-0.01em",
