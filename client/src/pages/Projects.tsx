@@ -129,9 +129,9 @@ const projects = [
     stats: [],
     description: "Specific NZ managed the FF&E and relocation scope for the transition of Rydges Queenstown to the QT Hotels brand, coordinating the removal, storage, and installation of FF&E across the rebrand programme.",
     images: [
-      "/manus-storage/rydges_qt_truck_9da4a85e.jpg",
+      "/manus-storage/qt_queenstown_room_915035f3.png",
     ],
-    hero: "/manus-storage/rydges_qt_truck_9da4a85e.jpg",
+    hero: "/manus-storage/qt_queenstown_room_915035f3.png",
   },
   {
     id: "voco-auckland",
