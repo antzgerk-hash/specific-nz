@@ -30,8 +30,8 @@ const SERVICES = [
     title: "Corporate & Office Relocations",
     subtitle: "End-to-End Commercial Moves",
     accent: "oklch(0.60 0.12 185)",
-    img: "/manus-storage/office_relocation_09799b8f.webp",
-    imgAlt: "Professional commercial office relocation team",
+    img: "/manus-storage/VicTeamLoadingequimentatWalkinshawrelocation2025_13007dd4.png",
+    imgAlt: "Specific team loading equipment at Walkinshaw relocation 2025",
     summary:
       "Commercial relocations require precision planning, zero operational disruption, and a team that understands the difference between moving boxes and managing a business transition. Specific NZ plans, manages, and executes corporate moves for offices, schools, and institutions — delivering continuity from day one.",
     scope: [
@@ -49,8 +49,8 @@ const SERVICES = [
     title: "Detailed Joinery & FF&E Installations",
     subtitle: "Precision Fit-Out to Exacting Tolerances",
     accent: "oklch(0.72 0.14 145)",
-    img: "/manus-storage/joinery_installation_c403f826.jpg",
-    imgAlt: "Bespoke commercial joinery installation in a premium fit-out",
+    img: "/manus-storage/mecuremelbourne2026bathrooms_fb5835fd.jpeg",
+    imgAlt: "Completed bathroom installation — Mercure Melbourne 2026, joinery and fixtures by Specific",
     summary:
       "Bespoke joinery and high-specification FF&E packages demand installation teams who read drawings, work to millimetre tolerances, and understand the relationship between joinery, services, and finishes. Specific NZ's installation crews are trained in detailed joinery placement, scribing, and level-critical fixing — not general labour.",
     scope: [
@@ -87,8 +87,8 @@ const SERVICES = [
     title: "Warehousing, Storage & Handling",
     subtitle: "Secure Storage for High-Value & Sensitive Items",
     accent: "oklch(0.75 0.10 55)",
-    img: "/manus-storage/art_storage_ea44f610.jpg",
-    imgAlt: "Climate-controlled fine art and high-value equipment storage facility",
+    img: "/manus-storage/pasted_file_8RFr71_image_7fe731ae.png",
+    imgAlt: "Specific warehouse — wrapped FF&E and furniture in secure storage facility",
     summary:
       "Premium FF&E, commissioned artworks, and high-specification AV equipment require more than a rack in a warehouse. Specific NZ provides secure, professionally managed storage with white-glove handling protocols — purpose-built for the construction and hospitality sectors where the cost of damage is measured in programme delays, not just replacement value.",
     scope: [
@@ -221,25 +221,174 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
-      <section style={{ padding: "clamp(4rem, 6vw, 5rem) clamp(1.5rem, 6vw, 6rem)", background: "oklch(0.63 0.18 38)", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "1.5rem" }}>
-        <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: "clamp(2rem, 4vw, 3rem)", color: "white", lineHeight: 1 }}>
-          SPECIFIC SCOPE.<br />SPECIFIC RESULTS.
-        </h2>
-        <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "1rem", maxWidth: "480px" }}>
-          Talk to Dwyane Hitchens directly about your next project. We respond within the business day.
-        </p>
-        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
-          <Link href="/contact">
-            <button style={{ background: "white", color: "oklch(0.63 0.18 38)", border: "none", padding: "0.875rem 2.5rem", fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.875rem", letterSpacing: "0.1em", cursor: "pointer" }}>
-              GET IN TOUCH
-            </button>
-          </Link>
-          <Link href="/projects">
-            <button style={{ background: "transparent", color: "white", border: "2px solid rgba(255,255,255,0.6)", padding: "0.875rem 2.5rem", fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.875rem", letterSpacing: "0.1em", cursor: "pointer" }}>
-              VIEW PROJECTS
-            </button>
-          </Link>
+      {/* ─── CTA — REDESIGNED ─── */}
+      <section style={{ position: "relative", overflow: "hidden", background: "oklch(0.08 0.01 240)" }}>
+
+        {/* Large diagonal orange slab — top portion */}
+        <div style={{
+          position: "absolute", top: 0, left: 0, right: 0, bottom: 0,
+          background: "oklch(0.63 0.18 38)",
+          clipPath: "polygon(0 0, 100% 0, 100% 65%, 0 100%)",
+        }} />
+
+        {/* Subtle diagonal hatching texture over orange */}
+        <div style={{
+          position: "absolute", top: 0, left: 0, right: 0, bottom: 0,
+          backgroundImage: "repeating-linear-gradient(135deg, transparent, transparent 30px, rgba(0,0,0,0.05) 30px, rgba(0,0,0,0.05) 60px)",
+          clipPath: "polygon(0 0, 100% 0, 100% 65%, 0 100%)",
+          pointerEvents: "none",
+        }} />
+
+        {/* Large ghost number watermark */}
+        <div style={{
+          position: "absolute", right: "4rem", top: "1rem",
+          fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900,
+          fontSize: "clamp(8rem, 18vw, 16rem)", lineHeight: 1,
+          color: "rgba(0,0,0,0.08)", userSelect: "none", pointerEvents: "none",
+          letterSpacing: "-0.04em",
+        }}>NZ</div>
+
+        {/* Content */}
+        <div style={{ position: "relative", zIndex: 1, padding: "clamp(4rem, 7vw, 6rem) clamp(1.5rem, 6vw, 6rem) clamp(5rem, 9vw, 7rem)" }}>
+          <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "center" }}>
+
+            {/* Left — headline */}
+            <div>
+              <p style={{
+                fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700,
+                fontSize: "0.7rem", letterSpacing: "0.22em",
+                color: "rgba(255,255,255,0.60)", marginBottom: "1.25rem",
+                display: "flex", alignItems: "center", gap: "0.6rem",
+              }}>
+                <span style={{ display: "inline-block", width: "1.5rem", height: "2px", background: "rgba(255,255,255,0.45)" }} />
+                SPECIFIC NEW ZEALAND
+              </p>
+              <h2 style={{
+                fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800,
+                fontSize: "clamp(2.8rem, 5vw, 4.5rem)", color: "white",
+                lineHeight: 0.92, marginBottom: "1.5rem",
+              }}>
+                SPECIFIC SCOPE.<br />
+                <span style={{ WebkitTextStroke: "2px white", color: "transparent" }}>SPECIFIC RESULTS.</span>
+              </h2>
+              <p style={{ color: "rgba(255,255,255,0.82)", fontSize: "1rem", lineHeight: 1.75, maxWidth: "400px" }}>
+                Talk to the Specific team about your next project. We respond within the business day.
+              </p>
+
+              {/* Credential strip */}
+              <div style={{ display: "flex", gap: "1.5rem", marginTop: "2rem", flexWrap: "wrap" }}>
+                {["ISO 45001", "ISO 9001", "ISO 14001"].map((cert) => (
+                  <div key={cert} style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+                    <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", background: "rgba(255,255,255,0.5)" }} />
+                    <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.1em", color: "rgba(255,255,255,0.55)" }}>{cert}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — contact card */}
+            <div style={{
+              background: "oklch(0.13 0.022 240)",
+              border: "1px solid oklch(0.22 0.03 240)",
+              padding: "clamp(1.75rem, 3vw, 2.5rem)",
+              boxShadow: "0 24px 60px rgba(0,0,0,0.5)",
+            }}>
+              <p style={{
+                fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700,
+                fontSize: "0.65rem", letterSpacing: "0.22em",
+                color: "oklch(0.63 0.18 38)", marginBottom: "1.75rem",
+                borderBottom: "1px solid oklch(0.20 0.025 240)", paddingBottom: "1rem",
+              }}>
+                GET IN TOUCH — SPECIFIC TEAM
+              </p>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", marginBottom: "2rem" }}>
+
+                {/* Email */}
+                <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                  <div style={{
+                    width: "38px", height: "38px", background: "oklch(0.63 0.18 38)",
+                    display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+                  }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                      <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.6rem", letterSpacing: "0.18em", color: "oklch(0.42 0.02 240)", marginBottom: "0.2rem" }}>EMAIL</p>
+                    <a href="mailto:info@specificgroup.com.au" style={{ color: "white", fontSize: "0.9375rem", fontWeight: 500, textDecoration: "none" }}>
+                      info@specificgroup.com.au
+                    </a>
+                  </div>
+                </div>
+
+                {/* Phone */}
+                <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                  <div style={{
+                    width: "38px", height: "38px", background: "oklch(0.60 0.12 185)",
+                    display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+                  }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.6rem", letterSpacing: "0.18em", color: "oklch(0.42 0.02 240)", marginBottom: "0.2rem" }}>NZ DIRECT</p>
+                    <a href="tel:+64204243242" style={{ color: "white", fontSize: "0.9375rem", fontWeight: 500, textDecoration: "none" }}>
+                      +64 204 243 242
+                    </a>
+                  </div>
+                </div>
+
+                {/* Website */}
+                <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                  <div style={{
+                    width: "38px", height: "38px", background: "oklch(0.20 0.03 240)",
+                    border: "1px solid oklch(0.28 0.03 240)",
+                    display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+                  }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.63 0.18 38)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"/>
+                      <line x1="2" y1="12" x2="22" y2="12"/>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.6rem", letterSpacing: "0.18em", color: "oklch(0.42 0.02 240)", marginBottom: "0.2rem" }}>GROUP WEBSITE</p>
+                    <a href="https://specificgroup.com.au" target="_blank" rel="noopener noreferrer" style={{ color: "oklch(0.63 0.18 38)", fontSize: "0.9375rem", fontWeight: 500, textDecoration: "none" }}>
+                      specificgroup.com.au
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+                <Link href="/contact">
+                  <button style={{
+                    background: "oklch(0.63 0.18 38)", color: "white", border: "none",
+                    padding: "0.9rem 2rem",
+                    fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700,
+                    fontSize: "0.8rem", letterSpacing: "0.12em", cursor: "pointer", textTransform: "uppercase",
+                  }}>
+                    SEND ENQUIRY
+                  </button>
+                </Link>
+                <Link href="/projects">
+                  <button style={{
+                    background: "transparent", color: "oklch(0.65 0.025 240)",
+                    border: "1px solid oklch(0.28 0.03 240)",
+                    padding: "0.9rem 2rem",
+                    fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700,
+                    fontSize: "0.8rem", letterSpacing: "0.12em", cursor: "pointer", textTransform: "uppercase",
+                  }}>
+                    VIEW PROJECTS
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
     </div>
