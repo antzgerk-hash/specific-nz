@@ -135,10 +135,37 @@ export default function Group() {
   return (
     <div style={{ background: "oklch(0.10 0.01 240)", minHeight: "100vh", fontFamily: "'Barlow', sans-serif" }}>
 
+      {/* ─── NAV ─── */}
+      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: "oklch(0.07 0.01 240 / 0.96)", backdropFilter: "blur(12px)", borderBottom: "1px solid oklch(0.16 0.02 240)", padding: "0 clamp(1.5rem, 5vw, 4rem)", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        {/* Logo */}
+        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "0.75rem" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            {/* Orange dot brand mark */}
+            <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: "oklch(0.63 0.18 38)", flexShrink: 0 }} />
+            <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: "1.5rem", color: "white", letterSpacing: "-0.02em", lineHeight: 1 }}>specific.</span>
+          </div>
+        </Link>
+        {/* Nav links */}
+        <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
+          <Link href="/" style={{ color: "oklch(0.55 0.02 240)", textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.1em", fontWeight: 600, fontFamily: "'Barlow Condensed', sans-serif" }}>HOME</Link>
+          <Link href="/services" style={{ color: "oklch(0.55 0.02 240)", textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.1em", fontWeight: 600, fontFamily: "'Barlow Condensed', sans-serif" }}>SERVICES</Link>
+          <Link href="/projects" style={{ color: "oklch(0.55 0.02 240)", textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.1em", fontWeight: 600, fontFamily: "'Barlow Condensed', sans-serif" }}>PROJECTS</Link>
+          <Link href="/group" style={{ color: "oklch(0.63 0.18 38)", textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.1em", fontWeight: 700, fontFamily: "'Barlow Condensed', sans-serif", borderBottom: "2px solid oklch(0.63 0.18 38)", paddingBottom: "2px" }}>THE GROUP</Link>
+          <Link href="/about" style={{ color: "oklch(0.55 0.02 240)", textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.1em", fontWeight: 600, fontFamily: "'Barlow Condensed', sans-serif" }}>ABOUT</Link>
+          <Link href="/contact" style={{ background: "oklch(0.63 0.18 38)", color: "white", textDecoration: "none", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.1em", padding: "0.5rem 1.25rem", fontFamily: "'Barlow Condensed', sans-serif" }}>GET IN TOUCH</Link>
+        </div>
+      </nav>
+
       {/* ─── HERO ─── */}
       <section style={{ paddingTop: "140px", paddingBottom: "80px", paddingLeft: "clamp(1.5rem, 6vw, 6rem)", paddingRight: "clamp(1.5rem, 6vw, 6rem)", borderBottom: "1px solid oklch(0.20 0.02 240)", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 80% 60% at 70% 50%, oklch(0.15 0.04 240) 0%, transparent 70%)", pointerEvents: "none" }} />
         <div style={{ position: "relative", maxWidth: "900px" }}>
+          {/* Specific brand mark in hero */}
+          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "2rem" }}>
+            <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "oklch(0.63 0.18 38)" }} />
+            <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: "1.75rem", color: "white", letterSpacing: "-0.02em", lineHeight: 1 }}>specific.</span>
+            <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 400, fontSize: "0.75rem", letterSpacing: "0.2em", color: "oklch(0.45 0.02 240)", marginLeft: "0.5rem", borderLeft: "1px solid oklch(0.25 0.02 240)", paddingLeft: "0.75rem" }}>GROUP OF COMPANIES</span>
+          </div>
           <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.2em", color: "oklch(0.63 0.18 38)", marginBottom: "1.25rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
             <span style={{ display: "inline-block", width: "2rem", height: "2px", background: "oklch(0.63 0.18 38)" }} />
             THE SPECIFIC GROUP
@@ -549,6 +576,28 @@ export default function Group() {
           </div>
         </div>
       </section>
+
+      {/* ─── FOOTER ─── */}
+      <footer style={{ background: "oklch(0.06 0.01 240)", borderTop: "1px solid oklch(0.14 0.02 240)", padding: "2rem clamp(1.5rem, 6vw, 6rem)" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1.5rem" }}>
+          {/* Logo */}
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: "oklch(0.63 0.18 38)" }} />
+            <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: "1.5rem", color: "white", letterSpacing: "-0.02em" }}>specific.</span>
+            <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 400, fontSize: "0.65rem", letterSpacing: "0.15em", color: "oklch(0.35 0.02 240)", marginLeft: "0.5rem", borderLeft: "1px solid oklch(0.20 0.02 240)", paddingLeft: "0.75rem" }}>GROUP OF COMPANIES</span>
+          </div>
+          {/* Nav */}
+          <div style={{ display: "flex", gap: "2rem" }}>
+            <Link href="/" style={{ color: "oklch(0.40 0.02 240)", textDecoration: "none", fontSize: "0.7rem", letterSpacing: "0.1em", fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600 }}>HOME</Link>
+            <Link href="/services" style={{ color: "oklch(0.40 0.02 240)", textDecoration: "none", fontSize: "0.7rem", letterSpacing: "0.1em", fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600 }}>SERVICES</Link>
+            <Link href="/projects" style={{ color: "oklch(0.40 0.02 240)", textDecoration: "none", fontSize: "0.7rem", letterSpacing: "0.1em", fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600 }}>PROJECTS</Link>
+            <Link href="/contact" style={{ color: "oklch(0.40 0.02 240)", textDecoration: "none", fontSize: "0.7rem", letterSpacing: "0.1em", fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600 }}>CONTACT</Link>
+          </div>
+          {/* Copyright */}
+          <p style={{ fontSize: "0.7rem", color: "oklch(0.30 0.02 240)", fontFamily: "'Barlow Condensed', sans-serif" }}>© 2026 Specific Group. All rights reserved.</p>
+        </div>
+      </footer>
+
     </div>
   );
 }
