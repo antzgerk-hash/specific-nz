@@ -1,492 +1,247 @@
 /*
  * Services Page — Dark Authority Design
- * Two distinct service categories:
- *   1. Specialist Project Logistics — Hotels, Stadiums, Healthcare, Tourism
- *   2. Corporate & Office Relocations — Office moves, workstations, IT
+ * Five distinct capabilities for Specific NZ
+ * Design: Barlow Condensed headlines, navy/charcoal base, orange accents
  */
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import { Link } from "wouter";
 
-const specialistServices = [
+const SERVICES = [
   {
-    number: "01",
-    title: "FF&E Delivery & Installation",
-    tagline: "From receipt to room-ready.",
-    body: "Specific NZ manages the complete FF&E chain for hospitality, stadium, and public venue projects. We receive, QC, warehouse, stage, and install furniture, fixtures, and equipment to programme — across any scale, any floor count, any site complexity. Our teams are experienced in hotel room packages, corporate suite fit-outs, restaurant and bar FF&E, and specialist public venue installations.",
-    capabilities: [
-      "Receipt and QC at our Auckland warehouse",
-      "Staged delivery sequenced to programme",
-      "Floor-by-floor and room-by-room installation",
-      "Joinery, loose furniture, soft furnishings",
-      "Electricals, AV, refrigeration, whitegoods",
-      "Close-out documentation and sign-off",
+    num: "01",
+    title: "Specialist Project Logistics",
+    subtitle: "FF&E Delivery & Installation",
+    accent: "oklch(0.63 0.18 38)",
+    img: "/manus-storage/ffe_installation_d22ff496.jpg",
+    imgAlt: "Hotel FF&E installation — furniture and fixtures being placed",
+    summary:
+      "New Zealand's most demanding hotel and commercial fit-out projects require a logistics partner who understands programme-critical timelines, damage-sensitive goods, and the complexity of multi-floor staged delivery. Specific NZ operates as a fully integrated logistics and installation team — not a subcontractor handed a manifest.",
+    scope: [
+      "Full FF&E delivery, placement, and installation across hotels, stadiums, and commercial developments",
+      "Staged floor-by-floor installation coordinated against live construction programmes",
+      "QC receipt, inventory management, and damage reporting from point of delivery",
+      "Multi-truckload operations with driver assignment, manifest sign-off, and digital handover",
+      "Daily client updates via WhatsApp, email, and Aroflo digital reporting",
+      "Level-by-level sign-off with photographic installation reports",
     ],
-    image: "/manus-storage/indigo_room2_9aeecf11.jpg",
+    clients: "Hotel Indigo Auckland · One NZ Stadium · Holiday Inn Express · Rydges/QT Queenstown",
   },
   {
-    number: "02",
-    title: "Specialist Project Installations",
-    tagline: "Complex environments. Immovable deadlines.",
-    body: "Hotels, stadiums, healthcare facilities, and tourism venues share one thing: a hard opening date and zero tolerance for failure. Specific NZ installs FF&E and OS&E across New Zealand's most demanding project environments — from multi-level hotel fit-outs to alpine gondola restaurants and major public venues. We understand programme accountability, site protocols, and the consequences of getting it wrong.",
-    capabilities: [
-      "Hotel room and suite FF&E installation",
-      "Stadium and public venue fit-out",
-      "Healthcare and aged-care installations",
-      "Tourism and hospitality venue FF&E",
-      "OS&E placement and room dressing",
-      "Site induction compliance and H&S management",
-    ],
-    image: "/manus-storage/tekaha_joinery_suite_e199cc08.webp",
-  },
-  {
-    number: "03",
-    title: "Logistics Management",
-    tagline: "One point of accountability across the full chain.",
-    body: "When a project involves multiple suppliers, multiple delivery windows, and a single hard opening date, you need one logistics partner who owns the full chain. Specific NZ provides warehousing, receipt, QC, sequencing, and coordinated delivery across complex multi-supplier programmes — giving you a single point of accountability from first delivery to final installation.",
-    capabilities: [
-      "Multi-supplier receipt and QC",
-      "Secure warehousing and staging",
-      "Delivery sequencing and programme management",
-      "Damage management and claims coordination",
-      "Real-time reporting and status updates",
-      "National delivery capability",
-    ],
-    image: "/manus-storage/fleet_trucks_e875af64.png",
-  },
-];
-
-const relocationServices = [
-  {
-    number: "01",
+    num: "02",
     title: "Corporate & Office Relocations",
-    tagline: "Planned, managed, and delivered.",
-    body: "Corporate relocations require more than a truck and a team. Specific NZ plans and manages the full relocation programme — from pre-move audits and asset tagging through to transport, installation at the new location, and post-move stabilisation. We minimise downtime and protect your assets throughout. Whether you are moving 20 workstations or 500, we deliver to floor plan.",
-    capabilities: [
-      "Pre-move planning and asset auditing",
-      "Branded crates and specialist packing",
-      "Workstation and task seating relocation",
-      "Floor-plan-based reinstallation",
-      "Post-move stabilisation and close-out",
-      "Storage and interim warehousing",
+    subtitle: "End-to-End Commercial Moves",
+    accent: "oklch(0.60 0.12 185)",
+    img: "/manus-storage/office_relocation_09799b8f.webp",
+    imgAlt: "Professional commercial office relocation team",
+    summary:
+      "Commercial relocations require precision planning, zero operational disruption, and a team that understands the difference between moving boxes and managing a business transition. Specific NZ plans, manages, and executes corporate moves for offices, schools, and institutions — delivering continuity from day one.",
+    scope: [
+      "Full project management from site survey through to post-move defect rectification",
+      "Office, school, hospital, and institutional relocations across New Zealand",
+      "Make-good and reinstatement services for vacated tenancies",
+      "IT and AV equipment disconnection, transport, and reconnection coordination",
+      "Out-of-hours and weekend moves to minimise business disruption",
+      "Dedicated project manager assigned from brief through to handover",
     ],
-    image: "/manus-storage/equipment_crates_22489160.png",
+    clients: "Commercial offices · Educational institutions · Healthcare facilities · Government tenancies",
   },
   {
-    number: "02",
-    title: "IT & Technology Coordination",
-    tagline: "Disconnect, transport, reconnect — on schedule.",
-    body: "Technology assets require careful handling and coordination with your IT team. Specific NZ manages the physical disconnect, safe transport, and reinstallation of IT and AV equipment as part of a broader relocation programme. We work alongside your IT provider to ensure systems are back online to your required timeline.",
-    capabilities: [
-      "IT equipment disconnect and labelling",
-      "Safe transport of servers, screens, and peripherals",
-      "Reinstallation to IT team specification",
-      "AV system relocation",
-      "Cable management and tidy-up",
-      "Coordination with client IT team",
+    num: "03",
+    title: "Detailed Joinery & FF&E Installations",
+    subtitle: "Precision Fit-Out to Exacting Tolerances",
+    accent: "oklch(0.72 0.14 145)",
+    img: "/manus-storage/joinery_installation_c403f826.jpg",
+    imgAlt: "Bespoke commercial joinery installation in a premium fit-out",
+    summary:
+      "Bespoke joinery and high-specification FF&E packages demand installation teams who read drawings, work to millimetre tolerances, and understand the relationship between joinery, services, and finishes. Specific NZ's installation crews are trained in detailed joinery placement, scribing, and level-critical fixing — not general labour.",
+    scope: [
+      "Bespoke joinery installation including wardrobes, vanities, cabinetry, and reception counters",
+      "High-specification FF&E placement to approved floorplans and room data sheets",
+      "Scribing, levelling, and fixing to manufacturer and architect specifications",
+      "Artwork hanging and positioning to curator or designer specifications",
+      "Coordination with trades for services integration (electrical, plumbing rough-in)",
+      "Defect identification, rectification scheduling, and final sign-off documentation",
     ],
-    image: "/manus-storage/equipment_rollcages_e1af2686.png",
+    clients: "Hotel Indigo Auckland · Grand Millennium Auckland · Ramada Newmarket · La Quinta Ellerslie",
   },
   {
-    number: "03",
-    title: "Warehousing & Storage",
-    tagline: "Secure, managed, and ready when you need it.",
-    body: "Specific NZ provides secure warehousing and managed storage across our New Zealand facilities. Whether you need short-term staging for a project delivery or longer-term storage between tenancies, our facilities are managed, insured, and integrated with our delivery and installation capability.",
-    capabilities: [
-      "Short and long-term storage",
-      "Secure, insured facilities",
-      "Inventory management and reporting",
-      "Staged release to project programme",
-      "Integration with delivery and installation",
-      "Auckland, Christchurch, and South Island coverage",
+    num: "04",
+    title: "AV Installations & OS&E Installations",
+    subtitle: "Audio Visual & Operating Supplies",
+    accent: "oklch(0.65 0.15 280)",
+    img: "/manus-storage/av_installation_1bee17e1.jpg",
+    imgAlt: "Professional AV installation in a hotel conference facility",
+    summary:
+      "Audio visual systems and operating supplies & equipment require coordinated delivery, precise placement, and commissioning that integrates with the broader fit-out programme. Specific NZ manages the full AV and OS&E installation scope — from unboxing and placement through to system commissioning and handover documentation.",
+    scope: [
+      "In-room AV installation including televisions, mounting systems, and control panels",
+      "Conference and event AV system installation and commissioning",
+      "OS&E delivery, placement, and inventory reconciliation across all room types",
+      "Minibar, safe, and in-room equipment installation to brand standards",
+      "Coordination with AV suppliers and hotel operators for commissioning sign-off",
+      "Full photographic OS&E placement records and room-by-room handover reports",
     ],
-    image: "/manus-storage/rydges_qt_truck_9a7c8e21.jpeg",
+    clients: "Holiday Inn Express · Voco Auckland · Tryp Wellington · Drifter Christchurch",
+  },
+  {
+    num: "05",
+    title: "Warehousing, Storage & Handling",
+    subtitle: "Secure Storage for High-Value & Sensitive Items",
+    accent: "oklch(0.75 0.10 55)",
+    img: "/manus-storage/art_storage_ea44f610.jpg",
+    imgAlt: "Climate-controlled fine art and high-value equipment storage facility",
+    summary:
+      "Premium FF&E, commissioned artworks, and high-specification AV equipment require more than a rack in a warehouse. Specific NZ provides secure, professionally managed storage with white-glove handling protocols — purpose-built for the construction and hospitality sectors where the cost of damage is measured in programme delays, not just replacement value.",
+    scope: [
+      "Secure warehousing for FF&E, joinery, and high-value equipment pre-installation",
+      "Specialist sensitive storage for fine art, commissioned pieces, and gallery-quality works",
+      "Climate-aware storage protocols for temperature and humidity-sensitive items",
+      "White-glove handling for premium AV, bespoke furniture, and fragile goods",
+      "Inventory management, condition reporting, and photographic stock records",
+      "Staged release and delivery to site coordinated with installation programme",
+    ],
+    clients: "Hotel Indigo Auckland (Stuart Robertson commissioned artworks) · One NZ Stadium · Grand Millennium Auckland",
   },
 ];
 
-const specialistSectors = [
-  { name: "Hotels & Hospitality", desc: "IHG, Marriott, QT Hotels, and independent brands across New Zealand." },
-  { name: "Stadiums & Public Venues", desc: "Large-scale public venue FF&E with hard opening deadlines — including One NZ Stadium, Christchurch." },
-  { name: "Tourism & Attractions", desc: "High-complexity tourism venues including gondola, alpine, and waterfront environments." },
-  { name: "Healthcare & Aged Care", desc: "Careful handling, documentation, and compliance-led installation for healthcare environments." },
-  { name: "Student Accommodation", desc: "High-density room package delivery and installation for PBSA operators." },
-  { name: "Retail & Food & Beverage", desc: "Restaurant, bar, and retail fit-out FF&E delivery and installation." },
+const PROCESS_STEPS = [
+  { step: "01", label: "Account Setup & Kickoff", desc: "Client onboarding, Aroflo project creation, compliance docs, SWMS, ISO certificates issued." },
+  { step: "02", label: "Pre-Installation Planning", desc: "Site induction, toolbox talk, floorplan review, staged delivery schedule confirmed with PM." },
+  { step: "03", label: "Delivery & QC Receipt", desc: "Goods received at warehouse, condition checked, photographed, and inventoried against manifest." },
+  { step: "04", label: "Staged Installation", desc: "Level-by-level installation per approved floorplan. Daily updates to client via WhatsApp and email." },
+  { step: "05", label: "Sign-Off & Defects", desc: "Level sign-off with client PM. Defects identified, rectification scheduled, and completed." },
+  { step: "06", label: "Handover Report", desc: "Digital handover via Aroflo. Photographic installation report. Team debrief and lessons captured." },
 ];
 
 export default function Services() {
   return (
-    <div className="min-h-screen" style={{ background: "oklch(0.16 0.035 240)" }}>
-      <Navigation />
+    <div style={{ background: "oklch(0.10 0.01 240)", minHeight: "100vh", fontFamily: "'Barlow', sans-serif" }}>
 
-      {/* Page header */}
+      {/* ─── HERO ─── */}
       <section
-        className="pt-32 pb-16 lg:pt-40 lg:pb-20"
-        style={{ background: "oklch(0.12 0.03 240)", borderBottom: "1px solid oklch(1 0 0 / 0.08)" }}
+        style={{
+          paddingTop: "140px",
+          paddingBottom: "80px",
+          paddingLeft: "clamp(1.5rem, 6vw, 6rem)",
+          paddingRight: "clamp(1.5rem, 6vw, 6rem)",
+          borderBottom: "1px solid oklch(0.20 0.02 240)",
+          position: "relative",
+          overflow: "hidden",
+        }}
       >
-        <div className="container">
-          <p className="section-label mb-4">What We Do</p>
-          <h1
-            style={{
-              fontFamily: "'Barlow Condensed', sans-serif",
-              fontWeight: 800,
-              fontSize: "clamp(3rem, 7vw, 6rem)",
-              color: "white",
-              lineHeight: 0.95,
-            }}
-          >
-            SERVICES
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 80% 60% at 70% 50%, oklch(0.15 0.04 240) 0%, transparent 70%)", pointerEvents: "none" }} />
+        <div style={{ position: "relative", maxWidth: "900px" }}>
+          <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.2em", color: "oklch(0.63 0.18 38)", marginBottom: "1.25rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
+            <span style={{ display: "inline-block", width: "2rem", height: "2px", background: "oklch(0.63 0.18 38)" }} />
+            SPECIFIC NEW ZEALAND — CAPABILITIES
+          </p>
+          <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: "clamp(3rem, 7vw, 6rem)", lineHeight: 0.9, color: "white", marginBottom: "1.5rem" }}>
+            FIVE DISTINCT<br />
+            <span style={{ color: "oklch(0.63 0.18 38)" }}>CAPABILITIES.</span>
           </h1>
-          <p
-            className="mt-6 max-w-2xl"
-            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "oklch(0.65 0.025 240)", lineHeight: 1.65 }}
-          >
-            Specific NZ operates across two distinct service lines — specialist project logistics for hotels, stadiums, and complex venues, and corporate relocation services for office and commercial environments. Each requires a different capability set. We deliver both.
+          <p style={{ fontSize: "1.125rem", color: "oklch(0.65 0.02 240)", maxWidth: "600px", lineHeight: 1.7 }}>
+            Specific NZ operates as a fully integrated installation and logistics company. From the warehouse to the wall, every capability is delivered by our own trained teams — not subcontracted, not outsourced.
           </p>
         </div>
       </section>
 
-      {/* ── CATEGORY 1: SPECIALIST PROJECT LOGISTICS ── */}
-      <section className="py-16 lg:py-24">
-        <div className="container">
-          {/* Category header */}
-          <div
-            className="mb-16 pb-8"
-            style={{ borderBottom: "2px solid oklch(0.63 0.18 38)" }}
-          >
-            <p className="section-label mb-3">Category One</p>
-            <h2
-              style={{
-                fontFamily: "'Barlow Condensed', sans-serif",
-                fontWeight: 800,
-                fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
-                color: "white",
-                lineHeight: 0.95,
-              }}
-            >
-              SPECIALIST PROJECT
-              <br />
-              <span style={{ color: "oklch(0.63 0.18 38)" }}>LOGISTICS</span>
-            </h2>
-            <p
-              className="mt-4 max-w-2xl"
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", color: "oklch(0.65 0.025 240)", lineHeight: 1.65 }}
-            >
-              For hotels, stadiums, healthcare facilities, tourism venues, and complex public environments where the opening date is fixed and the logistics cannot fail. We manage the full chain — from warehouse receipt through to final room sign-off.
-            </p>
-          </div>
-
-          <div className="space-y-24">
-            {specialistServices.map((s, i) => (
-              <div
-                key={s.number}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-              >
-                <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                  <p
-                    style={{
-                      fontFamily: "'Barlow Condensed', sans-serif",
-                      fontWeight: 700,
-                      fontSize: "0.75rem",
-                      letterSpacing: "0.15em",
-                      color: "oklch(0.63 0.18 38)",
-                      marginBottom: "1rem",
-                    }}
-                  >
-                    {s.number}
-                  </p>
-                  <h3
-                    style={{
-                      fontFamily: "'Barlow Condensed', sans-serif",
-                      fontWeight: 700,
-                      fontSize: "clamp(2rem, 4vw, 3rem)",
-                      color: "white",
-                      marginBottom: "0.5rem",
-                    }}
-                  >
-                    {s.title}
-                  </h3>
-                  <p
-                    className="mb-5"
-                    style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "oklch(0.60 0.12 185)", fontWeight: 500 }}
-                  >
-                    {s.tagline}
-                  </p>
-                  <p
-                    className="mb-8"
-                    style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", color: "oklch(0.65 0.025 240)", lineHeight: 1.75 }}
-                  >
-                    {s.body}
-                  </p>
-                  <ul className="space-y-2">
-                    {s.capabilities.map((c) => (
-                      <li key={c} className="flex items-start gap-3">
-                        <span style={{ color: "oklch(0.63 0.18 38)", fontWeight: 700, flexShrink: 0, marginTop: "2px" }}>—</span>
-                        <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "oklch(0.72 0.025 240)" }}>{c}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={`relative overflow-hidden ${i % 2 === 1 ? "lg:order-1" : ""}`} style={{ aspectRatio: "4/3" }}>
-                  <img src={s.image} alt={s.title} className="w-full h-full object-cover" />
-                  <div
-                    className="absolute inset-0"
-                    style={{ background: "linear-gradient(135deg, oklch(0.10 0.03 240 / 0.3) 0%, transparent 60%)" }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Specialist Sectors */}
-      <section
-        className="py-16 lg:py-20"
-        style={{ background: "oklch(0.13 0.032 240)", borderTop: "1px solid oklch(1 0 0 / 0.08)" }}
-      >
-        <div className="container">
-          <p className="section-label mb-4">Specialist Project Sectors</p>
-          <h2
-            className="mb-12"
+      {/* ─── FIVE CAPABILITIES ─── */}
+      {SERVICES.map((svc, i) => {
+        const isEven = i % 2 === 0;
+        return (
+          <section
+            key={svc.num}
             style={{
-              fontFamily: "'Barlow Condensed', sans-serif",
-              fontWeight: 700,
-              fontSize: "clamp(2rem, 4vw, 3rem)",
-              color: "white",
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              minHeight: "560px",
+              borderBottom: "1px solid oklch(0.16 0.02 240)",
             }}
           >
-            INDUSTRY EXPERIENCE
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: "oklch(1 0 0 / 0.06)" }}>
-            {specialistSectors.map((sector) => (
-              <div key={sector.name} className="p-8" style={{ background: "oklch(0.13 0.032 240)" }}>
-                <h3
-                  className="mb-2"
-                  style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "1.25rem", color: "white" }}
-                >
-                  {sector.name}
-                </h3>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "oklch(0.62 0.025 240)", lineHeight: 1.6 }}>
-                  {sector.desc}
-                </p>
+            {/* Image */}
+            <div style={{ order: isEven ? 0 : 1, position: "relative", overflow: "hidden" }}>
+              <img src={svc.img} alt={svc.imgAlt} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "brightness(0.70)" }} />
+              <div style={{ position: "absolute", bottom: "2rem", left: isEven ? "2rem" : "auto", right: isEven ? "auto" : "2rem", fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: "clamp(4rem, 8vw, 7rem)", lineHeight: 1, color: "white", opacity: 0.12, userSelect: "none" }}>
+                {svc.num}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              <div style={{ position: "absolute", top: 0, left: isEven ? 0 : "auto", right: isEven ? "auto" : 0, width: "4px", height: "100%", background: svc.accent }} />
+            </div>
 
-      {/* ── DIVIDER ── */}
-      <div
-        className="py-16 lg:py-20"
-        style={{ background: "oklch(0.10 0.025 240)", borderTop: "1px solid oklch(1 0 0 / 0.08)", borderBottom: "1px solid oklch(1 0 0 / 0.08)" }}
-      >
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="section-label mb-3">Category Two</p>
-              <h2
-                style={{
-                  fontFamily: "'Barlow Condensed', sans-serif",
-                  fontWeight: 800,
-                  fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
-                  color: "white",
-                  lineHeight: 0.95,
-                }}
-              >
-                CORPORATE &amp;
-                <br />
-                <span style={{ color: "oklch(0.60 0.12 185)" }}>OFFICE RELOCATIONS</span>
-              </h2>
-              <p
-                className="mt-4"
-                style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", color: "oklch(0.65 0.025 240)", lineHeight: 1.65 }}
-              >
-                For businesses moving offices, consolidating workplaces, or managing commercial fit-out installations. We plan, manage, and execute the full relocation programme — minimising downtime and protecting your assets.
+            {/* Content */}
+            <div style={{ order: isEven ? 1 : 0, padding: "clamp(2.5rem, 5vw, 4rem)", display: "flex", flexDirection: "column", justifyContent: "center", background: isEven ? "oklch(0.12 0.015 240)" : "oklch(0.10 0.01 240)" }}>
+              <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.2em", color: svc.accent, marginBottom: "0.75rem" }}>
+                {svc.num} — {svc.subtitle.toUpperCase()}
               </p>
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              {[
-                { stat: "500+", label: "Workstations Relocated" },
-                { stat: "Zero", label: "Missed Opening Dates" },
-                { stat: "NZ-Wide", label: "Coverage" },
-              ].map((item) => (
-                <div key={item.label} className="text-center p-6" style={{ background: "oklch(0.16 0.035 240)", borderTop: "2px solid oklch(0.60 0.12 185)" }}>
-                  <p
-                    style={{
-                      fontFamily: "'Barlow Condensed', sans-serif",
-                      fontWeight: 800,
-                      fontSize: "2rem",
-                      color: "white",
-                      lineHeight: 1,
-                    }}
-                  >
-                    {item.stat}
-                  </p>
-                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.75rem", color: "oklch(0.62 0.025 240)", marginTop: "0.5rem", lineHeight: 1.4 }}>
-                    {item.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ── CATEGORY 2: CORPORATE RELOCATIONS ── */}
-      <section className="py-16 lg:py-24">
-        <div className="container space-y-24">
-          {relocationServices.map((s, i) => (
-            <div
-              key={s.number}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-            >
-              <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                <p
-                  style={{
-                    fontFamily: "'Barlow Condensed', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "0.75rem",
-                    letterSpacing: "0.15em",
-                    color: "oklch(0.60 0.12 185)",
-                    marginBottom: "1rem",
-                  }}
-                >
-                  {s.number}
+              <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: "clamp(1.75rem, 3vw, 2.75rem)", lineHeight: 1, color: "white", marginBottom: "1.25rem" }}>
+                {svc.title}
+              </h2>
+              <p style={{ fontSize: "0.9375rem", color: "oklch(0.65 0.02 240)", lineHeight: 1.75, marginBottom: "1.75rem", maxWidth: "520px" }}>
+                {svc.summary}
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1.75rem 0" }}>
+                {svc.scope.map((item, j) => (
+                  <li key={j} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", marginBottom: "0.6rem", fontSize: "0.875rem", color: "oklch(0.68 0.02 240)", lineHeight: 1.5 }}>
+                    <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", background: svc.accent, marginTop: "0.45rem", flexShrink: 0 }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div style={{ borderTop: "1px solid oklch(0.20 0.02 240)", paddingTop: "1rem" }}>
+                <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.15em", color: "oklch(0.40 0.02 240)", marginBottom: "0.35rem" }}>
+                  REPRESENTATIVE PROJECTS
                 </p>
-                <h3
-                  style={{
-                    fontFamily: "'Barlow Condensed', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "clamp(2rem, 4vw, 3rem)",
-                    color: "white",
-                    marginBottom: "0.5rem",
-                  }}
-                >
-                  {s.title}
-                </h3>
-                <p
-                  className="mb-5"
-                  style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "oklch(0.60 0.12 185)", fontWeight: 500 }}
-                >
-                  {s.tagline}
+                <p style={{ fontSize: "0.8125rem", color: "oklch(0.52 0.02 240)", lineHeight: 1.5 }}>
+                  {svc.clients}
                 </p>
-                <p
-                  className="mb-8"
-                  style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", color: "oklch(0.65 0.025 240)", lineHeight: 1.75 }}
-                >
-                  {s.body}
-                </p>
-                <ul className="space-y-2">
-                  {s.capabilities.map((c) => (
-                    <li key={c} className="flex items-start gap-3">
-                      <span style={{ color: "oklch(0.60 0.12 185)", fontWeight: 700, flexShrink: 0, marginTop: "2px" }}>—</span>
-                      <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "oklch(0.72 0.025 240)" }}>{c}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className={`relative overflow-hidden ${i % 2 === 1 ? "lg:order-1" : ""}`} style={{ aspectRatio: "4/3" }}>
-                <img src={s.image} alt={s.title} className="w-full h-full object-cover" />
-                <div
-                  className="absolute inset-0"
-                  style={{ background: "linear-gradient(135deg, oklch(0.10 0.03 240 / 0.3) 0%, transparent 60%)" }}
-                />
               </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </section>
+        );
+      })}
 
-      {/* Fleet & Equipment */}
-      <section
-        className="py-16 lg:py-20"
-        style={{ background: "oklch(0.13 0.032 240)", borderTop: "1px solid oklch(1 0 0 / 0.08)" }}
-      >
-        <div className="container">
-          <p className="section-label mb-4">Our Capability</p>
-          <h2
-            className="mb-12"
-            style={{
-              fontFamily: "'Barlow Condensed', sans-serif",
-              fontWeight: 700,
-              fontSize: "clamp(2rem, 4vw, 3rem)",
-              color: "white",
-            }}
-          >
-            FLEET &amp; EQUIPMENT
+      {/* ─── PROCESS ─── */}
+      <section style={{ padding: "clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 6rem)", background: "oklch(0.08 0.01 240)" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.2em", color: "oklch(0.63 0.18 38)", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
+            <span style={{ display: "inline-block", width: "2rem", height: "2px", background: "oklch(0.63 0.18 38)" }} />
+            HOW WE WORK
+          </p>
+          <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1, color: "white", marginBottom: "3rem" }}>
+            FROM BRIEF TO HANDOVER.<br />
+            <span style={{ color: "oklch(0.63 0.18 38)" }}>EVERY STEP MANAGED.</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { img: "/manus-storage/fleet_trucks_e875af64.png", label: "Branded Fleet", desc: "Dedicated Specific NZ vehicles from vans to heavy rigid trucks — all liveried and purpose-fitted." },
-              { img: "/manus-storage/equipment_crates_22489160.png", label: "Specialist Crates", desc: "Branded relocation crates and dollies for safe, trackable asset transport." },
-              { img: "/manus-storage/equipment_rollcages_e1af2686.png", label: "Roll Cages", desc: "Branded roll cages for warehouse staging and sequenced delivery to floor." },
-            ].map((item) => (
-              <div key={item.label} className="overflow-hidden" style={{ background: "oklch(0.20 0.04 240)" }}>
-                <div style={{ aspectRatio: "4/3", overflow: "hidden" }}>
-                  <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
-                </div>
-                <div className="p-5">
-                  <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "1.25rem", color: "white" }}>
-                    {item.label}
-                  </h3>
-                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "oklch(0.62 0.025 240)", marginTop: "0.25rem" }}>
-                    {item.desc}
-                  </p>
-                </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "2px" }}>
+            {PROCESS_STEPS.map((s) => (
+              <div key={s.step} style={{ background: "oklch(0.12 0.015 240)", padding: "2rem 1.75rem", borderTop: "3px solid oklch(0.63 0.18 38)" }}>
+                <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: "2.5rem", color: "oklch(0.20 0.02 240)", lineHeight: 1, marginBottom: "0.75rem" }}>{s.step}</p>
+                <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "white", marginBottom: "0.6rem" }}>{s.label}</h3>
+                <p style={{ fontSize: "0.8125rem", color: "oklch(0.55 0.02 240)", lineHeight: 1.6 }}>{s.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section
-        className="py-16 lg:py-20"
-        style={{ background: "oklch(0.12 0.03 240)", borderTop: "1px solid oklch(1 0 0 / 0.08)" }}
-      >
-        <div className="container text-center">
-          <h2
-            className="mb-6"
-            style={{
-              fontFamily: "'Barlow Condensed', sans-serif",
-              fontWeight: 800,
-              fontSize: "clamp(2.5rem, 5vw, 4rem)",
-              color: "white",
-              lineHeight: 0.95,
-            }}
-          >
-            TELL US ABOUT
-            <br />
-            <span style={{ color: "oklch(0.63 0.18 38)" }}>YOUR PROJECT</span>
-          </h2>
-          <p
-            className="mb-8 max-w-xl mx-auto"
-            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "oklch(0.65 0.025 240)", lineHeight: 1.65 }}
-          >
-            Whether you're planning a hotel fit-out, a stadium installation, or an office relocation, we'd like to hear from you.
-          </p>
+      {/* ─── CTA ─── */}
+      <section style={{ padding: "clamp(4rem, 6vw, 5rem) clamp(1.5rem, 6vw, 6rem)", background: "oklch(0.63 0.18 38)", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "1.5rem" }}>
+        <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: "clamp(2rem, 4vw, 3rem)", color: "white", lineHeight: 1 }}>
+          SPECIFIC SCOPE.<br />SPECIFIC RESULTS.
+        </h2>
+        <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "1rem", maxWidth: "480px" }}>
+          Talk to Dwyane Hitchens directly about your next project. We respond within the business day.
+        </p>
+        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
           <Link href="/contact">
-            <button
-              style={{
-                background: "oklch(0.63 0.18 38)",
-                color: "white",
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 700,
-                fontSize: "0.8rem",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                padding: "1rem 2.5rem",
-                border: "none",
-                cursor: "pointer",
-              }}
-            >
-              Get In Touch →
+            <button style={{ background: "white", color: "oklch(0.63 0.18 38)", border: "none", padding: "0.875rem 2.5rem", fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.875rem", letterSpacing: "0.1em", cursor: "pointer" }}>
+              GET IN TOUCH
+            </button>
+          </Link>
+          <Link href="/projects">
+            <button style={{ background: "transparent", color: "white", border: "2px solid rgba(255,255,255,0.6)", padding: "0.875rem 2.5rem", fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.875rem", letterSpacing: "0.1em", cursor: "pointer" }}>
+              VIEW PROJECTS
             </button>
           </Link>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

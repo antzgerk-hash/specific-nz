@@ -26,6 +26,7 @@ export default function Navigation() {
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
     { href: "/projects", label: "Projects" },
+    { href: "/group", label: "The Group" },
   ];
 
   const rightLinks = [
