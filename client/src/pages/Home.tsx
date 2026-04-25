@@ -771,6 +771,72 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── TRUSTED BY — client logo grid ─── */}
+      <section
+        className="py-20 lg:py-28"
+        style={{ background: "oklch(0.11 0.03 240)", borderTop: "1px solid oklch(1 0 0 / 0.06)" }}
+      >
+        <div className="container">
+          <div className="text-center mb-12">
+            <p className="section-label mb-3">Trusted By</p>
+            <h2
+              style={{
+                fontFamily: "'Barlow Condensed', sans-serif",
+                fontWeight: 800,
+                fontSize: "clamp(2rem, 4vw, 3.5rem)",
+                color: "white",
+                lineHeight: 0.95,
+              }}
+            >
+              AUSTRALIA &amp; NEW ZEALAND'S
+              <br />
+              <span style={{ color: "oklch(0.63 0.18 38)" }}>LEADING BUILDERS &amp; OPERATORS.</span>
+            </h2>
+            <p
+              className="mt-4 mx-auto max-w-xl"
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "0.9375rem",
+                color: "oklch(0.62 0.025 240)",
+                lineHeight: 1.7,
+              }}
+            >
+              From Tier One builders to international hotel brands — Specific Group is the trusted delivery partner for projects that cannot afford to fail.
+            </p>
+          </div>
+
+          {/* Client accreditations image */}
+          <div
+            className="relative mx-auto"
+            style={{
+              maxWidth: "780px",
+              background: "oklch(0.18 0.035 185)",
+              padding: "2.5rem",
+            }}
+          >
+            <img
+              src="/manus-storage/clients_accreditations_d3fdc27e.png"
+              alt="Specific Group — Builder, Accommodation and General Clients"
+              className="w-full h-auto"
+              style={{ display: "block" }}
+            />
+          </div>
+
+          <div className="mt-8 text-center">
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "0.75rem",
+                color: "oklch(0.45 0.02 240)",
+                letterSpacing: "0.06em",
+              }}
+            >
+              Builder Clients &nbsp;·&nbsp; Accommodation Clients &nbsp;·&nbsp; Corporate &amp; Commercial Clients
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ─── CTA ─── */}
       <section
         className="py-20 lg:py-28"
