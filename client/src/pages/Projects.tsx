@@ -72,16 +72,14 @@ const projects = [
     ],
     description: "The Skyline Gondola redevelopment in Queenstown presented one of the most logistically complex FF&E challenges in New Zealand — a high-altitude site accessible only via gondola or crane, with no conventional truck access to the installation floors. Specific NZ coordinated the full FF&E delivery and installation scope including dining chairs, tables, booth seating, bar joinery, and all loose items across the new restaurant and hospitality spaces. Items were delivered by container to the base site and crane-lifted to the installation level, with Specific NZ teams managing the full sequence from ground to completion.",
     images: [
-      "/manus-storage/skyline_restaurant_d6985091.webp",
-      "/manus-storage/skyline_dining_complete_81c38c70.webp",
+      "/manus-storage/20260314_150857_2793dba8.webp",
       "/manus-storage/skyline_booths_3d68b935.webp",
       "/manus-storage/skyline_joinery_c9e3e4f1.webp",
       "/manus-storage/skyline_terrace_crane_e82076ee.webp",
       "/manus-storage/skyline_container_delivery_e9fb98e7.webp",
       "/manus-storage/skyline_crane_site_da39dfa3.webp",
-      "/manus-storage/skyline_gondola_cabin_2340fbd3.webp",
     ],
-    hero: "/manus-storage/skyline_restaurant_d6985091.webp",
+    hero: "/manus-storage/20260314_150857_2793dba8.webp",
   },
   {
     id: "millennium",
