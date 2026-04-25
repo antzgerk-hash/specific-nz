@@ -99,7 +99,7 @@ export default function Home() {
           style={{ background: "oklch(0.63 0.18 38)" }}
         />
 
-        <div className="container relative z-10 pb-20 pt-40 lg:pb-28 lg:pt-48">
+        <div className="container relative z-10 pb-20 pt-48 lg:pb-28 lg:pt-56">
           <div className="max-w-4xl">
             {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-8">

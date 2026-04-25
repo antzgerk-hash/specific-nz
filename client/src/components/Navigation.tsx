@@ -1,8 +1,8 @@
 /*
- * Navigation — Dark Authority Design (ELEVATED)
- * Centred logo layout: nav links left | specific. logo centre | CTA right
- * Logo is the hero of the nav — prominent, breathing room, commands presence
+ * Navigation — Dark Authority Design (BRAND-FORWARD)
+ * Taller nav bar — logo is the dominant brand element, large and commanding
  * specific. gradient wordmark — ONLY approved logo asset
+ * Layout: nav links left | LARGE specific. logo centre | CTA right
  */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
@@ -37,8 +37,8 @@ export default function Navigation() {
     color: location === href ? "oklch(0.63 0.18 38)" : "oklch(0.82 0 0)",
     fontFamily: "'DM Sans', sans-serif",
     fontWeight: 500,
-    fontSize: "0.8rem",
-    letterSpacing: "0.1em",
+    fontSize: "0.82rem",
+    letterSpacing: "0.12em",
     textTransform: "uppercase" as const,
     transition: "color 0.2s",
   });
@@ -48,21 +48,22 @@ export default function Navigation() {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
         background: scrolled
-          ? "oklch(0.13 0.03 240 / 0.97)"
-          : "linear-gradient(to bottom, oklch(0 0 0 / 0.55), transparent)",
-        backdropFilter: scrolled ? "blur(14px)" : "none",
-        borderBottom: scrolled ? "1px solid oklch(1 0 0 / 0.07)" : "none",
+          ? "oklch(0.10 0.03 240 / 0.97)"
+          : "linear-gradient(to bottom, oklch(0 0 0 / 0.70) 0%, oklch(0 0 0 / 0.30) 70%, transparent 100%)",
+        backdropFilter: scrolled ? "blur(16px)" : "none",
+        borderBottom: scrolled ? "1px solid oklch(1 0 0 / 0.08)" : "none",
       }}
     >
+      {/* Desktop nav */}
       <div
-        className="hidden lg:grid items-center px-8 xl:px-14"
+        className="hidden lg:grid items-center px-10 xl:px-16"
         style={{
           gridTemplateColumns: "1fr auto 1fr",
-          height: "72px",
+          height: "100px",
         }}
       >
         {/* Left nav links */}
-        <nav className="flex items-center gap-8">
+        <nav className="flex items-center gap-10">
           {leftLinks.map((link) => (
             <Link
               key={link.href}
@@ -82,22 +83,34 @@ export default function Navigation() {
           ))}
         </nav>
 
-        {/* Centre — approved specific. gradient wordmark */}
-        <Link href="/" className="flex items-center justify-center px-8">
+        {/* Centre — large specific. gradient wordmark — brand hero */}
+        <Link href="/" className="flex items-center justify-center px-10">
           <img
             src="/manus-storage/specific_gradient_logo_9dabe950.webp"
             alt="specific."
             style={{
-              height: "46px",
+              height: "72px",
               width: "auto",
               objectFit: "contain",
               display: "block",
+              filter: "drop-shadow(0 2px 16px oklch(0.63 0.18 38 / 0.25))",
+              transition: "filter 0.3s, transform 0.3s",
+            }}
+            onMouseEnter={(e) => {
+              (e.target as HTMLImageElement).style.filter =
+                "drop-shadow(0 4px 24px oklch(0.63 0.18 38 / 0.45))";
+              (e.target as HTMLImageElement).style.transform = "scale(1.03)";
+            }}
+            onMouseLeave={(e) => {
+              (e.target as HTMLImageElement).style.filter =
+                "drop-shadow(0 2px 16px oklch(0.63 0.18 38 / 0.25))";
+              (e.target as HTMLImageElement).style.transform = "scale(1)";
             }}
           />
         </Link>
 
         {/* Right nav links + CTA */}
-        <nav className="flex items-center justify-end gap-8">
+        <nav className="flex items-center justify-end gap-10">
           {rightLinks.map((link) => (
             <Link
               key={link.href}
@@ -122,18 +135,22 @@ export default function Navigation() {
               color: "white",
               fontFamily: "'DM Sans', sans-serif",
               fontWeight: 700,
-              fontSize: "0.72rem",
-              letterSpacing: "0.12em",
+              fontSize: "0.75rem",
+              letterSpacing: "0.13em",
               textTransform: "uppercase",
-              padding: "0.55rem 1.5rem",
-              transition: "background 0.2s",
+              padding: "0.65rem 1.75rem",
+              transition: "background 0.2s, transform 0.2s",
               whiteSpace: "nowrap",
             }}
             onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.background = "oklch(0.55 0.18 38)";
+              const el = e.target as HTMLElement;
+              el.style.background = "oklch(0.55 0.18 38)";
+              el.style.transform = "translateY(-1px)";
             }}
             onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.background = "oklch(0.63 0.18 38)";
+              const el = e.target as HTMLElement;
+              el.style.background = "oklch(0.63 0.18 38)";
+              el.style.transform = "translateY(0)";
             }}
           >
             Get in Touch
@@ -141,13 +158,13 @@ export default function Navigation() {
         </nav>
       </div>
 
-      {/* Mobile nav — logo left, hamburger right */}
-      <div className="lg:hidden flex items-center justify-between px-5 h-16">
+      {/* Mobile nav */}
+      <div className="lg:hidden flex items-center justify-between px-5" style={{ height: "72px" }}>
         <Link href="/">
           <img
             src="/manus-storage/specific_gradient_logo_9dabe950.webp"
             alt="specific."
-            style={{ height: "34px", width: "auto", objectFit: "contain" }}
+            style={{ height: "44px", width: "auto", objectFit: "contain" }}
           />
         </Link>
         <button
@@ -175,7 +192,7 @@ export default function Navigation() {
         <div
           className="lg:hidden border-t"
           style={{
-            background: "oklch(0.13 0.03 240 / 0.98)",
+            background: "oklch(0.10 0.03 240 / 0.98)",
             borderColor: "oklch(1 0 0 / 0.08)",
           }}
         >
