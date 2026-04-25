@@ -840,30 +840,79 @@ export default function Home() {
       {/* ─── NZ CULTURAL IDENTITY ─── */}
       <section
         className="relative overflow-hidden"
-        style={{ background: "oklch(0.13 0.03 185)" }}
+        style={{ background: "linear-gradient(160deg, oklch(0.12 0.04 185) 0%, oklch(0.14 0.035 220) 60%, oklch(0.11 0.03 240) 100%)" }}
       >
-        {/* Silver fern SVG watermark */}
+        {/* Silver fern silhouette — All Blacks style, large background watermark */}
         <svg
-          viewBox="0 0 200 400"
-          className="absolute right-0 top-0 h-full opacity-[0.04] pointer-events-none"
-          style={{ width: "auto" }}
+          viewBox="0 0 300 420"
+          className="absolute right-[-30px] top-[5%] opacity-[0.07] pointer-events-none"
+          style={{ height: "90%", width: "auto" }}
           aria-hidden="true"
         >
+          {/* Main curved stem — sweeps from bottom-left to top-right */}
           <path
-            d="M100 380 C100 380 20 300 20 200 C20 100 60 40 100 20 C140 40 180 100 180 200 C180 300 100 380 100 380Z"
-            fill="white"
+            d="M60 410 C70 370 82 320 95 270 C108 220 118 170 128 125 C138 80 148 45 158 15"
+            fill="none" stroke="white" strokeWidth="5" strokeLinecap="round"
           />
-          {[0,1,2,3,4,5,6,7,8,9,10,11,12].map((i) => (
-            <ellipse
-              key={i}
-              cx={100 + (i % 2 === 0 ? -18 : 18)}
-              cy={340 - i * 24}
-              rx={22 - i * 0.8}
-              ry={7 - i * 0.3}
-              transform={`rotate(${i % 2 === 0 ? -18 : 18} ${100 + (i % 2 === 0 ? -18 : 18)} ${340 - i * 24})`}
-              fill="white"
-            />
-          ))}
+          {/* Right-side leaflets — larger, angled upward-right, paired with left */}
+          {[
+            { t: 0.95, len: 22, a: 52 },
+            { t: 0.90, len: 30, a: 55 },
+            { t: 0.84, len: 40, a: 58 },
+            { t: 0.78, len: 50, a: 60 },
+            { t: 0.72, len: 60, a: 62 },
+            { t: 0.66, len: 68, a: 63 },
+            { t: 0.60, len: 74, a: 64 },
+            { t: 0.54, len: 78, a: 65 },
+            { t: 0.48, len: 80, a: 65 },
+            { t: 0.42, len: 78, a: 65 },
+            { t: 0.36, len: 72, a: 64 },
+            { t: 0.30, len: 64, a: 63 },
+            { t: 0.24, len: 54, a: 62 },
+            { t: 0.18, len: 42, a: 60 },
+            { t: 0.12, len: 30, a: 57 },
+            { t: 0.06, len: 18, a: 53 },
+            { t: 0.02, len: 8,  a: 48 },
+          ].map((f, i) => {
+            const sx = 60 + f.t * 98;
+            const sy = 410 - f.t * 395;
+            const rad = (f.a * Math.PI) / 180;
+            const ex = sx + f.len * Math.cos(rad);
+            const ey = sy - f.len * Math.sin(rad);
+            return (
+              <g key={`r${i}`}>
+                <line x1={sx} y1={sy} x2={ex} y2={ey} stroke="white" strokeWidth="3.5" strokeLinecap="round" />
+                {/* Leaflet tip notch — characteristic All Blacks angled cut */}
+                <line x1={ex} y1={ey} x2={ex - 4} y2={ey - 7} stroke="white" strokeWidth="2" strokeLinecap="round" />
+              </g>
+            );
+          })}
+          {/* Left-side leaflets — shorter, angled upward-left */}
+          {[
+            { t: 0.92, len: 12, a: 52 },
+            { t: 0.86, len: 18, a: 55 },
+            { t: 0.80, len: 26, a: 58 },
+            { t: 0.74, len: 34, a: 60 },
+            { t: 0.68, len: 40, a: 62 },
+            { t: 0.62, len: 44, a: 63 },
+            { t: 0.56, len: 46, a: 64 },
+            { t: 0.50, len: 46, a: 65 },
+            { t: 0.44, len: 44, a: 65 },
+            { t: 0.38, len: 40, a: 64 },
+            { t: 0.32, len: 34, a: 63 },
+            { t: 0.26, len: 26, a: 62 },
+            { t: 0.20, len: 18, a: 60 },
+            { t: 0.14, len: 10, a: 57 },
+          ].map((f, i) => {
+            const sx = 60 + f.t * 98;
+            const sy = 410 - f.t * 395;
+            const rad = (f.a * Math.PI) / 180;
+            const ex = sx - f.len * Math.cos(rad);
+            const ey = sy - f.len * Math.sin(rad);
+            return (
+              <line key={`l${i}`} x1={sx} y1={sy} x2={ex} y2={ey} stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+            );
+          })}
         </svg>
 
         <div className="container py-20 lg:py-28">
@@ -953,60 +1002,95 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right — two stacked images */}
-            <div className="grid grid-cols-2 gap-3 py-8">
+            {/* Right — brand-colour design panel: silver fern + NZ values */}
+            <div className="flex flex-col gap-4 py-8">
+              {/* Main graphic panel — silver fern silhouette + NZ values */}
               <div
-                className="relative overflow-hidden"
-                style={{ aspectRatio: "3/4" }}
+                className="relative overflow-hidden flex-1"
+                style={{
+                  background: "linear-gradient(150deg, #0a2818 0%, #0d3320 50%, oklch(0.14 0.04 240) 100%)",
+                  borderLeft: "3px solid #2d7a4f",
+                  minHeight: "260px",
+                }}
               >
-                <img
-                  src="/manus-storage/specific_heitiki_48927c58.png"
-                  alt="Specific NZ — Tāonga and brand identity"
-                  className="w-full h-full object-cover"
-                />
-                <div
-                  className="absolute bottom-0 left-0 right-0 p-3"
-                  style={{
-                    background: "linear-gradient(to top, oklch(0.08 0.02 185 / 0.9), transparent)",
-                  }}
+                {/* Silver fern — All Blacks silhouette style, right-side watermark */}
+                <svg
+                  viewBox="0 0 200 340"
+                  className="absolute right-[-10px] top-[50%] -translate-y-1/2 opacity-[0.18] pointer-events-none"
+                  style={{ height: "88%", width: "auto" }}
+                  aria-hidden="true"
                 >
-                  <p
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: "0.7rem",
-                      color: "oklch(0.75 0.02 240)",
-                      letterSpacing: "0.06em",
-                    }}
-                  >
-                    Tāonga · Brand Identity
-                  </p>
+                  <path d="M50 330 C58 295 68 255 80 215 C92 175 103 138 114 104 C125 70 136 40 146 12" fill="none" stroke="white" strokeWidth="4.5" strokeLinecap="round" />
+                  {[
+                    { t:0.95,r:18,l:10,a:52 }, { t:0.89,r:26,l:15,a:55 }, { t:0.83,r:36,l:20,a:58 },
+                    { t:0.77,r:46,l:26,a:60 }, { t:0.71,r:56,l:32,a:62 }, { t:0.65,r:64,l:36,a:63 },
+                    { t:0.59,r:70,l:40,a:64 }, { t:0.53,r:74,l:42,a:65 }, { t:0.47,r:76,l:42,a:65 },
+                    { t:0.41,r:74,l:40,a:65 }, { t:0.35,r:68,l:36,a:64 }, { t:0.29,r:60,l:30,a:63 },
+                    { t:0.23,r:50,l:24,a:62 }, { t:0.17,r:38,l:16,a:60 }, { t:0.11,r:26,l:10,a:57 },
+                    { t:0.05,r:14,l:5, a:53 },
+                  ].map((f,i) => {
+                    const sx = 50 + f.t * 96;
+                    const sy = 330 - f.t * 318;
+                    const rad = (f.a * Math.PI) / 180;
+                    return (
+                      <g key={i}>
+                        <line x1={sx} y1={sy} x2={sx + f.r * Math.cos(rad)} y2={sy - f.r * Math.sin(rad)} stroke="white" strokeWidth="3" strokeLinecap="round" />
+                        <line x1={sx} y1={sy} x2={sx - f.l * Math.cos(rad)} y2={sy - f.l * Math.sin(rad)} stroke="white" strokeWidth="2.2" strokeLinecap="round" />
+                      </g>
+                    );
+                  })}
+                </svg>
+                <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                  <div>
+                    <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: "clamp(1.8rem, 3vw, 2.6rem)", color: "#4ade80", lineHeight: 1, marginBottom: "0.5rem", letterSpacing: "0.02em" }}>AOTEAROA</p>
+                    <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "1rem", color: "white", letterSpacing: "0.12em", opacity: 0.6 }}>NEW ZEALAND</p>
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginTop: "2rem" }}>
+                    {[
+                      { nz: "Manaakitanga", en: "Care & Respect" },
+                      { nz: "Kotahitanga", en: "Unity & Purpose" },
+                      { nz: "Tūhono", en: "Connection" },
+                    ].map((v) => (
+                      <div key={v.nz} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                        <div style={{ width: "3px", height: "28px", background: "#2d7a4f", flexShrink: 0 }} />
+                        <div>
+                          <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.95rem", color: "white", letterSpacing: "0.06em" }}>{v.nz}</p>
+                          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.72rem", color: "oklch(0.55 0.025 240)", letterSpacing: "0.04em" }}>{v.en}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-              <div
-                className="relative overflow-hidden"
-                style={{ aspectRatio: "3/4" }}
-              >
-                <img
-                  src="/manus-storage/specific_truck_walkinshaw_806bd66a.png"
-                  alt="Specific NZ fleet — branded truck and van"
-                  className="w-full h-full object-cover"
-                />
+
+              {/* Bottom two stat cards */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                 <div
-                  className="absolute bottom-0 left-0 right-0 p-3"
                   style={{
-                    background: "linear-gradient(to top, oklch(0.08 0.02 185 / 0.9), transparent)",
+                    background: "oklch(0.63 0.18 38)",
+                    padding: "1.25rem 1rem",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.25rem",
                   }}
                 >
-                  <p
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: "0.7rem",
-                      color: "oklch(0.75 0.02 240)",
-                      letterSpacing: "0.06em",
-                    }}
-                  >
-                    Specific NZ Fleet · Auckland
-                  </p>
+                  <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: "2rem", color: "white", lineHeight: 1 }}>ISO</p>
+                  <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.75rem", color: "rgba(255,255,255,0.75)", letterSpacing: "0.08em" }}>9001 · 14001 · 45001</p>
+                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.68rem", color: "rgba(255,255,255,0.6)", marginTop: "0.25rem" }}>Certified · Active 2026</p>
+                </div>
+                <div
+                  style={{
+                    background: "oklch(0.20 0.04 240)",
+                    border: "1px solid oklch(0.28 0.04 240)",
+                    padding: "1.25rem 1rem",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.25rem",
+                  }}
+                >
+                  <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: "1.6rem", color: "white", lineHeight: 1 }}>SITE</p>
+                  <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: "1.6rem", color: "oklch(0.63 0.18 38)", lineHeight: 1 }}>SAFE</p>
+                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.68rem", color: "oklch(0.55 0.025 240)", marginTop: "0.25rem" }}>Certified · All Crew</p>
                 </div>
               </div>
             </div>
