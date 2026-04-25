@@ -32,6 +32,7 @@ const SERVICES = [
     accent: "oklch(0.60 0.12 185)",
     img: "/manus-storage/VicTeamLoadingequimentatWalkinshawrelocation2025_13007dd4.png",
     imgAlt: "Specific team loading equipment at Walkinshaw relocation 2025",
+    imgPosition: "center 30%",
     summary:
       "Commercial relocations require precision planning, zero operational disruption, and a team that understands the difference between moving boxes and managing a business transition. Specific NZ plans, manages, and executes corporate moves for offices, schools, and institutions — delivering continuity from day one.",
     scope: [
@@ -159,7 +160,7 @@ export default function Services() {
           >
             {/* Image */}
             <div style={{ order: isEven ? 0 : 1, position: "relative", overflow: "hidden" }}>
-              <img src={svc.img} alt={svc.imgAlt} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "brightness(0.70)" }} />
+              <img src={svc.img} alt={svc.imgAlt} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: (svc as any).imgPosition || "center", filter: "brightness(0.70)" }} />
               <div style={{ position: "absolute", bottom: "2rem", left: isEven ? "2rem" : "auto", right: isEven ? "auto" : "2rem", fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: "clamp(4rem, 8vw, 7rem)", lineHeight: 1, color: "white", opacity: 0.12, userSelect: "none" }}>
                 {svc.num}
               </div>
