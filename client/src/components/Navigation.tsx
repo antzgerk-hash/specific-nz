@@ -1,7 +1,8 @@
 /*
- * Navigation — Dark Authority Design
- * Sticky top bar: transparent on hero, solid navy on scroll
- * specific. logo in orange, nav links in white with orange hover
+ * Navigation — Dark Authority Design (ELEVATED)
+ * Centred logo layout: nav links left | specific. logo centre | CTA right
+ * Logo is the hero of the nav — prominent, breathing room, commands presence
+ * specific. gradient wordmark — ONLY approved logo asset
  */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
@@ -21,55 +22,94 @@ export default function Navigation() {
     setMenuOpen(false);
   }, [location]);
 
-  const navLinks = [
+  const leftLinks = [
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
     { href: "/projects", label: "Projects" },
+  ];
+
+  const rightLinks = [
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
+
+  const linkStyle = (href: string) => ({
+    color: location === href ? "oklch(0.63 0.18 38)" : "oklch(0.82 0 0)",
+    fontFamily: "'DM Sans', sans-serif",
+    fontWeight: 500,
+    fontSize: "0.8rem",
+    letterSpacing: "0.1em",
+    textTransform: "uppercase" as const,
+    transition: "color 0.2s",
+  });
 
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
         background: scrolled
-          ? "oklch(0.16 0.035 240 / 0.97)"
-          : "linear-gradient(to bottom, oklch(0 0 0 / 0.5), transparent)",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid oklch(1 0 0 / 0.08)" : "none",
+          ? "oklch(0.13 0.03 240 / 0.97)"
+          : "linear-gradient(to bottom, oklch(0 0 0 / 0.55), transparent)",
+        backdropFilter: scrolled ? "blur(14px)" : "none",
+        borderBottom: scrolled ? "1px solid oklch(1 0 0 / 0.07)" : "none",
       }}
     >
-      <div className="container flex items-center justify-between h-16 lg:h-20">
-        {/* Logo — approved specific. gradient wordmark */}
-        <Link href="/">
-          <img
-            src="/manus-storage/specific_gradient_logo_9dabe950.webp"
-            alt="specific."
-            style={{ height: "38px", width: "auto", objectFit: "contain" }}
-          />
-        </Link>
-
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
+      <div
+        className="hidden lg:grid items-center px-8 xl:px-14"
+        style={{
+          gridTemplateColumns: "1fr auto 1fr",
+          height: "72px",
+        }}
+      >
+        {/* Left nav links */}
+        <nav className="flex items-center gap-8">
+          {leftLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium tracking-wide transition-colors duration-200"
-              style={{
-                color: location === link.href
-                  ? "oklch(0.63 0.18 38)"
-                  : "oklch(0.85 0 0)",
-                fontFamily: "'DM Sans', sans-serif",
-              }}
+              style={linkStyle(link.href)}
               onMouseEnter={(e) => {
                 if (location !== link.href)
                   (e.target as HTMLElement).style.color = "oklch(0.63 0.18 38)";
               }}
               onMouseLeave={(e) => {
                 if (location !== link.href)
-                  (e.target as HTMLElement).style.color = "oklch(0.85 0 0)";
+                  (e.target as HTMLElement).style.color = "oklch(0.82 0 0)";
+              }}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Centre — approved specific. gradient wordmark */}
+        <Link href="/" className="flex items-center justify-center px-8">
+          <img
+            src="/manus-storage/specific_gradient_logo_9dabe950.webp"
+            alt="specific."
+            style={{
+              height: "46px",
+              width: "auto",
+              objectFit: "contain",
+              display: "block",
+            }}
+          />
+        </Link>
+
+        {/* Right nav links + CTA */}
+        <nav className="flex items-center justify-end gap-8">
+          {rightLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              style={linkStyle(link.href)}
+              onMouseEnter={(e) => {
+                if (location !== link.href)
+                  (e.target as HTMLElement).style.color = "oklch(0.63 0.18 38)";
+              }}
+              onMouseLeave={(e) => {
+                if (location !== link.href)
+                  (e.target as HTMLElement).style.color = "oklch(0.82 0 0)";
               }}
             >
               {link.label}
@@ -77,17 +117,17 @@ export default function Navigation() {
           ))}
           <Link
             href="/contact"
-            className="btn-primary text-sm px-5 py-2.5"
             style={{
               background: "oklch(0.63 0.18 38)",
               color: "white",
               fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 600,
-              fontSize: "0.8rem",
-              letterSpacing: "0.06em",
+              fontWeight: 700,
+              fontSize: "0.72rem",
+              letterSpacing: "0.12em",
               textTransform: "uppercase",
-              padding: "0.55rem 1.4rem",
+              padding: "0.55rem 1.5rem",
               transition: "background 0.2s",
+              whiteSpace: "nowrap",
             }}
             onMouseEnter={(e) => {
               (e.target as HTMLElement).style.background = "oklch(0.55 0.18 38)";
@@ -99,10 +139,19 @@ export default function Navigation() {
             Get in Touch
           </Link>
         </nav>
+      </div>
 
-        {/* Mobile hamburger */}
+      {/* Mobile nav — logo left, hamburger right */}
+      <div className="lg:hidden flex items-center justify-between px-5 h-16">
+        <Link href="/">
+          <img
+            src="/manus-storage/specific_gradient_logo_9dabe950.webp"
+            alt="specific."
+            style={{ height: "34px", width: "auto", objectFit: "contain" }}
+          />
+        </Link>
         <button
-          className="lg:hidden flex flex-col gap-1.5 p-2"
+          className="flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -126,12 +175,12 @@ export default function Navigation() {
         <div
           className="lg:hidden border-t"
           style={{
-            background: "oklch(0.16 0.035 240 / 0.98)",
+            background: "oklch(0.13 0.03 240 / 0.98)",
             borderColor: "oklch(1 0 0 / 0.08)",
           }}
         >
-          <nav className="container py-6 flex flex-col gap-4">
-            {navLinks.map((link) => (
+          <nav className="px-5 py-6 flex flex-col gap-4">
+            {[...leftLinks, ...rightLinks].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -144,6 +193,21 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/contact"
+              className="mt-2 text-center py-3"
+              style={{
+                background: "oklch(0.63 0.18 38)",
+                color: "white",
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 700,
+                fontSize: "0.8rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+              }}
+            >
+              Get in Touch
+            </Link>
           </nav>
         </div>
       )}

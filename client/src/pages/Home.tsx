@@ -118,22 +118,24 @@ export default function Home() {
               </span>
             </div>
 
-            {/* Main headline — massive, tight */}
+            {/* Main headline — authority-led, premium positioning */}
             <h1
               style={{
                 fontFamily: "'Barlow Condensed', sans-serif",
                 fontWeight: 800,
-                fontSize: "clamp(4.5rem, 12vw, 10rem)",
+                fontSize: "clamp(4rem, 11vw, 9.5rem)",
                 color: "white",
-                lineHeight: 0.9,
+                lineHeight: 0.88,
                 letterSpacing: "-0.01em",
               }}
             >
-              WHEN THE
+              NEW ZEALAND'S
               <br />
-              <span style={{ color: "oklch(0.63 0.18 38)" }}>DEADLINE</span>
+              <span style={{ color: "oklch(0.63 0.18 38)" }}>PREMIER</span>
               <br />
-              IS IMMOVABLE.
+              FF&amp;E INSTALLATION
+              <br />
+              <span style={{ color: "oklch(0.75 0.04 240)" }}>SPECIALISTS.</span>
             </h1>
 
             {/* Taglines */}
