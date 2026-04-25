@@ -219,8 +219,63 @@ export default function Group() {
       </section>
 
       {/* ─── NZ TEAM ─── */}
-      <section style={{ padding: "clamp(4rem, 8vw, 6rem) clamp(1.5rem, 6vw, 6rem)", borderBottom: "1px solid oklch(0.16 0.02 240)" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+      <section style={{ padding: "clamp(4rem, 8vw, 6rem) clamp(1.5rem, 6vw, 6rem)", borderBottom: "1px solid oklch(0.16 0.02 240)", position: "relative", overflow: "hidden" }}>
+        {/* Auckland skyline — right-side bleed, heavily darkened */}
+        <img
+          src="/manus-storage/nz_auckland_skyline_dusk_ddb6b5d4.jpg"
+          alt=""
+          aria-hidden="true"
+          style={{ position: "absolute", right: 0, top: 0, width: "55%", height: "100%", objectFit: "cover", objectPosition: "center 40%", filter: "brightness(0.18) saturate(0.7)", zIndex: 0 }}
+        />
+        {/* Gradient — dark left, fades to photo right */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, oklch(0.09 0.02 240) 0%, oklch(0.09 0.02 240) 40%, transparent 75%)", zIndex: 1 }} />
+        {/* SVG botanical fern pattern — brand colours, decorative right-side watermark */}
+        <svg
+          viewBox="0 0 600 400"
+          aria-hidden="true"
+          style={{ position: "absolute", right: "-40px", top: "-20px", width: "55%", maxWidth: "580px", height: "auto", opacity: 0.07, pointerEvents: "none", zIndex: 0 }}
+        >
+          {/* Large silver fern frond — right */}
+          <g stroke="oklch(0.60 0.12 185)" strokeWidth="1.5" fill="none">
+            {/* Main stem */}
+            <path d="M 500 380 Q 420 280 340 160 Q 300 100 280 40" />
+            {/* Pinnae pairs — right side */}
+            {[{x:480,y:360,a:-35},{x:455,y:330,a:-40},{x:430,y:295,a:-45},{x:400,y:258,a:-50},{x:368,y:218,a:-55},{x:335,y:178,a:-58},{x:305,y:140,a:-60},{x:285,y:105,a:-62}].map((p,i)=>(
+              <g key={`r${i}`} transform={`translate(${p.x},${p.y}) rotate(${p.a})`}>
+                <path d={`M 0 0 Q ${18-i} -${10+i*1.5} ${30-i*2} -${6+i}`} />
+                <path d={`M ${8} -${3+i*0.5} Q ${20-i} -${14+i} ${28-i*2} -${8+i}`} />
+                <path d={`M ${15} -${5+i*0.7} Q ${24-i} -${16+i} ${26-i*2} -${10+i}`} />
+              </g>
+            ))}
+            {/* Pinnae pairs — left side */}
+            {[{x:480,y:360,a:145},{x:455,y:330,a:140},{x:430,y:295,a:135},{x:400,y:258,a:130},{x:368,y:218,a:125},{x:335,y:178,a:122},{x:305,y:140,a:120},{x:285,y:105,a:118}].map((p,i)=>(
+              <g key={`l${i}`} transform={`translate(${p.x},${p.y}) rotate(${p.a})`}>
+                <path d={`M 0 0 Q ${18-i} -${10+i*1.5} ${30-i*2} -${6+i}`} />
+                <path d={`M ${8} -${3+i*0.5} Q ${20-i} -${14+i} ${28-i*2} -${8+i}`} />
+              </g>
+            ))}
+          </g>
+          {/* Second smaller frond — far right, offset */}
+          <g stroke="oklch(0.63 0.18 38)" strokeWidth="1" fill="none" opacity="0.6">
+            <path d="M 580 400 Q 530 320 490 220 Q 470 170 460 110" />
+            {[{x:570,y:385,a:-30},{x:548,y:355,a:-38},{x:522,y:318,a:-44},{x:496,y:278,a:-50},{x:468,y:235,a:-54},{x:472,y:195,a:-57}].map((p,i)=>(
+              <g key={`r2${i}`} transform={`translate(${p.x},${p.y}) rotate(${p.a})`}>
+                <path d={`M 0 0 Q ${14-i} -${8+i} ${22-i*1.5} -${5+i}`} />
+                <path d={`M ${7} -${3+i*0.4} Q ${16-i} -${11+i} ${20-i*1.5} -${7+i}`} />
+              </g>
+            ))}
+            {[{x:570,y:385,a:150},{x:548,y:355,a:142},{x:522,y:318,a:136},{x:496,y:278,a:130},{x:468,y:235,a:126}].map((p,i)=>(
+              <g key={`l2${i}`} transform={`translate(${p.x},${p.y}) rotate(${p.a})`}>
+                <path d={`M 0 0 Q ${14-i} -${8+i} ${22-i*1.5} -${5+i}`} />
+              </g>
+            ))}
+          </g>
+          {/* Koru spiral — top right corner */}
+          <g stroke="oklch(0.60 0.12 185)" strokeWidth="1.2" fill="none" opacity="0.5">
+            <path d="M 540 50 Q 560 30 575 50 Q 590 70 570 85 Q 548 98 530 80 Q 515 62 530 48 Q 542 36 555 48" />
+          </g>
+        </svg>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 2 }}>
           <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.2em", color: "oklch(0.63 0.18 38)", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
             <span style={{ display: "inline-block", width: "2rem", height: "2px", background: "oklch(0.63 0.18 38)" }} />
             SPECIFIC NZ — AUCKLAND

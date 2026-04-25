@@ -1120,9 +1120,20 @@ export default function Home() {
       {/* ─── CTA ─── */}
       <section
         className="py-20 lg:py-28"
-        style={{ background: "oklch(0.16 0.035 240)" }}
+        style={{ background: "oklch(0.16 0.035 240)", position: "relative", overflow: "hidden" }}
       >
-        <div className="container">
+        {/* Auckland skyline background */}
+        <img
+          src="/manus-storage/nz_auckland_skyline_dusk_ddb6b5d4.jpg"
+          alt=""
+          aria-hidden="true"
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 55%", filter: "brightness(0.22) saturate(0.9)", zIndex: 0 }}
+        />
+        {/* Gradient overlay — stronger on left for text legibility, fades right */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(100deg, oklch(0.08 0.02 240 / 0.95) 0%, oklch(0.08 0.02 240 / 0.7) 50%, oklch(0.08 0.02 240 / 0.4) 100%)", zIndex: 1 }} />
+        {/* Orange accent line at top */}
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", background: "oklch(0.63 0.18 38)", zIndex: 2 }} />
+        <div className="container" style={{ position: "relative", zIndex: 3 }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="section-label mb-4">Work With Us</p>
@@ -1172,7 +1183,7 @@ export default function Home() {
                   Get in Touch
                 </Link>
                 <a
-                  href="tel:+64204243242"
+                  href="mailto:info@specificgroup.com.au"
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
                     fontWeight: 600,
@@ -1180,7 +1191,7 @@ export default function Home() {
                     color: "oklch(0.60 0.12 185)",
                   }}
                 >
-                  +64 204 243 242
+                  info@specificgroup.com.au
                 </a>
               </div>
             </div>
