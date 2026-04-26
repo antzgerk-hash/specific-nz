@@ -30,8 +30,8 @@ const SERVICES = [
     title: "Corporate & Office Relocations",
     subtitle: "End-to-End Commercial Moves",
     accent: "oklch(0.60 0.12 185)",
-    img: "/manus-storage/Screenshot2026-04-08014112_2df50744.png",
-    imgAlt: "Specific Relocations branded crates and dollies — proprietary crate system used on all commercial moves",
+    img: "/manus-storage/465152782_1461365497858195_4545629930176207314_n_0bc73ee5.jpg",
+    imgAlt: "Completed corporate office fitout — premium open-plan workspace with timber joinery island and hanging greenery",
     imgPosition: "center center",
     summary:
       "Commercial relocations require precision planning, zero operational disruption, and a team that understands the difference between moving boxes and managing a business transition. Specific NZ plans, manages, and executes corporate moves for offices, schools, and institutions — delivering continuity from day one.",

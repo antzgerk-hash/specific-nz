@@ -1,573 +1,484 @@
 /*
- * Projects Page — Dark Authority Design
- * Full project portfolio with photo galleries per project
+ * Projects Page — 6 Service Category Gateway Tiles
+ * Design: Barlow Condensed 900, dark authority, orange accents
+ * Each tile links to a dedicated category project gallery page
  */
-import { useState } from "react";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import { Link } from "wouter";
+import SiteNav from "@/components/SiteNav";
 
-const projects = [
+const CATEGORIES = [
   {
-    id: "tekaha",
-    name: "One NZ Stadium — Te Kaha",
-    client: "Statement iD / BESIX Watpac",
-    location: "Christchurch, New Zealand",
-    sector: "Stadium / Public Venue",
-    year: "2025–2026",
-    scope: "FF&E Delivery & Installation",
-    stats: [
-      { value: "2,740", label: "Items Delivered & Installed" },
-      { value: "55+", label: "Truckloads Coordinated" },
-      { value: "20+", label: "Site Days On Programme" },
-      { value: "60+", label: "Suppliers Managed" },
-    ],
-    description: "Specific NZ was engaged by Statement iD and BESIX Watpac to deliver and install the full FF&E scope across the $683 million One NZ Stadium (Te Kaha) in Christchurch — New Zealand's most significant new public venue in a generation. The project required the coordination of over 2,740 individual items across corporate suites, operational areas, and public spaces, delivered across 55+ truckloads over more than 20 site days. Items included workstations, electricals, refrigeration units, televisions, and specialist joinery. Specific NZ managed the full logistics chain from receipt and QC through to floor-by-floor installation, working to a hard opening deadline for the Super Rugby Pacific Super Round.",
-    images: [
-      "/manus-storage/Screenshot2026-04-01020026_5a3c5297.png",
-      "/manus-storage/Screenshot2026-04-01015901_ccc7dbd2.png",
-      "/manus-storage/Screenshot2026-04-01020119_15a48cbb.png",
-      "/manus-storage/stadium_seats_completed_4cbc7ed4.png",
-      "/manus-storage/tekaha_bikeracks_ab337b6d.webp",
-      "/manus-storage/tekaha_whiteboard_6a6f9301.webp",
-    ],
-    hero: "/manus-storage/Screenshot2026-04-01020026_5a3c5297.png",
-  },
-  {
-    id: "indigo",
-    name: "Hotel Indigo Auckland",
-    client: "Ninety-Four Feet / IHG Hotels & Resorts",
-    location: "51 Albert Street, Auckland CBD",
-    sector: "Hospitality / Luxury Boutique Hotel",
-    year: "2024–2025",
-    scope: "Full FF&E Delivery & Installation",
-    stats: [
-      { value: "225", label: "Guest Rooms Fitted" },
-      { value: "27", label: "Hotel Floors" },
-      { value: "41", label: "Storey Tower" },
-      { value: "Apr 2025", label: "Opening Date" },
-    ],
-    description: "Specific NZ delivered the full FF&E installation scope for Hotel Indigo Auckland — IHG's luxury boutique lifestyle brand making its New Zealand debut at 51 Albert Street, Midtown Auckland. The 225-room hotel spans 27 floors of a 41-storey tower, with the design concept rooted in the site's 1912 motor house heritage. Specific NZ managed the precision installation of complete room packages across all accommodation floors — beds, soft furnishings, joinery, desks, automotive-inspired lighting fixtures, pegboard shelving, and all loose FF&E — to IHG's exacting brand standards. The project was delivered for the official opening on 7 April 2025. Developer: Ninety-Four Feet. Operator: IHG Hotels & Resorts.",
-    images: [
-      "/manus-storage/Screenshot2026-04-02224143_0d61bee1.png",
-      "/manus-storage/indigo_exterior_05d26789.png",
-      "/manus-storage/indigo_room1_4837c19d.jpg",
-      "/manus-storage/indigo_room2_9aeecf11.jpg",
-      "/manus-storage/indigo_room3_26cf3ca0.jpg",
-      "/manus-storage/indigo_room4_962c1606.jpg",
-      "/manus-storage/indigo_room5_1e1cb1ed.jpg",
-    ],
+    id: "ffe",
+    num: "01",
+    title: "FF&E Installations",
+    subtitle: "Hotels · Stadiums · Commercial",
+    description:
+      "Full FF&E delivery, placement, and installation across New Zealand's most demanding hotel and commercial developments. From 27-storey towers to high-altitude gondola restaurants.",
+    projectCount: 12,
     hero: "/manus-storage/Screenshot2026-04-02224143_0d61bee1.png",
-  },
-  {
-    id: "skyline",
-    name: "Skyline Gondola Queenstown",
-    client: "Skyline Enterprises",
-    location: "Queenstown, New Zealand",
-    sector: "Tourism / Hospitality",
-    year: "2025–2026",
-    scope: "FF&E Delivery & Installation",
+    href: "/projects/ffe",
+    clients:
+      "Hotel Indigo Auckland · Grand Millennium · Voco Auckland · Holiday Inn Express · Tryp Wellington · Drifter Christchurch · Ramada Newmarket · Ramada Victoria St · La Quinta Ellerslie · Queenstown Hotel · Mercure Melbourne",
     stats: [
-      { value: "High", label: "Altitude Specialist Delivery" },
-      { value: "Crane", label: "Assisted Access Required" },
-      { value: "Full", label: "Restaurant & Bar FF&E" },
-      { value: "QTown", label: "Queenstown Location" },
+      { v: "12+", l: "Projects" },
+      { v: "2,500+", l: "Rooms Fitted" },
+      { v: "NZ & AU", l: "Coverage" },
     ],
-    description: "The Skyline Gondola redevelopment in Queenstown presented one of the most logistically complex FF&E challenges in New Zealand — a high-altitude site accessible only via gondola or crane, with no conventional truck access to the installation floors. Specific NZ coordinated the full FF&E delivery and installation scope including dining chairs, tables, booth seating, bar joinery, and all loose items across the new restaurant and hospitality spaces. Items were delivered by container to the base site and crane-lifted to the installation level, with Specific NZ teams managing the full sequence from ground to completion.",
-    images: [
-      "/manus-storage/20260314_150857_2793dba8.webp",
-      "/manus-storage/skyline_booths_3d68b935.webp",
-      "/manus-storage/skyline_joinery_c9e3e4f1.webp",
-      "/manus-storage/skyline_terrace_crane_e82076ee.webp",
-      "/manus-storage/skyline_container_delivery_e9fb98e7.webp",
-      "/manus-storage/skyline_crane_site_da39dfa3.webp",
-    ],
-    hero: "/manus-storage/20260314_150857_2793dba8.webp",
   },
   {
-    id: "queenstown-hotel",
-    name: "Queenstown Hotel — FF&E Installation",
-    client: "Confidential / Queenstown Hotel Developer",
-    location: "Queenstown, New Zealand",
-    sector: "Hospitality / Luxury Hotel FF&E",
-    year: "2026",
-    scope: "Full FF&E Delivery, Assembly & Installation",
+    id: "joinery",
+    num: "02",
+    title: "Joinery & Fitout",
+    subtitle: "Precision Installation · Millimetre Tolerances",
+    description:
+      "Bespoke joinery installation, high-specification fitout, and detailed furniture placement for New Zealand's premier hotel and commercial refurbishment programmes.",
+    projectCount: 2,
+    hero: "/manus-storage/grand_millennium_room2_89ea3763.jpg",
+    href: "/projects/joinery",
+    clients: "Millennium Auckland · QT Queenstown",
     stats: [
-      { value: "7+", label: "Floors Installed" },
-      { value: "Lake", label: "Wakatipu Views" },
-      { value: "Full", label: "Room FF&E Package" },
-      { value: "QTown", label: "Queenstown Location" },
+      { v: "2", l: "Flagship Projects" },
+      { v: "5-Star", l: "Standard" },
+      { v: "Zero", l: "Defects at Handover" },
     ],
-    description: "Specific NZ delivered the complete FF&E installation programme for a luxury hotel development in Queenstown, with Lake Wakatipu views across all guest floors. The scope included full room fit-out — high-end leather bench seating, marble-top side tables with brushed bronze bases, custom oak joinery, floating bedside units with integrated power, and designer corridor carpet installation under protective wrap. The Specific team assembled and installed all furniture on-site, working across active construction floors with crane-assisted access where required. The project was delivered to programme with zero defects at handover.",
-    images: [
-      "/manus-storage/20260305_151235_6d28f6bf.webp",
-      "/manus-storage/20260309_075804_3edde8bb.webp",
-      "/manus-storage/20260309_090234_072837a5.webp",
-      "/manus-storage/20260130_091440_a8cf5a50.webp",
-      "/manus-storage/20260126_081242_22845511.webp",
-      "/manus-storage/20260129_104520_6d10746d.webp",
-      "/manus-storage/20260126_121334_5e9358e9.webp",
-    ],
-    hero: "/manus-storage/20260305_151235_6d28f6bf.webp",
   },
   {
-    id: "millennium",
-    name: "Millennium Auckland",
-    client: "Millennium Hotels & Resorts",
-    location: "Auckland CBD, New Zealand",
-    sector: "Hospitality / Hotel",
-    year: "2024",
-    scope: "FF&E Delivery & Installation",
-    stats: [],
-    description: "Specific NZ delivered FF&E installation services for Millennium Auckland, one of the city's landmark hotel properties. The project involved coordinated delivery and installation of room and public area FF&E to programme.",
-    images: [],
-    hero: "/manus-storage/indigo_room1_4837c19d.jpg",
-    comingSoon: true,
-  },
-  {
-    id: "holiday-inn",
-    name: "Holiday Inn Express Auckland City Centre",
-    client: "Pro-invest Hotels / IHG Hotels & Resorts",
-    location: "58 Albert Street, Auckland CBD",
-    sector: "Hospitality / Hotel",
-    year: "2022",
-    scope: "FF&E Delivery & Installation",
+    id: "relocations",
+    num: "03",
+    title: "Office Relocations",
+    subtitle: "Corporate · Healthcare · Education",
+    description:
+      "End-to-end commercial relocations with zero operational disruption. Full project management from site survey through to post-move defect rectification.",
+    projectCount: 8,
+    hero: "/manus-storage/465152782_1461365497858195_4545629930176207314_n_0bc73ee5.jpg",
+    href: "/projects/relocations",
+    clients:
+      "Corporate offices · Healthcare facilities · Educational institutions · Government tenancies",
     stats: [
-      { value: "294", label: "Guest Rooms Fitted" },
-      { value: "May 2022", label: "Opening Date" },
-      { value: "NZ First", label: "Dual-Brand Development" },
-      { value: "CBD", label: "Auckland Location" },
+      { v: "500+", l: "Moves Completed" },
+      { v: "50,000+", l: "m² Relocated" },
+      { v: "Zero", l: "Operational Disruption" },
     ],
-    description: "Specific NZ delivered the full FF&E installation scope for Holiday Inn Express Auckland City Centre — New Zealand's first dual-branded hotel development, located at 58 Albert Street (corner of Albert & Wyndham Streets) in the Auckland CBD. The 294-room hotel is part of the same development as voco Auckland City Centre, forming New Zealand's first dual-brand hotel tower. Specific NZ managed the delivery and precision installation of complete room packages across all floors — walk-in shower fittings, blackout blinds, work stations, high-quality bedding, and all loose FF&E — to IHG brand standards. The hotel opened 26 May 2022. Developer: Pro-invest Hotels. Operator: IHG Hotels & Resorts.",
-    images: [
-      "/manus-storage/indigo_room3_26cf3ca0.jpg",
-      "/manus-storage/indigo_room4_962c1606.jpg",
-    ],
-    hero: "/manus-storage/indigo_room3_26cf3ca0.jpg",
   },
   {
-    id: "footscray-hospital",
-    name: "West Footscray Hospital",
-    client: "Specific Relocations / Health Infrastructure Victoria",
-    location: "West Footscray, Victoria, Australia",
-    sector: "Healthcare / Hospital Relocation",
-    year: "2026",
-    scope: "Commercial Relocation & Equipment Handling",
+    id: "special",
+    num: "04",
+    title: "Special Projects",
+    subtitle: "Complex · High-Profile · Landmark",
+    description:
+      "New Zealand and Australia's most complex and high-profile installation projects — requiring specialist logistics, landmark-scale coordination, and teams that perform under pressure.",
+    projectCount: 4,
+    hero: "/manus-storage/Screenshot2026-04-01020026_5a3c5297.png",
+    href: "/projects/special",
+    clients:
+      "One NZ Stadium (Te Kaha) · West Footscray Hospital · Walkinshaw Relocation · Skyline Gondola Queenstown",
     stats: [
-      { value: "Large", label: "Scale Hospital Relocation" },
-      { value: "Feb 2026", label: "Relocation Date" },
-      { value: "Specific", label: "Branded Crates & Trucks" },
-      { value: "Zero", label: "Disruption to Operations" },
+      { v: "50,000+", l: "Seat Stadium" },
+      { v: "Crane", l: "Assisted Access" },
+      { v: "Tier 1", l: "Contractors" },
     ],
-    description: "Specific managed the full relocation scope for the West Footscray Hospital — a major healthcare facility transition requiring precision logistics, branded crate systems, and coordinated truck movements through the hospital's loading dock. The team operated in a live clinical environment, managing equipment handling, floor-by-floor movement, and staged delivery to minimise disruption to hospital operations. Multiple Specific branded trucks and the proprietary Specific Relocations crate system were deployed across the project.",
-    images: [
-      "/manus-storage/footscrayhospitalwithspecificlogo_62498176.png",
-      "/manus-storage/WhatsAppImage2026-02-19at11.58.21AM_72eb2835.jpeg",
-      "/manus-storage/WhatsAppImage2026-02-19at11.58.16AM_aa1b941c.jpeg",
-      "/manus-storage/WhatsAppImage2026-02-19at11.58.20AM_373e4271.jpeg",
-    ],
-    hero: "/manus-storage/footscrayhospitalwithspecificlogo_62498176.png",
   },
   {
-    id: "mercure-melbourne",
-    name: "Mercure Melbourne",
-    client: "Accor Hotels",
-    location: "Melbourne, Victoria, Australia",
-    sector: "Hospitality / Hotel FF&E",
-    year: "2026",
-    scope: "Joinery & FF&E Installation",
-    stats: [
-      { value: "2026", label: "Completion Year" },
-      { value: "Accor", label: "Hotel Brand" },
-      { value: "Full", label: "Bathroom Joinery Package" },
-      { value: "VIC", label: "Victoria, Australia" },
-    ],
-    description: "Specific delivered the full joinery and FF&E installation scope for Mercure Melbourne — an Accor Hotels property. The scope included precision bathroom joinery installation across all guest rooms, including custom vanity cabinetry, backlit mirror installation, and complete OS&E placement. Every room was installed to Accor brand standards with photographic handover documentation.",
-    images: [
-      "/manus-storage/mecuremelbourne2026bathrooms_fb5835fd.jpeg",
-    ],
-    hero: "/manus-storage/mecuremelbourne2026bathrooms_fb5835fd.jpeg",
-  },
-  {
-    id: "rydges-qt",
-    name: "Rydges Queenstown → QT Hotels",
-    client: "Event Hospitality",
-    location: "Queenstown, New Zealand",
-    sector: "Hospitality / Hotel Rebrand",
-    year: "2024",
-    scope: "FF&E & Relocation",
-    stats: [],
-    description: "Specific NZ managed the FF&E and relocation scope for the transition of Rydges Queenstown to the QT Hotels brand, coordinating the removal, storage, and installation of FF&E across the rebrand programme.",
-    images: [
-      "/manus-storage/qt_queenstown_room_915035f3.png",
-    ],
-    hero: "/manus-storage/qt_queenstown_room_915035f3.png",
-  },
-  {
-    id: "voco-auckland",
-    name: "Voco Auckland City Centre",
-    client: "Pro-invest Hotels / IHG Hotels & Resorts",
-    location: "Corner of Albert & Wyndham Streets, Auckland CBD",
-    sector: "Hospitality / Luxury Hotel",
-    year: "2022",
-    scope: "Full FF&E Delivery & Installation",
-    stats: [
-      { value: "201", label: "Rooms & Suites" },
-      { value: "May 2022", label: "Opening Date" },
-      { value: "NZ First", label: "Voco Branded Property" },
-      { value: "IHG", label: "Brand Operator" },
-    ],
-    description: "Specific NZ delivered the full FF&E installation scope for Voco Auckland City Centre — New Zealand's first Voco branded property and part of the country's first dual-brand hotel development alongside Holiday Inn Express. The 201-room hotel features sustainable bedding, smart in-room technology, curated artworks, and stylish marble bathrooms. Specific NZ managed precision installation of complete room packages across all floors to IHG's exacting brand standards. Developer: Pro-invest Hotels. Operator: IHG Hotels & Resorts.",
-    images: [
-      "/manus-storage/voco_auckland_room1_3f0b217f.jpg",
-      "/manus-storage/voco_auckland_room2_3fe8a966.jpg",
-      "/manus-storage/voco_auckland_room3_9108bf0d.jpg",
-    ],
+    id: "av",
+    num: "05",
+    title: "AV & OS&E",
+    subtitle: "Audio Visual · Operating Supplies",
+    description:
+      "Large-scale AV installation and operating supplies and equipment programmes — from 1,600-unit national aged care rollouts to hotel in-room AV commissioning.",
+    projectCount: 4,
     hero: "/manus-storage/voco_auckland_room1_3f0b217f.jpg",
+    href: "/projects/av",
+    clients:
+      "Invocare Aged Care (1,600 TVs) · Holiday Inn Express · Voco Auckland · Tryp Wellington",
+    stats: [
+      { v: "1,600", l: "TVs Installed" },
+      { v: "National", l: "Rollout" },
+      { v: "Full", l: "Commissioning" },
+    ],
   },
   {
-    id: "ramada-newmarket",
-    name: "Ramada by Wyndham Newmarket Auckland",
-    client: "Safari Group / Wyndham Hotels & Resorts",
-    location: "41 Gillies Avenue, Newmarket, Auckland",
-    sector: "Hospitality / Serviced Apartments",
-    year: "2021",
-    scope: "FF&E Delivery & Installation",
+    id: "warehousing",
+    num: "06",
+    title: "Warehousing & Storage",
+    subtitle: "Secure Storage · Specialist Handling",
+    description:
+      "Purpose-built secure warehousing for FF&E, joinery, and high-value assets — including specialised storage and white-glove handling for high-end residential and commercial relocations.",
+    projectCount: 2,
+    hero: "/manus-storage/Screenshot2026-04-08013641_37253495.png",
+    href: "/projects/warehousing",
+    clients: "Tara ITI (High-End House Relocation and Specialised Storage) · Commercial FF&E Storage",
     stats: [
-      { value: "93", label: "Rooms & Apartments" },
-      { value: "June 2021", label: "Opening Date" },
-      { value: "$100M", label: "Mixed-Use Development" },
-      { value: "Newmarket", label: "Auckland Location" },
+      { v: "Secure", l: "Climate-Controlled" },
+      { v: "White", l: "Glove Handling" },
+      { v: "NZ Wide", l: "Coverage" },
     ],
-    description: "Specific NZ delivered the FF&E installation scope for Ramada by Wyndham Newmarket Auckland — a 93-room serviced apartment hotel forming part of a $100 million mixed-use development in Newmarket. The property features rooms and apartments designed to maximise sun, views, and living space, along with a high-tech purpose-built meeting room. Specific NZ coordinated delivery and installation of all room FF&E packages to Wyndham brand standards. Developer: Safari Group.",
-    images: [
-      "/manus-storage/ramada_newmarket_room1_cf18e843.jpg",
-      "/manus-storage/ramada_newmarket_room2_1cb6b22d.jpg",
-      "/manus-storage/ramada_newmarket_exterior_ecba2dbe.jpg",
-    ],
-    hero: "/manus-storage/ramada_newmarket_room1_cf18e843.jpg",
-  },
-  {
-    id: "ramada-victoria",
-    name: "Ramada Suites Victoria Street West",
-    client: "Safari Group Ltd / Wyndham Hotels & Resorts",
-    location: "147 Victoria Street West, Auckland CBD",
-    sector: "Hospitality / Serviced Apartments",
-    year: "2018",
-    scope: "FF&E Delivery & Installation",
-    stats: [
-      { value: "48", label: "Serviced Apartment Suites" },
-      { value: "55", label: "Residential Apartments" },
-      { value: "Late 2018", label: "Completion Date" },
-      { value: "CBD", label: "Auckland Location" },
-    ],
-    description: "Specific NZ delivered the FF&E installation scope for Ramada Suites by Wyndham Victoria Street West — a mixed-use development in the heart of Auckland CBD comprising 48 serviced apartment suites, 55 residential apartments, and retail/office units. The project required coordinated delivery and installation of FF&E packages across both the hotel and residential components. Developer: Safari Group Ltd.",
-    images: [
-      "/manus-storage/ramada_victoria_room1_d91dba0f.jpg",
-      "/manus-storage/ramada_victoria_room2_640b832c.jpg",
-      "/manus-storage/ramada_victoria_exterior_8804a7b0.jpg",
-    ],
-    hero: "/manus-storage/ramada_victoria_room1_d91dba0f.jpg",
-  },
-  {
-    id: "tryp-wellington",
-    name: "Tryp by Wyndham Wellington",
-    client: "Safari Group / Wyndham Hotels & Resorts",
-    location: "15 Tory Street, Te Aro, Wellington",
-    sector: "Hospitality / Heritage Hotel",
-    year: "2023",
-    scope: "FF&E Delivery & Installation",
-    stats: [
-      { value: "71", label: "Hotel Rooms" },
-      { value: "6", label: "Residential Apartments" },
-      { value: "Early 2023", label: "Opening Date" },
-      { value: "Heritage", label: "Listed Building" },
-    ],
-    description: "Specific NZ delivered the FF&E installation scope for Tryp by Wyndham Wellington — a fully renovated heritage-listed art deco building on Tory Street in Wellington's Te Aro precinct. The 71-room hotel features city-influenced design, premium suites with kitchenettes, and a 24/7 fitness centre. Specific NZ managed the delivery and installation of all room FF&E packages within the constraints of a heritage building environment. Developer: Safari Group.",
-    images: [
-      "/manus-storage/tryp_wgtn_room1_33c5c412.jpg",
-      "/manus-storage/tryp_wgtn_room2_95ca3f76.jpg",
-      "/manus-storage/tryp_wgtn_lobby_73e353bf.jpg",
-    ],
-    hero: "/manus-storage/tryp_wgtn_room1_33c5c412.jpg",
-  },
-  {
-    id: "laquinta-ellerslie",
-    name: "La Quinta by Wyndham Ellerslie Auckland",
-    client: "Safari Group / Wyndham Hotels & Resorts",
-    location: "20 Park Avenue, Ellerslie, Auckland",
-    sector: "Hospitality / Hotel",
-    year: "2023",
-    scope: "Full FF&E Delivery & Installation",
-    stats: [
-      { value: "246", label: "Guest Rooms" },
-      { value: "12", label: "Levels" },
-      { value: "Oct 2023", label: "Opening Date" },
-      { value: "Ellerslie", label: "Auckland Location" },
-    ],
-    description: "Specific NZ delivered the full FF&E installation scope for La Quinta by Wyndham Ellerslie Auckland — a purpose-built 12-level, 246-room hotel in Ellerslie, Auckland. Specific NZ managed the coordinated delivery and precision installation of complete room packages across all 12 levels, including beds, soft furnishings, joinery, desks, and all loose FF&E to Wyndham brand standards. Developer: Safari Group.",
-    images: [
-      "/manus-storage/laquinta_room1_c13140e2.jpg",
-      "/manus-storage/laquinta_room2_9c5125e0.jpg",
-      "/manus-storage/laquinta_exterior_2843c938.jpg",
-    ],
-    hero: "/manus-storage/laquinta_room1_c13140e2.jpg",
-  },
-  {
-    id: "drifter-christchurch",
-    name: "Drifter Christchurch",
-    client: "Leisure Accommodation Collective (LA Co) / Dovetail and Co.",
-    location: "96 Lichfield Street, Christchurch",
-    sector: "Hospitality / Design Hotel",
-    year: "2024",
-    scope: "FF&E Delivery & Installation",
-    stats: [
-      { value: "95", label: "Rooms" },
-      { value: "Oct 2024", label: "Official Opening" },
-      { value: "Heritage", label: "Building" },
-      { value: "Christchurch", label: "Location" },
-    ],
-    description: "Specific NZ delivered the FF&E installation scope for Drifter Christchurch — a design-led hybrid hotel in a heritage building on Lichfield Street. The 95-room property by Leisure Accommodation Collective features architecture by Urbanfunction and interior design by CTRL Space, offering both private rooms and shared accommodations. Specific NZ managed delivery and installation of all FF&E packages within the heritage building environment for the October 2024 official opening.",
-    images: [
-      "/manus-storage/drifter_chch_room1_dce6ba1f.jpg",
-      "/manus-storage/drifter_chch_exterior_c96897b6.jpg",
-      "/manus-storage/drifter_chch_bar_5843fe17.jpg",
-    ],
-    hero: "/manus-storage/drifter_chch_exterior_c96897b6.jpg",
-  },
-  {
-    id: "grand-millennium",
-    name: "Grand Millennium Auckland",
-    client: "Millennium Hotels & Resorts / CDLHT",
-    location: "71 Mayoral Drive, Auckland CBD",
-    sector: "Hospitality / 5-Star Hotel",
-    year: "2024",
-    scope: "FF&E Delivery & Installation",
-    stats: [
-      { value: "453", label: "Guest Rooms" },
-      { value: "5-Star", label: "Qualmark Graded" },
-      { value: "12", label: "Storey Atrium Hotel" },
-      { value: "CBD", label: "Auckland Location" },
-    ],
-    description: "Specific NZ delivered FF&E installation services for Grand Millennium Auckland — one of Auckland's premier 5-star hotel properties. The 453-room, 12-storey atrium-styled hotel at 71 Mayoral Drive is a Qualmark 5-star graded establishment and one of the city's landmark hospitality venues. Specific NZ coordinated the delivery and precision installation of room and public area FF&E to programme, working within the operational constraints of a live hotel environment.",
-    images: [
-      "/manus-storage/grand_millennium_exterior_9787ede3.png",
-      "/manus-storage/grand_millennium_room1_7fc8a5f2.jpg",
-      "/manus-storage/grand_millennium_room2_89ea3763.jpg",
-    ],
-    hero: "/manus-storage/grand_millennium_exterior_9787ede3.png",
   },
 ];
 
 export default function Projects() {
-  const [activeProject, setActiveProject] = useState(projects[0]);
-  const [activeImage, setActiveImage] = useState(0);
-
   return (
-    <div className="min-h-screen" style={{ background: "oklch(0.16 0.035 240)" }}>
-      <Navigation />
+    <div
+      style={{
+        background: "oklch(0.08 0.01 240)",
+        minHeight: "100vh",
+        fontFamily: "'Barlow', sans-serif",
+      }}
+    >
+      <SiteNav />
 
-      {/* Page header */}
+      {/* PAGE HERO */}
       <section
-        className="pt-32 pb-16 lg:pt-40 lg:pb-20"
-        style={{ background: "oklch(0.12 0.03 240)", borderBottom: "1px solid oklch(1 0 0 / 0.08)" }}
+        style={{
+          paddingTop: "140px",
+          paddingBottom: "72px",
+          paddingLeft: "clamp(1.5rem, 6vw, 6rem)",
+          paddingRight: "clamp(1.5rem, 6vw, 6rem)",
+          borderBottom: "1px solid oklch(0.16 0.02 240)",
+          position: "relative",
+          overflow: "hidden",
+        }}
       >
-        <div className="container">
-          <p className="section-label mb-4">Our Work</p>
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "radial-gradient(ellipse 60% 80% at 80% 50%, oklch(0.14 0.04 240) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+        <div style={{ position: "relative", maxWidth: "900px" }}>
+          <p
+            style={{
+              fontFamily: "'Barlow Condensed', sans-serif",
+              fontWeight: 700,
+              fontSize: "0.72rem",
+              letterSpacing: "0.22em",
+              color: "oklch(0.63 0.18 38)",
+              marginBottom: "1.25rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.75rem",
+            }}
+          >
+            <span
+              style={{
+                display: "inline-block",
+                width: "2rem",
+                height: "2px",
+                background: "oklch(0.63 0.18 38)",
+              }}
+            />
+            SPECIFIC GROUP — PROJECT PORTFOLIO
+          </p>
           <h1
             style={{
               fontFamily: "'Barlow Condensed', sans-serif",
-              fontWeight: 800,
+              fontWeight: 900,
               fontSize: "clamp(3rem, 7vw, 6rem)",
+              lineHeight: 0.9,
               color: "white",
-              lineHeight: 0.95,
+              marginBottom: "1.5rem",
+              letterSpacing: "-0.01em",
             }}
           >
-            PROJECTS
+            SIX SERVICE
+            <br />
+            <span style={{ color: "oklch(0.63 0.18 38)" }}>CATEGORIES.</span>
           </h1>
           <p
-            className="mt-6 max-w-2xl"
-            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "oklch(0.65 0.025 240)", lineHeight: 1.65 }}
+            style={{
+              fontSize: "1.05rem",
+              color: "oklch(0.58 0.02 240)",
+              maxWidth: "580px",
+              lineHeight: 1.7,
+              fontFamily: "'DM Sans', sans-serif",
+            }}
           >
-            A selection of completed FF&E, installation, and logistics projects across New Zealand's hospitality, tourism, and public venue sectors.
+            Select a service category to explore our project portfolio. Every
+            project is delivered by our own trained teams — not subcontracted,
+            not outsourced.
           </p>
         </div>
       </section>
 
-      {/* Project selector + detail */}
-      <section className="py-16 lg:py-20">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Sidebar list */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-24 space-y-1">
-                {projects.map((p) => (
-                  <button
-                    key={p.id}
-                    onClick={() => { setActiveProject(p); setActiveImage(0); }}
-                    className="w-full text-left px-5 py-4 transition-all duration-200 border-l-2"
-                    style={{
-                      background: activeProject.id === p.id ? "oklch(0.20 0.04 240)" : "transparent",
-                      borderLeftColor: activeProject.id === p.id ? "oklch(0.63 0.18 38)" : "transparent",
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontFamily: "'Barlow Condensed', sans-serif",
-                        fontWeight: 700,
-                        fontSize: "1.1rem",
-                        color: activeProject.id === p.id ? "white" : "oklch(0.65 0.025 240)",
-                        lineHeight: 1.2,
-                      }}
-                    >
-                      {p.name}
-                    </p>
-                    <p
-                      style={{
-                        fontFamily: "'DM Sans', sans-serif",
-                        fontSize: "0.75rem",
-                        color: activeProject.id === p.id ? "oklch(0.63 0.18 38)" : "oklch(0.50 0.02 240)",
-                        marginTop: "0.2rem",
-                      }}
-                    >
-                      {p.location} · {p.year}
-                    </p>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Project detail */}
-            <div className="lg:col-span-2">
-              {/* Hero image */}
-              <div className="relative overflow-hidden mb-6" style={{ aspectRatio: "16/9" }}>
-                <img
-                  src={activeProject.images.length > 0 ? activeProject.images[activeImage] : activeProject.hero}
-                  alt={activeProject.name}
-                  className="w-full h-full object-cover"
-                />
-                {activeProject.comingSoon && (
-                  <div
-                    className="absolute inset-0 flex items-center justify-center"
-                    style={{ background: "oklch(0.10 0.03 240 / 0.7)" }}
-                  >
-                    <p
-                      style={{
-                        fontFamily: "'Barlow Condensed', sans-serif",
-                        fontWeight: 700,
-                        fontSize: "1.5rem",
-                        color: "oklch(0.63 0.18 38)",
-                        letterSpacing: "0.1em",
-                      }}
-                    >
-                      PROJECT PHOTOS COMING SOON
-                    </p>
-                  </div>
-                )}
-              </div>
-
-              {/* Thumbnail strip */}
-              {activeProject.images.length > 1 && !activeProject.comingSoon && (
-                <div className="flex gap-2 mb-8 overflow-x-auto pb-2">
-                  {activeProject.images.map((img, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActiveImage(i)}
-                      className="flex-shrink-0 overflow-hidden"
-                      style={{
-                        width: "80px",
-                        height: "56px",
-                        border: activeImage === i ? "2px solid oklch(0.63 0.18 38)" : "2px solid transparent",
-                        opacity: activeImage === i ? 1 : 0.6,
-                        transition: "opacity 0.2s, border-color 0.2s",
-                      }}
-                    >
-                      <img src={img} alt="" className="w-full h-full object-cover" />
-                    </button>
-                  ))}
-                </div>
-              )}
-
-              {/* Project info */}
-              <div className="mb-6">
-                <div className="flex flex-wrap gap-3 mb-4">
-                  <span
-                    className="px-3 py-1 text-xs font-semibold uppercase tracking-widest"
-                    style={{ background: "oklch(0.63 0.18 38 / 0.15)", color: "oklch(0.63 0.18 38)", fontFamily: "'DM Sans', sans-serif" }}
-                  >
-                    {activeProject.sector}
-                  </span>
-                  <span
-                    className="px-3 py-1 text-xs font-semibold uppercase tracking-widest"
-                    style={{ background: "oklch(0.60 0.12 185 / 0.15)", color: "oklch(0.60 0.12 185)", fontFamily: "'DM Sans', sans-serif" }}
-                  >
-                    {activeProject.scope}
-                  </span>
-                </div>
-                <h2
-                  style={{
-                    fontFamily: "'Barlow Condensed', sans-serif",
-                    fontWeight: 800,
-                    fontSize: "clamp(2rem, 4vw, 3rem)",
-                    color: "white",
-                    lineHeight: 1,
-                  }}
-                >
-                  {activeProject.name}
-                </h2>
-                <p
-                  className="mt-2"
-                  style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "oklch(0.62 0.025 240)" }}
-                >
-                  {activeProject.client} · {activeProject.location} · {activeProject.year}
-                </p>
-              </div>
-
-              {/* Stats */}
-              {activeProject.stats.length > 0 && (
-                <div
-                  className="grid grid-cols-2 sm:grid-cols-4 gap-px mb-8"
-                  style={{ background: "oklch(1 0 0 / 0.06)" }}
-                >
-                  {activeProject.stats.map((s, i) => (
-                    <div key={i} className="p-5" style={{ background: "oklch(0.16 0.035 240)" }}>
-                      <div
-                        style={{
-                          fontFamily: "'Barlow Condensed', sans-serif",
-                          fontWeight: 800,
-                          fontSize: "2rem",
-                          color: "oklch(0.63 0.18 38)",
-                          lineHeight: 1,
-                        }}
-                      >
-                        {s.value}
-                      </div>
-                      <p
-                        style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.75rem", color: "oklch(0.62 0.025 240)", marginTop: "0.25rem" }}
-                      >
-                        {s.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {/* Description */}
-              <p
+      {/* 6 CATEGORY TILES */}
+      <section>
+        {CATEGORIES.map((cat, i) => {
+          const isEven = i % 2 === 0;
+          return (
+            <Link
+              key={cat.id}
+              href={cat.href}
+              style={{ textDecoration: "none", display: "block" }}
+            >
+              <div
+                className="cat-tile"
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "0.9375rem",
-                  color: "oklch(0.72 0.025 240)",
-                  lineHeight: 1.75,
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  minHeight: "460px",
+                  borderBottom: "1px solid oklch(0.13 0.02 240)",
+                  cursor: "pointer",
+                  position: "relative",
+                  overflow: "hidden",
                 }}
               >
-                {activeProject.description}
-              </p>
-            </div>
-          </div>
-        </div>
+                {/* Image side */}
+                <div
+                  style={{
+                    order: isEven ? 1 : 0,
+                    position: "relative",
+                    overflow: "hidden",
+                    minHeight: "320px",
+                  }}
+                >
+                  <img
+                    src={cat.hero}
+                    alt={cat.title}
+                    className="cat-img"
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                      filter: "brightness(0.52) saturate(0.75)",
+                      transition: "transform 0.65s ease, filter 0.4s ease",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      [isEven ? "right" : "left"]: 0,
+                      width: "4px",
+                      height: "100%",
+                      background: "oklch(0.63 0.18 38)",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: "1.25rem",
+                      [isEven ? "right" : "left"]: "1.5rem",
+                      fontFamily: "'Barlow Condensed', sans-serif",
+                      fontWeight: 900,
+                      fontSize: "clamp(5rem, 10vw, 9rem)",
+                      lineHeight: 1,
+                      color: "white",
+                      opacity: 0.07,
+                      userSelect: "none",
+                      pointerEvents: "none",
+                    }}
+                  >
+                    {cat.num}
+                  </div>
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      background:
+                        "linear-gradient(to top, oklch(0.05 0.01 240 / 0.96) 0%, transparent 100%)",
+                      padding: "2.5rem 2rem 1.5rem",
+                      display: "flex",
+                      gap: "2rem",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    {cat.stats.map((s) => (
+                      <div key={s.l}>
+                        <div
+                          style={{
+                            fontFamily: "'Barlow Condensed', sans-serif",
+                            fontWeight: 900,
+                            fontSize: "1.5rem",
+                            color: "oklch(0.63 0.18 38)",
+                            lineHeight: 1,
+                          }}
+                        >
+                          {s.v}
+                        </div>
+                        <div
+                          style={{
+                            fontFamily: "'Barlow Condensed', sans-serif",
+                            fontSize: "0.62rem",
+                            letterSpacing: "0.13em",
+                            color: "oklch(0.52 0.02 240)",
+                            fontWeight: 600,
+                            marginTop: "0.2rem",
+                          }}
+                        >
+                          {s.l.toUpperCase()}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Content side */}
+                <div
+                  style={{
+                    order: isEven ? 0 : 1,
+                    padding: "clamp(2.5rem, 5vw, 5rem)",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    background: isEven
+                      ? "oklch(0.10 0.015 240)"
+                      : "oklch(0.09 0.01 240)",
+                    position: "relative",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: "'Barlow Condensed', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "0.68rem",
+                      letterSpacing: "0.22em",
+                      color: "oklch(0.63 0.18 38)",
+                      marginBottom: "0.6rem",
+                    }}
+                  >
+                    {cat.num} — {cat.subtitle.toUpperCase()}
+                  </p>
+                  <h2
+                    style={{
+                      fontFamily: "'Barlow Condensed', sans-serif",
+                      fontWeight: 900,
+                      fontSize: "clamp(2rem, 3.5vw, 3.25rem)",
+                      lineHeight: 0.95,
+                      color: "white",
+                      marginBottom: "1.25rem",
+                      letterSpacing: "-0.01em",
+                    }}
+                  >
+                    {cat.title.toUpperCase()}
+                  </h2>
+                  <p
+                    style={{
+                      fontSize: "0.92rem",
+                      color: "oklch(0.58 0.02 240)",
+                      lineHeight: 1.72,
+                      marginBottom: "1.25rem",
+                      maxWidth: "440px",
+                      fontFamily: "'DM Sans', sans-serif",
+                    }}
+                  >
+                    {cat.description}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: "0.72rem",
+                      color: "oklch(0.42 0.02 240)",
+                      lineHeight: 1.65,
+                      marginBottom: "2rem",
+                      fontStyle: "italic",
+                      fontFamily: "'DM Sans', sans-serif",
+                    }}
+                  >
+                    {cat.clients}
+                  </p>
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <span
+                      className="cat-cta"
+                      style={{
+                        fontFamily: "'Barlow Condensed', sans-serif",
+                        fontWeight: 700,
+                        fontSize: "0.75rem",
+                        letterSpacing: "0.16em",
+                        color: "oklch(0.63 0.18 38)",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.5rem",
+                        transition: "gap 0.2s ease",
+                      }}
+                    >
+                      VIEW {cat.projectCount} PROJECTS
+                      <span style={{ fontSize: "1.1rem" }}>{"→"}</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          );
+        })}
       </section>
 
-      <Footer />
+      {/* FOOTER CTA */}
+      <section
+        style={{
+          padding: "5rem clamp(1.5rem, 6vw, 6rem)",
+          background: "oklch(0.07 0.01 240)",
+          borderTop: "1px solid oklch(0.14 0.02 240)",
+          textAlign: "center",
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "'Barlow Condensed', sans-serif",
+            fontWeight: 700,
+            fontSize: "0.72rem",
+            letterSpacing: "0.22em",
+            color: "oklch(0.63 0.18 38)",
+            marginBottom: "1rem",
+          }}
+        >
+          READY TO DISCUSS YOUR PROJECT?
+        </p>
+        <h2
+          style={{
+            fontFamily: "'Barlow Condensed', sans-serif",
+            fontWeight: 900,
+            fontSize: "clamp(2rem, 4vw, 3.5rem)",
+            color: "white",
+            marginBottom: "2rem",
+            lineHeight: 0.95,
+          }}
+        >
+          LET'S TALK SCOPE.
+        </h2>
+        <Link
+          href="/contact"
+          style={{
+            display: "inline-block",
+            background: "oklch(0.63 0.18 38)",
+            color: "white",
+            textDecoration: "none",
+            fontFamily: "'Barlow Condensed', sans-serif",
+            fontWeight: 700,
+            fontSize: "0.82rem",
+            letterSpacing: "0.16em",
+            padding: "1rem 2.5rem",
+          }}
+        >
+          GET IN TOUCH {"→"}
+        </Link>
+      </section>
+
+      <style>{`
+        .cat-tile:hover .cat-img {
+          transform: scale(1.05);
+          filter: brightness(0.65) saturate(0.9) !important;
+        }
+        .cat-tile:hover .cat-cta {
+          gap: 0.85rem !important;
+        }
+        @media (max-width: 768px) {
+          .cat-tile {
+            grid-template-columns: 1fr !important;
+          }
+          .cat-tile > div {
+            order: unset !important;
+          }
+          .cat-tile > div:first-child {
+            min-height: 260px;
+          }
+        }
+      `}</style>
     </div>
   );
 }
