@@ -48,10 +48,12 @@ export default function SiteNav() {
         fontFamily: "'Barlow Condensed', sans-serif",
       }}>
         {/* Logo */}
-        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", flexShrink: 0 }}>
-          <div style={{ width: "9px", height: "9px", borderRadius: "50%", background: "oklch(0.63 0.18 38)", flexShrink: 0 }} />
-          <span style={{ fontWeight: 900, fontSize: "1.6rem", color: "white", letterSpacing: "-0.02em", lineHeight: 1 }}>specific.</span>
-          <span style={{ fontWeight: 400, fontSize: "0.6rem", letterSpacing: "0.18em", color: "oklch(0.38 0.02 240)", marginLeft: "0.4rem", borderLeft: "1px solid oklch(0.20 0.02 240)", paddingLeft: "0.6rem", display: "none" }} className="brand-sub">NZ</span>
+        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", flexShrink: 0 }}>
+          <img
+            src="/manus-storage/specific_gradient_logo_d001f3df.webp"
+            alt="Specific."
+            style={{ height: "30px", width: "auto", display: "block" }}
+          />
         </Link>
 
         {/* Desktop links */}
