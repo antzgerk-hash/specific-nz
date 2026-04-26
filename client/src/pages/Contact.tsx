@@ -22,6 +22,33 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Build mailto link with form data
+    const projectTypeLabels: Record<string, string> = {
+      ffe: "FF&E Delivery & Installation",
+      installation: "Commercial Installations",
+      relocation: "Corporate Relocation",
+      logistics: "Logistics Management",
+      other: "Other",
+    };
+
+    const subject = `Website Enquiry — ${formData.name}${formData.company ? ` (${formData.company})` : ""}`;
+    const body = [
+      `Name: ${formData.name}`,
+      formData.company ? `Company: ${formData.company}` : "",
+      `Email: ${formData.email}`,
+      formData.phone ? `Phone: ${formData.phone}` : "",
+      formData.projectType ? `Project Type: ${projectTypeLabels[formData.projectType] || formData.projectType}` : "",
+      "",
+      "Project Details:",
+      formData.message,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    const mailtoUrl = `mailto:info@specificgroup.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+
     setSubmitted(true);
   };
 
@@ -128,6 +155,21 @@ export default function Contact() {
                     </a>
                   </p>
                 </div>
+                {/* General enquiries email */}
+                <div style={{ paddingTop: "0.5rem", borderTop: "1px solid oklch(1 0 0 / 0.08)" }}>
+                  <p className="section-label mb-3">General Enquiries</p>
+                  <a
+                    href="mailto:info@specificgroup.com.au"
+                    style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "0.9375rem",
+                      color: "oklch(0.63 0.18 38)",
+                      fontWeight: 600,
+                    }}
+                  >
+                    info@specificgroup.com.au
+                  </a>
+                </div>
                 {/* NZBN */}
                 <div style={{ paddingTop: "0.5rem", borderTop: "1px solid oklch(1 0 0 / 0.08)" }}>
                   <p className="section-label mb-3">Company Details</p>
@@ -156,15 +198,6 @@ export default function Contact() {
                         </div>
                       </div>
                     ))}
-                  </div>
-                </div>
-
-                {/* Operations AI */}
-                <div style={{ paddingTop: "0.5rem", borderTop: "1px solid oklch(1 0 0 / 0.08)" }}>
-                  <p className="section-label mb-3">Operations Platform</p>
-                  <div style={{ background: "oklch(0.20 0.04 240)", borderLeft: "3px solid oklch(0.60 0.12 185)", padding: "0.875rem 1rem" }}>
-                    <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "1rem", color: "white", letterSpacing: "0.04em", marginBottom: "0.35rem" }}>Operations AI Database</p>
-                    <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", color: "oklch(0.65 0.025 240)", lineHeight: 1.6 }}>Specific NZ runs a proprietary AI-powered operations database — enabling real-time project tracking, asset management, and logistics coordination across all NZ sites.</p>
                   </div>
                 </div>
 
@@ -198,10 +231,13 @@ export default function Contact() {
                       marginBottom: "1rem",
                     }}
                   >
-                    MESSAGE RECEIVED
+                    ENQUIRY SENT
                   </h3>
                   <p style={{ fontFamily: "'DM Sans', sans-serif", color: "oklch(0.65 0.025 240)", lineHeight: 1.65 }}>
-                    Thank you for getting in touch. A member of the Specific NZ team will respond to your enquiry within one business day.
+                    Your email client should have opened with your enquiry details. If it didn't, please email us directly at{" "}
+                    <a href="mailto:info@specificgroup.com.au" style={{ color: "oklch(0.63 0.18 38)", fontWeight: 600 }}>
+                      info@specificgroup.com.au
+                    </a>
                   </p>
                 </div>
               ) : (

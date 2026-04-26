@@ -16,11 +16,11 @@ const NAV_LINKS = [
 
 const SERVICE_LINKS = [
   { href: "/relocations", label: "Office Relocations" },
-  { href: "/warehousing", label: "Warehousing & Storage" },
-  { href: "/ffe-installations", label: "FF&E Installations" },
-  { href: "/joinery", label: "Joinery & Fitout" },
-  { href: "/transport", label: "Transport & Logistics" },
-  { href: "/av-art", label: "AV & Art Installation" },
+  { href: "/projects/warehousing", label: "Warehousing & Storage" },
+  { href: "/projects/ffe", label: "FF&E Installations" },
+  { href: "/projects/joinery", label: "Joinery & Fitout" },
+  { href: "/projects/special", label: "Special Projects" },
+  { href: "/projects/av", label: "AV & Art Installation" },
 ];
 
 export default function SiteNav() {

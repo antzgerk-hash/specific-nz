@@ -73,8 +73,8 @@ export default function Footer() {
               <li style={{ fontWeight: 600, color: "white", paddingTop: "0.25rem" }}>Otago / Southland</li>
               <li style={{ color: "oklch(0.62 0.025 240)" }}>57 Ellis Street, Otautau</li>
               <li style={{ paddingTop: "0.5rem" }}>
-                <a href="mailto:nz@specificgroup.com" className="transition-colors" style={{ color: "oklch(0.63 0.18 38)" }}>
-                  nz@specificgroup.com
+                <a href="mailto:info@specificgroup.com.au" className="transition-colors" style={{ color: "oklch(0.63 0.18 38)" }}>
+                  info@specificgroup.com.au
                 </a>
               </li>
             </ul>
