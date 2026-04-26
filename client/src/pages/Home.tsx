@@ -5,6 +5,7 @@
  * Colours: oklch(0.16 0.035 240) navy | oklch(0.63 0.18 38) orange | oklch(0.60 0.12 185) teal
  * Type: Barlow Condensed 800 headings | DM Sans body
  */
+import { useAuth } from "@/_core/hooks/useAuth";
 import { Link } from "wouter";
 import { useEffect, useRef, useState } from "react";
 import Navigation from "@/components/Navigation";
@@ -26,9 +27,9 @@ function useInView(threshold = 0.15) {
 
 const stats = [
   { value: "2,740+", label: "FF&E Items Installed", sub: "One NZ Stadium" },
-  { value: "519", label: "Hotel Rooms Fitted", sub: "Auckland CBD alone" },
+  { value: "4,000+", label: "Hotel Rooms Per Year", sub: "Across The Group" },
   { value: "4", label: "NZ Locations", sub: "AKL · CHC · Otago · Southland" },
-  { value: "15+", label: "Years Experience", sub: "Specific Group" },
+  { value: "100+", label: "Years Experience", sub: "Specific Group" },
 ];
 
 const projects = [
@@ -37,7 +38,8 @@ const projects = [
     sub: "Te Kaha, Christchurch",
     tag: "FF&E · Stadium",
     stat: "2,740+ items",
-    img: "/manus-storage/Screenshot2026-04-01015901_ccc7dbd2.png",
+    img: "/manus-storage/stadium_seats_completed_87639d75.png",
+    imgPosition: "center 30%",
     href: "/projects",
     accent: "oklch(0.63 0.18 38)",
   },
@@ -55,13 +57,18 @@ const projects = [
     sub: "Queenstown",
     tag: "Logistics · High-Altitude",
     stat: "Crane-lift install",
-    img: "/manus-storage/skyline_terrace_crane_e82076ee.webp",
+    img: "/manus-storage/skyline_dining_complete_cf691fb4.webp",
+    imgPosition: "center center",
     href: "/projects",
     accent: "oklch(0.63 0.18 38)",
   },
 ];
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const statsSection = useInView();
   const projectsSection = useInView(0.1);
   const servicesSection = useInView(0.1);
@@ -387,6 +394,7 @@ export default function Home() {
                     className="w-full h-full object-cover"
                     style={{
                       transition: "transform 0.7s ease",
+                      objectPosition: (p as any).imgPosition || "center center",
                     }}
                   />
                   {/* Dark overlay */}

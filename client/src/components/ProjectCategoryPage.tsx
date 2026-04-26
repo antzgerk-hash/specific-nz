@@ -5,6 +5,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import SiteNav from "@/components/SiteNav";
+import { trpc } from "@/lib/trpc";
 
 export interface ProjectItem {
   id: string;
@@ -561,6 +562,9 @@ export default function ProjectCategoryPage({
         </div>
       </section>
 
+      {/* ─── UPLOADED GALLERY PHOTOS ─── */}
+      <UploadedGallery categoryKey={categoryNum === "01" ? "ffe" : categoryNum === "02" ? "joinery" : categoryNum === "03" ? "relocations" : categoryNum === "04" ? "special" : categoryNum === "05" ? "av" : "warehousing"} />
+
       <style>{`
         @media (max-width: 900px) {
           .cat-grid {
@@ -569,5 +573,98 @@ export default function ProjectCategoryPage({
         }
       `}</style>
     </div>
+  );
+}
+
+// ─── Uploaded Gallery Section ──────────────────────────────────────────────
+function UploadedGallery({ categoryKey }: { categoryKey: string }) {
+  const { data: media, isLoading } = trpc.projectMedia.listByCategory.useQuery({ category: categoryKey });
+  const [lightbox, setLightbox] = useState<string | null>(null);
+
+  if (isLoading || !media || media.length === 0) return null;
+
+  return (
+    <section
+      style={{
+        padding: "clamp(2rem, 4vw, 4rem) clamp(1.5rem, 6vw, 6rem)",
+        borderTop: "1px solid oklch(0.16 0.02 240)",
+      }}
+    >
+      <p
+        style={{
+          fontFamily: "'Barlow Condensed', sans-serif",
+          fontWeight: 700,
+          fontSize: "0.65rem",
+          letterSpacing: "0.2em",
+          color: "oklch(0.63 0.18 38)",
+          marginBottom: "1.25rem",
+          textTransform: "uppercase",
+        }}
+      >
+        Project Gallery — {media.length} Photo{media.length !== 1 ? "s" : ""}
+      </p>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+          gap: "0.75rem",
+        }}
+      >
+        {media.map((item) => (
+          <div
+            key={item.id}
+            onClick={() => setLightbox(item.url)}
+            style={{ cursor: "pointer", position: "relative", overflow: "hidden", background: "oklch(0.12 0.02 240)" }}
+          >
+            <img
+              src={item.url}
+              alt={item.caption ?? item.projectName ?? "Project photo"}
+              style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", display: "block", transition: "transform 0.4s ease" }}
+              onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.04)")}
+              onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+            />
+            {(item.caption || item.projectName) && (
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  padding: "0.5rem 0.75rem",
+                  background: "linear-gradient(to top, oklch(0.08 0.01 240 / 0.9) 0%, transparent 100%)",
+                }}
+              >
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.72rem", color: "white", fontWeight: 600 }}>
+                  {item.caption ?? item.projectName}
+                </p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div
+          onClick={() => setLightbox(null)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "oklch(0.05 0.01 240 / 0.95)",
+            zIndex: 9999,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "zoom-out",
+          }}
+        >
+          <img
+            src={lightbox}
+            alt="Full size"
+            style={{ maxWidth: "90vw", maxHeight: "90vh", objectFit: "contain" }}
+          />
+        </div>
+      )}
+    </section>
   );
 }

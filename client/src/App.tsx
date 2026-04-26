@@ -19,8 +19,9 @@ import RelocationsProjectPage from "./pages/projects/RelocationsProjectPage";
 import SpecialPage from "./pages/projects/SpecialPage";
 import AVPage from "./pages/projects/AVPage";
 import WarehousingPage from "./pages/projects/WarehousingPage";
-
+import AdminMedia from "./pages/AdminMedia";
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -36,6 +37,7 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/group" component={Group} />
       <Route path="/relocations" component={Relocations} />
+      <Route path="/admin/media" component={AdminMedia} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
