@@ -4,6 +4,7 @@
  */
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
+import { useAuth } from "@/_core/hooks/useAuth";
 
 const NAV_LINKS = [
   { href: "/", label: "HOME" },
@@ -26,6 +27,8 @@ export default function SiteNav() {
   const [location] = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const { user } = useAuth();
+  const isAdmin = user?.role === "admin";
 
   const isActive = (href: string) => {
     if (href === "/") return location === "/";
@@ -124,6 +127,22 @@ export default function SiteNav() {
               </Link>
             );
           })}
+          {isAdmin && (
+            <Link href="/admin/media" style={{
+              color: "oklch(0.60 0.12 185)",
+              textDecoration: "none",
+              fontSize: "0.65rem",
+              fontWeight: 700,
+              letterSpacing: "0.12em",
+              padding: "0.4rem 0.75rem",
+              border: "1px solid oklch(0.60 0.12 185)",
+              marginLeft: "0.25rem",
+              transition: "all 0.2s",
+              display: "inline-block",
+            }}>
+              ADMIN
+            </Link>
+          )}
           <Link href="/contact" style={{
             background: "oklch(0.63 0.18 38)",
             color: "white",

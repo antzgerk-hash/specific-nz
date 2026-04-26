@@ -10,5 +10,5 @@
 - [x] Wire ProjectCategoryPage to display uploaded photos from DB with lightbox
 - [x] Add /admin/media route to App.tsx (admin-only guard)
 - [x] Write vitest tests for all media/documents procedures (9 tests passing)
-- [ ] Add public document download section to About or Services page
-- [ ] Add admin link in SiteNav for logged-in admin users
+- [x] Add public document download section to About page (grouped by tag, download links)
+- [x] Add admin link in SiteNav for logged-in admin users

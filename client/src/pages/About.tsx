@@ -7,6 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
 import { useEffect, useRef, useState } from "react";
+import { trpc } from "@/lib/trpc";
 
 function useInView(threshold = 0.12) {
   const ref = useRef<HTMLDivElement>(null);
@@ -659,7 +660,136 @@ export default function About() {
         </div>
       </section>
 
+      {/* ─── PUBLIC DOCUMENTS ─── */}
+      <PublicDocuments />
+
       <Footer />
     </div>
+  );
+}
+
+// ─── Public Document Download Section ──────────────────────────────────────
+function PublicDocuments() {
+  const { data: docs, isLoading } = trpc.documents.listPublic.useQuery();
+
+  if (isLoading || !docs || docs.length === 0) return null;
+
+  // Group by tag
+  const grouped = docs.reduce<Record<string, typeof docs>>((acc, doc) => {
+    const tag = doc.tag ?? "General";
+    if (!acc[tag]) acc[tag] = [];
+    acc[tag].push(doc);
+    return acc;
+  }, {});
+
+  return (
+    <section
+      style={{
+        background: "oklch(0.11 0.03 240)",
+        borderTop: "1px solid oklch(0.16 0.02 240)",
+        padding: "clamp(3rem, 6vw, 5rem) clamp(1.5rem, 6vw, 6rem)",
+      }}
+    >
+      <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+        <p
+          style={{
+            fontFamily: "'DM Sans', sans-serif",
+            fontSize: "0.65rem",
+            letterSpacing: "0.2em",
+            color: "oklch(0.63 0.18 38)",
+            fontWeight: 600,
+            textTransform: "uppercase",
+            marginBottom: "0.75rem",
+          }}
+        >
+          Resources
+        </p>
+        <h2
+          style={{
+            fontFamily: "'Barlow Condensed', sans-serif",
+            fontWeight: 800,
+            fontSize: "clamp(2rem, 4vw, 3rem)",
+            color: "white",
+            lineHeight: 0.95,
+            marginBottom: "2.5rem",
+          }}
+        >
+          COMPANY
+          <br />
+          <span style={{ color: "oklch(0.60 0.12 185)" }}>DOCUMENTS.</span>
+        </h2>
+
+        {Object.entries(grouped).map(([tag, items]) => (
+          <div key={tag} style={{ marginBottom: "2rem" }}>
+            <p
+              style={{
+                fontFamily: "'Barlow Condensed', sans-serif",
+                fontWeight: 700,
+                fontSize: "0.7rem",
+                letterSpacing: "0.15em",
+                color: "oklch(0.55 0.025 240)",
+                textTransform: "uppercase",
+                marginBottom: "0.75rem",
+                borderBottom: "1px solid oklch(0.16 0.02 240)",
+                paddingBottom: "0.4rem",
+              }}
+            >
+              {tag}
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              {items.map((doc) => (
+                <a
+                  key={doc.id}
+                  href={doc.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "1rem",
+                    padding: "0.85rem 1.25rem",
+                    background: "oklch(0.14 0.025 240)",
+                    border: "1px solid oklch(0.18 0.02 240)",
+                    textDecoration: "none",
+                    transition: "border-color 0.2s, background 0.2s",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "oklch(0.63 0.18 38)";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "oklch(0.16 0.03 240)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "oklch(0.18 0.02 240)";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "oklch(0.14 0.025 240)";
+                  }}
+                >
+                  {/* File icon */}
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="oklch(0.63 0.18 38)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                  </svg>
+                  <span
+                    style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "0.875rem",
+                      fontWeight: 600,
+                      color: "white",
+                      flex: 1,
+                    }}
+                  >
+                    {doc.title}
+                  </span>
+                  {/* Download arrow */}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="oklch(0.50 0.02 240)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
