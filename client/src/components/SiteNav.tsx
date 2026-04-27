@@ -53,7 +53,7 @@ export default function SiteNav() {
         {/* Logo */}
         <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", flexShrink: 0 }}>
           <img
-            src="/manus-storage/specific_gradient_logo_d001f3df.webp"
+            src="/manus-storage/specific_gradient_logo_85c53376.webp"
             alt="Specific."
             style={{ height: "30px", width: "auto", display: "block" }}
           />
