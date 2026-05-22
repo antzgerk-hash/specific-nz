@@ -14,8 +14,12 @@ const projects: ProjectItem[] = [
     scope: "FF&E Delivery & Installation — $683M Stadium",
     description:
       "Specific NZ was engaged by Statement iD and BESIX Watpac to deliver and install the full FF&E scope across the $683 million One NZ Stadium (Te Kaha) in Christchurch — New Zealand's most significant new public venue in a generation. The project required the coordination of over 2,740 individual items across corporate suites, operational areas, and public spaces, delivered across 55+ truckloads over more than 20 site days. Items included workstations, electricals, refrigeration units, televisions, and specialist joinery. Specific NZ managed the full logistics chain from receipt and QC through to floor-by-floor installation, working to a hard opening deadline for the Super Rugby Pacific Super Round.",
-    hero: "/manus-storage/Screenshot2026-04-01020026_5a3c5297.png",
+    hero: "/manus-storage/graphic1_facebook_hero_v5_b54e07a4.jpg",
     images: [
+      "/manus-storage/graphic1_facebook_hero_v5_b54e07a4.jpg",
+      "/manus-storage/graphic2_instagram_post_v4_b1e76840.jpg",
+      "/manus-storage/graphic3_instagram_story_v4_18b67260.jpg",
+      "/manus-storage/endcard_1920x1080_349e9e00.jpg",
       "/manus-storage/Screenshot2026-04-01020026_5a3c5297.png",
       "/manus-storage/Screenshot2026-04-01015901_ccc7dbd2.png",
       "/manus-storage/Screenshot2026-04-01020119_15a48cbb.png",
