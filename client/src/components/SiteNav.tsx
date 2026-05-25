@@ -143,6 +143,24 @@ export default function SiteNav() {
               ADMIN
             </Link>
           )}
+          {/* Specific Australia cross-link */}
+          <a href="https://specific.australia.specgroup.ai" target="_blank" rel="noopener noreferrer" style={{
+            color: "oklch(0.60 0.12 185)",
+            textDecoration: "none",
+            fontSize: "0.65rem",
+            fontWeight: 700,
+            letterSpacing: "0.12em",
+            padding: "0.4rem 0.75rem",
+            border: "1px solid oklch(0.35 0.08 185)",
+            marginLeft: "0.25rem",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.3rem",
+            transition: "all 0.2s",
+          }}>
+            AU SITE
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
           <Link href="/contact" style={{
             background: "oklch(0.63 0.18 38)",
             color: "white",
@@ -215,6 +233,18 @@ export default function SiteNav() {
               )}
             </div>
           ))}
+          <a href="https://specific.australia.specgroup.ai" target="_blank" rel="noopener noreferrer" style={{
+            display: "block",
+            color: "oklch(0.60 0.12 185)",
+            textDecoration: "none",
+            fontSize: "1rem",
+            fontWeight: 700,
+            letterSpacing: "0.08em",
+            padding: "0.75rem 0",
+            borderBottom: "1px solid oklch(0.14 0.02 240)",
+          }}>
+            SPECIFIC AUSTRALIA ↗
+          </a>
           <Link href="/contact" onClick={() => setMobileOpen(false)} style={{
             display: "block",
             background: "oklch(0.63 0.18 38)",

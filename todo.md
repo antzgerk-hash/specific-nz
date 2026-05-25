@@ -12,3 +12,10 @@
 - [x] Write vitest tests for all media/documents procedures (9 tests passing)
 - [x] Add public document download section to About page (grouped by tag, download links)
 - [x] Add admin link in SiteNav for logged-in admin users
+
+## Group Structure Restructure
+- [x] Rewrite The Group page — NZ as Head Office, AU as sister operation with live link
+- [x] Add "Specific Australia" cross-link in SiteNav (visible on all pages)
+- [x] Add "Specific Australia" cross-link in Footer (Group page footer)
+- [x] Update home page to reinforce NZ as primary entity for NZ clients
+- [x] Update About page to position NZ as Head Office for NZ clients

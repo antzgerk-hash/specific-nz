@@ -129,6 +129,29 @@ export default function Navigation() {
               {link.label}
             </Link>
           ))}
+          <a
+            href="https://specific.australia.specgroup.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "oklch(0.60 0.12 185)",
+              fontFamily: "'DM Sans', sans-serif",
+              fontWeight: 600,
+              fontSize: "0.72rem",
+              letterSpacing: "0.10em",
+              textTransform: "uppercase" as const,
+              border: "1px solid oklch(0.35 0.08 185)",
+              padding: "0.5rem 1rem",
+              whiteSpace: "nowrap" as const,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.3rem",
+              transition: "color 0.2s, border-color 0.2s",
+            }}
+          >
+            AU Site
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
           <Link
             href="/contact"
             style={{
@@ -211,6 +234,18 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href="https://specific.australia.specgroup.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-base font-medium py-1"
+              style={{
+                color: "oklch(0.60 0.12 185)",
+                fontFamily: "'DM Sans', sans-serif",
+              }}
+            >
+              Specific Australia ↗
+            </a>
             <Link
               href="/contact"
               className="mt-2 text-center py-3"
