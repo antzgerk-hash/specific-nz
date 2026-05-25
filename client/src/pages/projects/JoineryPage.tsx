@@ -38,6 +38,7 @@ const projects: ProjectItem[] = [
     hero: "/manus-storage/qt_queenstown_room_915035f3.png",
     images: [
       "/manus-storage/qt_queenstown_room_915035f3.png",
+      "/manus-storage/tekaha_joinery_suite_d9d1a5bd.webp",
     ],
     stats: [
       { value: "QT", label: "Brand Standard" },

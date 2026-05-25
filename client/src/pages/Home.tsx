@@ -38,8 +38,8 @@ const projects = [
     sub: "Te Kaha, Christchurch",
     tag: "FF&E · Stadium",
     stat: "2,740+ items",
-    img: "/manus-storage/stadium_seats_completed_87639d75.png",
-    imgPosition: "center 30%",
+    img: "/manus-storage/hero_stadium_install_4605699c.jpg",
+    imgPosition: "center 40%",
     href: "/projects",
     accent: "oklch(0.63 0.18 38)",
   },
@@ -48,7 +48,7 @@ const projects = [
     sub: "51 Albert Street, CBD",
     tag: "FF&E · Hospitality",
     stat: "225 rooms",
-    img: "/manus-storage/Screenshot2026-04-02224143_0d61bee1.png",
+    img: "/manus-storage/hotel_ffe_install_a6b1e4fd.jpg",
     href: "/projects",
     accent: "oklch(0.60 0.12 185)",
   },
@@ -57,7 +57,7 @@ const projects = [
     sub: "Queenstown",
     tag: "Logistics · High-Altitude",
     stat: "Crane-lift install",
-    img: "/manus-storage/skyline_dining_complete_cf691fb4.webp",
+    img: "/manus-storage/skyline_restaurant_f044e768.webp",
     imgPosition: "center center",
     href: "/projects",
     accent: "oklch(0.63 0.18 38)",
@@ -1030,58 +1030,74 @@ export default function Home() {
 
             {/* Right — brand-colour design panel: silver fern + NZ values */}
             <div className="flex flex-col gap-4 py-8">
-              {/* Main graphic panel — silver fern silhouette + NZ values */}
+              {/* Main graphic panel — Aotearoa NZ values — PREMIUM REDESIGN */}
               <div
                 className="relative overflow-hidden flex-1"
                 style={{
-                  background: "linear-gradient(150deg, #0a2818 0%, #0d3320 50%, oklch(0.14 0.04 240) 100%)",
-                  borderLeft: "3px solid #2d7a4f",
-                  minHeight: "260px",
+                  background: "linear-gradient(135deg, oklch(0.10 0.06 155) 0%, oklch(0.13 0.08 160) 40%, oklch(0.09 0.04 200) 100%)",
+                  borderLeft: "4px solid oklch(0.55 0.18 145)",
+                  borderTop: "1px solid oklch(0.25 0.08 155)",
+                  borderRight: "1px solid oklch(0.18 0.04 200)",
+                  borderBottom: "1px solid oklch(0.18 0.04 200)",
+                  minHeight: "280px",
+                  boxShadow: "inset 0 0 60px oklch(0.08 0.05 155 / 0.6)",
                 }}
               >
-                {/* Silver fern — All Blacks silhouette style, right-side watermark */}
+                {/* Radial glow — top-left */}
+                <div style={{ position: "absolute", top: "-40px", left: "-20px", width: "220px", height: "220px", borderRadius: "50%", background: "radial-gradient(circle, oklch(0.40 0.18 145 / 0.18) 0%, transparent 70%)", pointerEvents: "none" }} />
+                {/* Silver fern — bold, high-contrast, large */}
                 <svg
                   viewBox="0 0 200 340"
-                  className="absolute right-[-10px] top-[50%] -translate-y-1/2 opacity-[0.18] pointer-events-none"
-                  style={{ height: "88%", width: "auto" }}
+                  style={{ position: "absolute", right: "-8px", top: "50%", transform: "translateY(-50%)", height: "92%", width: "auto", opacity: 0.38, pointerEvents: "none" }}
                   aria-hidden="true"
                 >
-                  <path d="M50 330 C58 295 68 255 80 215 C92 175 103 138 114 104 C125 70 136 40 146 12" fill="none" stroke="white" strokeWidth="4.5" strokeLinecap="round" />
+                  <defs>
+                    <linearGradient id="fernGrad" x1="0" y1="1" x2="0" y2="0">
+                      <stop offset="0%" stopColor="oklch(0.65 0.22 145)" stopOpacity="0.6" />
+                      <stop offset="100%" stopColor="white" stopOpacity="0.9" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M50 330 C58 295 68 255 80 215 C92 175 103 138 114 104 C125 70 136 40 146 12" fill="none" stroke="url(#fernGrad)" strokeWidth="5" strokeLinecap="round" />
                   {[
-                    { t:0.95,r:18,l:10,a:52 }, { t:0.89,r:26,l:15,a:55 }, { t:0.83,r:36,l:20,a:58 },
-                    { t:0.77,r:46,l:26,a:60 }, { t:0.71,r:56,l:32,a:62 }, { t:0.65,r:64,l:36,a:63 },
-                    { t:0.59,r:70,l:40,a:64 }, { t:0.53,r:74,l:42,a:65 }, { t:0.47,r:76,l:42,a:65 },
-                    { t:0.41,r:74,l:40,a:65 }, { t:0.35,r:68,l:36,a:64 }, { t:0.29,r:60,l:30,a:63 },
-                    { t:0.23,r:50,l:24,a:62 }, { t:0.17,r:38,l:16,a:60 }, { t:0.11,r:26,l:10,a:57 },
-                    { t:0.05,r:14,l:5, a:53 },
+                    { t:0.95,r:20,l:11,a:52 }, { t:0.89,r:30,l:17,a:55 }, { t:0.83,r:42,l:23,a:58 },
+                    { t:0.77,r:54,l:30,a:60 }, { t:0.71,r:64,l:36,a:62 }, { t:0.65,r:72,l:40,a:63 },
+                    { t:0.59,r:78,l:44,a:64 }, { t:0.53,r:82,l:46,a:65 }, { t:0.47,r:84,l:46,a:65 },
+                    { t:0.41,r:82,l:44,a:65 }, { t:0.35,r:76,l:40,a:64 }, { t:0.29,r:68,l:34,a:63 },
+                    { t:0.23,r:56,l:27,a:62 }, { t:0.17,r:42,l:18,a:60 }, { t:0.11,r:28,l:11,a:57 },
+                    { t:0.05,r:15,l:6, a:53 },
                   ].map((f,i) => {
                     const sx = 50 + f.t * 96;
                     const sy = 330 - f.t * 318;
                     const rad = (f.a * Math.PI) / 180;
                     return (
                       <g key={i}>
-                        <line x1={sx} y1={sy} x2={sx + f.r * Math.cos(rad)} y2={sy - f.r * Math.sin(rad)} stroke="white" strokeWidth="3" strokeLinecap="round" />
-                        <line x1={sx} y1={sy} x2={sx - f.l * Math.cos(rad)} y2={sy - f.l * Math.sin(rad)} stroke="white" strokeWidth="2.2" strokeLinecap="round" />
+                        <line x1={sx} y1={sy} x2={sx + f.r * Math.cos(rad)} y2={sy - f.r * Math.sin(rad)} stroke="url(#fernGrad)" strokeWidth="3.5" strokeLinecap="round" />
+                        <line x1={sx} y1={sy} x2={sx - f.l * Math.cos(rad)} y2={sy - f.l * Math.sin(rad)} stroke="url(#fernGrad)" strokeWidth="2.5" strokeLinecap="round" />
                       </g>
                     );
                   })}
                 </svg>
-                <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                {/* Content */}
+                <div style={{ position: "relative", zIndex: 10, padding: "2rem", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                   <div>
-                    <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: "clamp(1.8rem, 3vw, 2.6rem)", color: "#4ade80", lineHeight: 1, marginBottom: "0.5rem", letterSpacing: "0.02em" }}>AOTEAROA</p>
-                    <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "1rem", color: "white", letterSpacing: "0.12em", opacity: 0.6 }}>NEW ZEALAND</p>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.6rem" }}>
+                      <div style={{ width: "24px", height: "2px", background: "oklch(0.65 0.22 145)" }} />
+                      <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.22em", color: "oklch(0.65 0.22 145)" }}>PROUDLY</span>
+                    </div>
+                    <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: "clamp(2.2rem, 4vw, 3.2rem)", color: "white", lineHeight: 0.9, marginBottom: "0.35rem", letterSpacing: "-0.01em", textShadow: "0 2px 20px oklch(0.30 0.12 155 / 0.8)" }}>AOTEAROA</p>
+                    <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, fontSize: "0.85rem", color: "oklch(0.65 0.22 145)", letterSpacing: "0.18em" }}>NEW ZEALAND</p>
                   </div>
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginTop: "2rem" }}>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", marginTop: "1.75rem" }}>
                     {[
                       { nz: "Manaakitanga", en: "Care & Respect" },
                       { nz: "Kotahitanga", en: "Unity & Purpose" },
                       { nz: "Tūhono", en: "Connection" },
                     ].map((v) => (
-                      <div key={v.nz} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                        <div style={{ width: "3px", height: "28px", background: "#2d7a4f", flexShrink: 0 }} />
+                      <div key={v.nz} style={{ display: "flex", alignItems: "center", gap: "0.875rem" }}>
+                        <div style={{ width: "3px", height: "32px", background: "linear-gradient(to bottom, oklch(0.65 0.22 145), oklch(0.45 0.15 145))", flexShrink: 0, borderRadius: "2px" }} />
                         <div>
-                          <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.95rem", color: "white", letterSpacing: "0.06em" }}>{v.nz}</p>
-                          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.72rem", color: "oklch(0.55 0.025 240)", letterSpacing: "0.04em" }}>{v.en}</p>
+                          <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: "1.05rem", color: "white", letterSpacing: "0.04em", lineHeight: 1.1 }}>{v.nz}</p>
+                          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.72rem", color: "oklch(0.60 0.10 155)", letterSpacing: "0.06em", marginTop: "0.1rem" }}>{v.en}</p>
                         </div>
                       </div>
                     ))}

@@ -19,3 +19,11 @@
 - [x] Add "Specific Australia" cross-link in Footer (Group page footer)
 - [x] Update home page to reinforce NZ as primary entity for NZ clients
 - [x] Update About page to position NZ as Head Office for NZ clients
+
+## Graphics Upgrade — Full Site Audit
+- [ ] Fix Aotearoa values card on Group page — replace flat green card with premium design
+- [ ] Upgrade Group page — Australia card graphic
+- [ ] Audit and upgrade Home page hero and stats section graphics
+- [ ] Audit and upgrade About page graphics
+- [ ] Audit and upgrade Services page graphics
+- [ ] Ensure all project category pages have strong hero images
