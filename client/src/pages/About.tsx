@@ -57,7 +57,7 @@ export default function About() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/manus-storage/specific_nz_truck_775e2899.webp')",
+            backgroundImage: "url('/manus-storage/specific_nz_truck_c874acf8.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: 0.12,
@@ -160,7 +160,7 @@ export default function About() {
             }}
           >
             <img
-              src="/manus-storage/skyline_terrace_crane_e82076ee.webp"
+              src="/manus-storage/skyline_terrace_crane_9c818d4f.webp"
               alt="Specific NZ on site — Skyline Gondola Queenstown"
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -570,7 +570,7 @@ export default function About() {
               }}
             >
               <img
-                src="/manus-storage/fleet_trucks_e875af64.png"
+                src="/manus-storage/fleet_trucks_87f4acd9.png"
                 alt="Specific NZ — Auckland warehouse and fleet"
                 className="w-full object-cover"
                 style={{ aspectRatio: "16/9" }}

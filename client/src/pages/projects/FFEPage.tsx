@@ -14,15 +14,15 @@ const projects: ProjectItem[] = [
     scope: "Full FF&E Delivery & Installation — 225 rooms, 27 floors",
     description:
       "Specific NZ delivered the full FF&E installation scope for Hotel Indigo Auckland — IHG's luxury boutique lifestyle brand making its New Zealand debut at 51 Albert Street, Midtown Auckland. The 225-room hotel spans 27 floors of a 41-storey tower, with the design concept rooted in the site's 1912 motor house heritage. Specific NZ managed the precision installation of complete room packages across all accommodation floors — beds, soft furnishings, joinery, desks, automotive-inspired lighting fixtures, pegboard shelving, and all loose FF&E — to IHG's exacting brand standards. Delivered for the official opening on 7 April 2025.",
-    hero: "/manus-storage/Screenshot2026-04-02224143_0d61bee1.png",
+    hero: "/manus-storage/Screenshot2026-04-02224143_0f085291.png",
     images: [
-      "/manus-storage/Screenshot2026-04-02224143_0d61bee1.png",
-      "/manus-storage/indigo_exterior_05d26789.png",
-      "/manus-storage/indigo_room1_4837c19d.jpg",
-      "/manus-storage/indigo_room2_9aeecf11.jpg",
-      "/manus-storage/indigo_room3_26cf3ca0.jpg",
-      "/manus-storage/indigo_room4_962c1606.jpg",
-      "/manus-storage/indigo_room5_1e1cb1ed.jpg",
+      "/manus-storage/Screenshot2026-04-02224143_0f085291.png",
+      "/manus-storage/indigo_exterior_2c60d47b.png",
+      "/manus-storage/indigo_room1_a06f1159.jpg",
+      "/manus-storage/indigo_room2_1e12e341.jpg",
+      "/manus-storage/indigo_room3_18ec82f6.jpg",
+      "/manus-storage/indigo_room4_4adcf44b.jpg",
+      "/manus-storage/indigo_room5_7703a6d8.jpg",
     ],
     stats: [
       { value: "225", label: "Guest Rooms Fitted" },
@@ -66,11 +66,11 @@ const projects: ProjectItem[] = [
     scope: "FF&E Delivery & Installation — 453 rooms",
     description:
       "Specific NZ delivered FF&E installation services for Grand Millennium Auckland — one of Auckland's premier 5-star hotel properties. The 453-room, 12-storey atrium-styled hotel at 71 Mayoral Drive is a Qualmark 5-star graded establishment and one of the city's landmark hospitality venues. Specific NZ coordinated the delivery and precision installation of room and public area FF&E to programme, working within the operational constraints of a live hotel environment.",
-    hero: "/manus-storage/grand_millennium_exterior_9787ede3.png",
+    hero: "/manus-storage/grand_millennium_exterior_b262ed44.png",
     images: [
-      "/manus-storage/grand_millennium_exterior_9787ede3.png",
-      "/manus-storage/grand_millennium_room1_7fc8a5f2.jpg",
-      "/manus-storage/grand_millennium_room2_89ea3763.jpg",
+      "/manus-storage/grand_millennium_exterior_b262ed44.png",
+      "/manus-storage/grand_millennium_room1_68ec7725.jpg",
+      "/manus-storage/grand_millennium_room2_49cc013f.jpg",
     ],
     stats: [
       { value: "453", label: "Guest Rooms" },
@@ -87,11 +87,11 @@ const projects: ProjectItem[] = [
     scope: "Full FF&E Delivery & Installation — 201 rooms",
     description:
       "Specific NZ delivered the full FF&E installation scope for Voco Auckland City Centre — New Zealand's first Voco branded property and part of the country's first dual-brand hotel development alongside Holiday Inn Express. The 201-room hotel features sustainable bedding, smart in-room technology, curated artworks, and stylish marble bathrooms. Specific NZ managed precision installation of complete room packages across all floors to IHG's exacting brand standards.",
-    hero: "/manus-storage/voco_auckland_room1_3f0b217f.jpg",
+    hero: "/manus-storage/voco_auckland_room1_b885e8e0.jpg",
     images: [
-      "/manus-storage/voco_auckland_room1_3f0b217f.jpg",
-      "/manus-storage/voco_auckland_room2_3fe8a966.jpg",
-      "/manus-storage/voco_auckland_room3_9108bf0d.jpg",
+      "/manus-storage/voco_auckland_room1_b885e8e0.jpg",
+      "/manus-storage/voco_auckland_room2_c4befad9.jpg",
+      "/manus-storage/voco_auckland_room3_e055a136.jpg",
     ],
     stats: [
       { value: "201", label: "Rooms & Suites" },
@@ -108,10 +108,10 @@ const projects: ProjectItem[] = [
     scope: "FF&E Delivery & Installation — 294 rooms",
     description:
       "Specific NZ delivered the full FF&E installation scope for Holiday Inn Express Auckland City Centre — New Zealand's first dual-branded hotel development. The 294-room hotel is part of the same development as Voco Auckland City Centre, forming New Zealand's first dual-brand hotel tower. Specific NZ managed the delivery and precision installation of complete room packages across all floors to IHG brand standards. The hotel opened 26 May 2022.",
-    hero: "/manus-storage/indigo_room3_26cf3ca0.jpg",
+    hero: "/manus-storage/indigo_room3_18ec82f6.jpg",
     images: [
-      "/manus-storage/indigo_room3_26cf3ca0.jpg",
-      "/manus-storage/indigo_room4_962c1606.jpg",
+      "/manus-storage/indigo_room3_18ec82f6.jpg",
+      "/manus-storage/indigo_room4_4adcf44b.jpg",
     ],
     stats: [
       { value: "294", label: "Guest Rooms Fitted" },
@@ -128,11 +128,11 @@ const projects: ProjectItem[] = [
     scope: "FF&E Delivery & Installation — 71 rooms",
     description:
       "Specific NZ delivered the FF&E installation scope for Tryp by Wyndham Wellington — a fully renovated heritage-listed art deco building on Tory Street in Wellington's Te Aro precinct. The 71-room hotel features city-influenced design, premium suites with kitchenettes, and a 24/7 fitness centre. Specific NZ managed the delivery and installation of all room FF&E packages within the constraints of a heritage building environment.",
-    hero: "/manus-storage/tryp_wgtn_room1_33c5c412.jpg",
+    hero: "/manus-storage/tryp_wgtn_room1_26e49abd.jpg",
     images: [
-      "/manus-storage/tryp_wgtn_room1_33c5c412.jpg",
-      "/manus-storage/tryp_wgtn_room2_95ca3f76.jpg",
-      "/manus-storage/tryp_wgtn_lobby_73e353bf.jpg",
+      "/manus-storage/tryp_wgtn_room1_26e49abd.jpg",
+      "/manus-storage/tryp_wgtn_room2_5b61e7d9.jpg",
+      "/manus-storage/tryp_wgtn_lobby_9bf42152.jpg",
     ],
     stats: [
       { value: "71", label: "Hotel Rooms" },
@@ -149,11 +149,11 @@ const projects: ProjectItem[] = [
     scope: "Full FF&E Delivery & Installation — 246 rooms",
     description:
       "Specific NZ delivered the full FF&E installation scope for La Quinta by Wyndham Ellerslie Auckland — a purpose-built 12-level, 246-room hotel in Ellerslie, Auckland. Specific NZ managed the coordinated delivery and precision installation of complete room packages across all 12 levels, including beds, soft furnishings, joinery, desks, and all loose FF&E to Wyndham brand standards.",
-    hero: "/manus-storage/laquinta_room1_c13140e2.jpg",
+    hero: "/manus-storage/laquinta_room1_0c2db79f.jpg",
     images: [
-      "/manus-storage/laquinta_room1_c13140e2.jpg",
-      "/manus-storage/laquinta_room2_9c5125e0.jpg",
-      "/manus-storage/laquinta_exterior_2843c938.jpg",
+      "/manus-storage/laquinta_room1_0c2db79f.jpg",
+      "/manus-storage/laquinta_room2_40d69e50.jpg",
+      "/manus-storage/laquinta_exterior_6b70a50e.jpg",
     ],
     stats: [
       { value: "246", label: "Guest Rooms" },
@@ -170,11 +170,11 @@ const projects: ProjectItem[] = [
     scope: "FF&E Delivery & Installation — 95 rooms",
     description:
       "Specific NZ delivered the FF&E installation scope for Drifter Christchurch — a design-led hybrid hotel in a heritage building on Lichfield Street. The 95-room property by Leisure Accommodation Collective features architecture by Urbanfunction and interior design by CTRL Space. Specific NZ managed delivery and installation of all FF&E packages within the heritage building environment for the October 2024 official opening.",
-    hero: "/manus-storage/drifter_chch_exterior_c96897b6.jpg",
+    hero: "/manus-storage/drifter_chch_exterior_ee76e1e5.jpg",
     images: [
-      "/manus-storage/drifter_chch_exterior_c96897b6.jpg",
-      "/manus-storage/drifter_chch_room1_dce6ba1f.jpg",
-      "/manus-storage/drifter_chch_bar_5843fe17.jpg",
+      "/manus-storage/drifter_chch_exterior_ee76e1e5.jpg",
+      "/manus-storage/drifter_chch_room1_75885f15.jpg",
+      "/manus-storage/drifter_chch_bar_b92b68fe.jpg",
     ],
     stats: [
       { value: "95", label: "Rooms" },
@@ -191,11 +191,11 @@ const projects: ProjectItem[] = [
     scope: "FF&E Delivery & Installation — 93 rooms",
     description:
       "Specific NZ delivered the FF&E installation scope for Ramada by Wyndham Newmarket Auckland — a 93-room serviced apartment hotel forming part of a $100 million mixed-use development in Newmarket. The property features rooms and apartments designed to maximise sun, views, and living space, along with a high-tech purpose-built meeting room. Specific NZ coordinated delivery and installation of all room FF&E packages to Wyndham brand standards.",
-    hero: "/manus-storage/ramada_newmarket_room1_cf18e843.jpg",
+    hero: "/manus-storage/ramada_newmarket_room1_a3c71b8b.jpg",
     images: [
-      "/manus-storage/ramada_newmarket_room1_cf18e843.jpg",
-      "/manus-storage/ramada_newmarket_room2_1cb6b22d.jpg",
-      "/manus-storage/ramada_newmarket_exterior_ecba2dbe.jpg",
+      "/manus-storage/ramada_newmarket_room1_a3c71b8b.jpg",
+      "/manus-storage/ramada_newmarket_room2_1acd9e30.jpg",
+      "/manus-storage/ramada_newmarket_exterior_f40df10c.jpg",
     ],
     stats: [
       { value: "93", label: "Rooms & Apartments" },
@@ -212,11 +212,11 @@ const projects: ProjectItem[] = [
     scope: "FF&E Delivery & Installation — 48 suites + 55 apartments",
     description:
       "Specific NZ delivered the FF&E installation scope for Ramada Suites by Wyndham Victoria Street West — a mixed-use development in the heart of Auckland CBD comprising 48 serviced apartment suites, 55 residential apartments, and retail/office units. The project required coordinated delivery and installation of FF&E packages across both the hotel and residential components.",
-    hero: "/manus-storage/ramada_victoria_room1_d91dba0f.jpg",
+    hero: "/manus-storage/ramada_victoria_room1_57fe6018.jpg",
     images: [
-      "/manus-storage/ramada_victoria_room1_d91dba0f.jpg",
-      "/manus-storage/ramada_victoria_room2_640b832c.jpg",
-      "/manus-storage/ramada_victoria_exterior_8804a7b0.jpg",
+      "/manus-storage/ramada_victoria_room1_57fe6018.jpg",
+      "/manus-storage/ramada_victoria_room2_13e4a2c6.jpg",
+      "/manus-storage/ramada_victoria_exterior_f49bdd1a.jpg",
     ],
     stats: [
       { value: "48", label: "Serviced Apartment Suites" },
@@ -233,8 +233,8 @@ const projects: ProjectItem[] = [
     scope: "Joinery & FF&E Installation — Full Bathroom Package",
     description:
       "Specific delivered the full joinery and FF&E installation scope for Mercure Melbourne — an Accor Hotels property. The scope included precision bathroom joinery installation across all guest rooms, including custom vanity cabinetry, backlit mirror installation, and complete OS&E placement. Every room was installed to Accor brand standards with photographic handover documentation.",
-    hero: "/manus-storage/mecuremelbourne2026bathrooms_fb5835fd.jpeg",
-    images: ["/manus-storage/mecuremelbourne2026bathrooms_fb5835fd.jpeg"],
+    hero: "/manus-storage/mecuremelbourne2026bathrooms_d412ea97.jpeg",
+    images: ["/manus-storage/mecuremelbourne2026bathrooms_d412ea97.jpeg"],
     stats: [
       { value: "2026", label: "Completion Year" },
       { value: "Accor", label: "Hotel Brand" },
@@ -253,11 +253,11 @@ const projects: ProjectItem[] = [
     hero: "/manus-storage/20260314_150857_2793dba8.webp",
     images: [
       "/manus-storage/20260314_150857_2793dba8.webp",
-      "/manus-storage/skyline_booths_3d68b935.webp",
-      "/manus-storage/skyline_joinery_c9e3e4f1.webp",
-      "/manus-storage/skyline_terrace_crane_e82076ee.webp",
-      "/manus-storage/skyline_container_delivery_e9fb98e7.webp",
-      "/manus-storage/skyline_crane_site_da39dfa3.webp",
+      "/manus-storage/skyline_booths_f24eb5c5.webp",
+      "/manus-storage/skyline_joinery_ecfa11c5.webp",
+      "/manus-storage/skyline_terrace_crane_9c818d4f.webp",
+      "/manus-storage/skyline_container_delivery_5d88c352.webp",
+      "/manus-storage/skyline_crane_site_6b624941.webp",
     ],
     stats: [
       { value: "High", label: "Altitude Specialist" },

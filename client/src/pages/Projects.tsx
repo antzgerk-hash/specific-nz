@@ -15,7 +15,7 @@ const CATEGORIES = [
     description:
       "Full FF&E delivery, placement, and installation across New Zealand's most demanding hotel and commercial developments. From 27-storey towers to high-altitude gondola restaurants.",
     projectCount: 12,
-    hero: "/manus-storage/Screenshot2026-04-02224143_0d61bee1.png",
+    hero: "/manus-storage/Screenshot2026-04-02224143_0f085291.png",
     href: "/projects/ffe",
     clients:
       "Hotel Indigo Auckland · Grand Millennium · Voco Auckland · Holiday Inn Express · Tryp Wellington · Drifter Christchurch · Ramada Newmarket · Ramada Victoria St · La Quinta Ellerslie · Queenstown Hotel · Mercure Melbourne",
@@ -33,7 +33,7 @@ const CATEGORIES = [
     description:
       "Bespoke joinery installation, high-specification fitout, and detailed furniture placement for New Zealand's premier hotel and commercial refurbishment programmes.",
     projectCount: 2,
-    hero: "/manus-storage/grand_millennium_room2_89ea3763.jpg",
+    hero: "/manus-storage/grand_millennium_room2_49cc013f.jpg",
     href: "/projects/joinery",
     clients: "Millennium Auckland · QT Queenstown",
     stats: [
@@ -68,7 +68,7 @@ const CATEGORIES = [
     description:
       "New Zealand and Australia's most complex and high-profile installation projects — requiring specialist logistics, landmark-scale coordination, and teams that perform under pressure.",
     projectCount: 4,
-    hero: "/manus-storage/Screenshot2026-04-01020026_5a3c5297.png",
+    hero: "/manus-storage/Screenshot2026-04-01020026_a53bc165.png",
     href: "/projects/special",
     clients:
       "One NZ Stadium (Te Kaha) · West Footscray Hospital · Walkinshaw Relocation · Skyline Gondola Queenstown",
@@ -86,7 +86,7 @@ const CATEGORIES = [
     description:
       "Large-scale AV installation and operating supplies and equipment programmes — from 1,600-unit national aged care rollouts to hotel in-room AV commissioning.",
     projectCount: 4,
-    hero: "/manus-storage/voco_auckland_room1_3f0b217f.jpg",
+    hero: "/manus-storage/voco_auckland_room1_b885e8e0.jpg",
     href: "/projects/av",
     clients:
       "Invocare Aged Care (1,600 TVs) · Holiday Inn Express · Voco Auckland · Tryp Wellington",
@@ -104,7 +104,7 @@ const CATEGORIES = [
     description:
       "Purpose-built secure warehousing for FF&E, joinery, and high-value assets — including specialised storage and white-glove handling for high-end residential and commercial relocations.",
     projectCount: 2,
-    hero: "/manus-storage/Screenshot2026-04-08013641_37253495.png",
+    hero: "/manus-storage/Screenshot2026-04-08013641_5a20557d.png",
     href: "/projects/warehousing",
     clients: "Tara ITI (High-End House Relocation and Specialised Storage) · Commercial FF&E Storage",
     stats: [

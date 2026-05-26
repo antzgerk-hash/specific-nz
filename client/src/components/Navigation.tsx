@@ -87,7 +87,7 @@ export default function Navigation() {
         {/* Centre — large specific. gradient wordmark — brand hero */}
         <Link href="/" className="flex items-center justify-center px-10">
           <img
-            src="/manus-storage/specific_gradient_logo_85c53376.webp"
+            src="/manus-storage/specific_gradient_logo_1889c37b.webp"
             alt="specific."
             style={{
               height: "72px",
@@ -186,7 +186,7 @@ export default function Navigation() {
       <div className="lg:hidden flex items-center justify-between px-5" style={{ height: "72px" }}>
         <Link href="/">
           <img
-            src="/manus-storage/specific_gradient_logo_85c53376.webp"
+            src="/manus-storage/specific_gradient_logo_1889c37b.webp"
             alt="specific."
             style={{ height: "44px", width: "auto", objectFit: "contain" }}
           />

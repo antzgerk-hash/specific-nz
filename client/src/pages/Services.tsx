@@ -11,7 +11,7 @@ const SERVICES = [
     title: "Specialist Project Logistics",
     subtitle: "FF&E Delivery & Installation",
     accent: "oklch(0.63 0.18 38)",
-    img: "/manus-storage/ffe_installation_d22ff496.jpg",
+    img: "/manus-storage/ffe_installation_8482ae72.jpg",
     imgAlt: "Hotel FF&E installation — furniture and fixtures being placed",
     summary:
       "New Zealand's most demanding hotel and commercial fit-out projects require a logistics partner who understands programme-critical timelines, damage-sensitive goods, and the complexity of multi-floor staged delivery. Specific NZ operates as a fully integrated logistics and installation team — not a subcontractor handed a manifest.",
@@ -51,7 +51,7 @@ const SERVICES = [
     title: "Detailed Joinery & FF&E Installations",
     subtitle: "Precision Fit-Out to Exacting Tolerances",
     accent: "oklch(0.72 0.14 145)",
-    img: "/manus-storage/mecuremelbourne2026bathrooms_fb5835fd.jpeg",
+    img: "/manus-storage/mecuremelbourne2026bathrooms_d412ea97.jpeg",
     imgAlt: "Completed bathroom installation — Mercure Melbourne 2026, joinery and fixtures by Specific",
     summary:
       "Bespoke joinery and high-specification FF&E packages demand installation teams who read drawings, work to millimetre tolerances, and understand the relationship between joinery, services, and finishes. Specific NZ's installation crews are trained in detailed joinery placement, scribing, and level-critical fixing — not general labour.",
@@ -70,7 +70,7 @@ const SERVICES = [
     title: "AV Installations & OS&E Installations",
     subtitle: "Audio Visual & Operating Supplies",
     accent: "oklch(0.65 0.15 280)",
-    img: "/manus-storage/av_installation_1bee17e1.jpg",
+    img: "/manus-storage/av_installation_6826eb6f.jpg",
     imgAlt: "Professional AV installation in a hotel conference facility",
     summary:
       "Audio visual systems and operating supplies & equipment require coordinated delivery, precise placement, and commissioning that integrates with the broader fit-out programme. Specific NZ manages the full AV and OS&E installation scope — from unboxing and placement through to system commissioning and handover documentation.",
@@ -89,7 +89,7 @@ const SERVICES = [
     title: "Warehousing, Storage & Handling",
     subtitle: "Secure Storage for High-Value & Sensitive Items",
     accent: "oklch(0.75 0.10 55)",
-    img: "/manus-storage/Screenshot2026-04-08013641_37253495.png",
+    img: "/manus-storage/Screenshot2026-04-08013641_5a20557d.png",
     imgAlt: "Specific warehouse — timber storage vaults and forklift operations in secure facility",
     summary:
       "Premium FF&E, commissioned artworks, and high-specification AV equipment require more than a rack in a warehouse. Specific NZ provides secure, professionally managed storage with white-glove handling protocols — purpose-built for the construction and hospitality sectors where the cost of damage is measured in programme delays, not just replacement value.",
@@ -209,10 +209,10 @@ export default function Services() {
       <section style={{ background: "oklch(0.08 0.01 240)", padding: "0", overflow: "hidden", borderBottom: "1px solid oklch(0.16 0.02 240)" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", height: "280px" }}>
           {[
-            { src: "/manus-storage/VicTeamLoadingequimentatWalkinshawrelocation2025_13007dd4.png", pos: "center 30%", label: "WALKINSHAW RELOCATION" },
-            { src: "/manus-storage/Screenshot2026-04-08014112_2df50744.png", pos: "center center", label: "SPECIFIC RELOCATIONS CRATES" },
-            { src: "/manus-storage/Screenshot2026-04-08014047_7b0f1897.png", pos: "center center", label: "BRANDED CAGE TROLLEYS" },
-            { src: "/manus-storage/Screenshot2026-04-08013641_37253495.png", pos: "center center", label: "SECURE STORAGE FACILITY" },
+            { src: "/manus-storage/VicTeamLoadingequimentatWalkinshawrelocation2025_b694a8ae.png", pos: "center 30%", label: "WALKINSHAW RELOCATION" },
+            { src: "/manus-storage/Screenshot2026-04-08014112_3fe21c4c.png", pos: "center center", label: "SPECIFIC RELOCATIONS CRATES" },
+            { src: "/manus-storage/Screenshot2026-04-08014047_ca2ed929.png", pos: "center center", label: "BRANDED CAGE TROLLEYS" },
+            { src: "/manus-storage/Screenshot2026-04-08013641_5a20557d.png", pos: "center center", label: "SECURE STORAGE FACILITY" },
           ].map((item, i) => (
             <div key={i} style={{ position: "relative", overflow: "hidden" }}>
               <img src={item.src} alt={item.label} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: item.pos, filter: "brightness(0.55) saturate(0.85)" }} />

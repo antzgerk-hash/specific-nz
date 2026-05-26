@@ -38,7 +38,7 @@ const projects = [
     sub: "Te Kaha, Christchurch",
     tag: "FF&E · Stadium",
     stat: "2,740+ items",
-    img: "/manus-storage/hero_stadium_install_4605699c.jpg",
+    img: "/manus-storage/hero_stadium_install_a51c5f38.jpg",
     imgPosition: "center 40%",
     href: "/projects",
     accent: "oklch(0.63 0.18 38)",
@@ -48,7 +48,7 @@ const projects = [
     sub: "51 Albert Street, CBD",
     tag: "FF&E · Hospitality",
     stat: "225 rooms",
-    img: "/manus-storage/hotel_ffe_install_a6b1e4fd.jpg",
+    img: "/manus-storage/hotel_ffe_install_f61e537e.jpg",
     href: "/projects",
     accent: "oklch(0.60 0.12 185)",
   },
@@ -57,7 +57,7 @@ const projects = [
     sub: "Queenstown",
     tag: "Logistics · High-Altitude",
     stat: "Crane-lift install",
-    img: "/manus-storage/skyline_restaurant_f044e768.webp",
+    img: "/manus-storage/skyline_restaurant_a670c0e7.webp",
     imgPosition: "center center",
     href: "/projects",
     accent: "oklch(0.63 0.18 38)",
@@ -105,7 +105,7 @@ export default function Home() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/manus-storage/Screenshot2026-04-01020026_5a3c5297.png')",
+            backgroundImage: "url('/manus-storage/hero_stadium_install_a51c5f38.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center center",
             opacity: 0.28,
@@ -610,7 +610,7 @@ export default function Home() {
             }}
           >
             <img
-              src="/manus-storage/fleet_trucks_e875af64.png"
+              src="/manus-storage/fleet_trucks_87f4acd9.png"
               alt="Specific NZ fleet"
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -728,7 +728,7 @@ export default function Home() {
       {/* ─── FULL-BLEED PHOTO BREAK — Te Kaha ─── */}
       <section className="relative" style={{ height: "55vh", minHeight: "380px" }}>
         <img
-          src="/manus-storage/one_nz_stadium_logo_67bf316d.jpg"
+          src="/manus-storage/one_nz_stadium_logo_92ab318d.jpg"
           alt="One NZ Stadium — Te Kaha FF&E installation"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: "center 40%" }}
@@ -841,7 +841,7 @@ export default function Home() {
             }}
           >
             <img
-              src="/manus-storage/clients_logos_clean_f335d82b.png"
+              src="/manus-storage/clients_logos_clean_91ca1df3.png"
               alt="Specific Group — Builder, Accommodation and General Clients"
               className="w-full h-auto"
               style={{ display: "block" }}
@@ -1148,7 +1148,7 @@ export default function Home() {
       >
         {/* Auckland skyline background */}
         <img
-          src="/manus-storage/nz_auckland_skyline_dusk_ddb6b5d4.jpg"
+          src="/manus-storage/nz_auckland_skyline_dusk_5577fc0d.jpg"
           alt=""
           aria-hidden="true"
           style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 55%", filter: "brightness(0.22) saturate(0.9)", zIndex: 0 }}

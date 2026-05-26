@@ -71,7 +71,7 @@ export default function Group() {
       {/* ─── NAV ─── */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: "oklch(0.07 0.01 240 / 0.96)", backdropFilter: "blur(12px)", borderBottom: "1px solid oklch(0.16 0.02 240)", padding: "0 clamp(1.5rem, 5vw, 4rem)", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          <img src="/manus-storage/specific_gradient_logo_6b3b3b3b.webp" alt="specific." style={{ height: "30px", width: "auto", objectFit: "contain" }} onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; (e.target as HTMLImageElement).nextElementSibling!.setAttribute("style", "display:flex;align-items:center;gap:0.5rem"); }} />
+          <img src="/manus-storage/specific_gradient_logo_1889c37b.webp" alt="specific." style={{ height: "30px", width: "auto", objectFit: "contain" }} onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; (e.target as HTMLImageElement).nextElementSibling!.setAttribute("style", "display:flex;align-items:center;gap:0.5rem"); }} />
           <span style={{ display: "none", alignItems: "center", gap: "0.5rem" }}>
             <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "oklch(0.63 0.18 38)", flexShrink: 0, display: "inline-block" }} />
             <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: "1.5rem", color: "white", letterSpacing: "-0.02em", lineHeight: 1 }}>specific.</span>
