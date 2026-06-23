@@ -14,8 +14,9 @@ const projects: ProjectItem[] = [
     scope: "National AV Installation — 1,600 Television Units",
     description:
       "Specific NZ was engaged to deliver a national AV installation programme for Invocare Aged Care — one of Australasia's largest aged care and funeral services operators. The scope involved the supply, delivery, and installation of 1,600 television units across multiple aged care facilities throughout New Zealand. The programme required precise scheduling, site-by-site coordination, and installation teams operating across the country simultaneously. Every unit was commissioned and tested on-site, with full handover documentation provided for each facility.",
-    hero: "/manus-storage/d98c97af-4f3f-4da0-ab61-b882f89e5eac_186d275a.jpg",
+    hero: "/manus-storage/Details_1580_d524259d.webp",
     images: [
+      "/manus-storage/Details_1580_d524259d.webp",
       "/manus-storage/d98c97af-4f3f-4da0-ab61-b882f89e5eac_186d275a.jpg",
       "/manus-storage/09e77881-06bf-42a8-9ace-e73cdb4d4f38_161ba70d.jpg",
       "/manus-storage/920ead3c-0641-4caf-bc61-606284ff7251_1899784d.jpg",

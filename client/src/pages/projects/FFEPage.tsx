@@ -14,15 +14,16 @@ const projects: ProjectItem[] = [
     scope: "Full FF&E Delivery & Installation — 225 rooms, 27 floors",
     description:
       "Specific NZ delivered the full FF&E installation scope for Hotel Indigo Auckland — IHG's luxury boutique lifestyle brand making its New Zealand debut at 51 Albert Street, Midtown Auckland. The 225-room hotel spans 27 floors of a 41-storey tower, with the design concept rooted in the site's 1912 motor house heritage. Specific NZ managed the precision installation of complete room packages across all accommodation floors — beds, soft furnishings, joinery, desks, automotive-inspired lighting fixtures, pegboard shelving, and all loose FF&E — to IHG's exacting brand standards. Delivered for the official opening on 7 April 2025.",
-    hero: "/manus-storage/Screenshot2026-04-02224143_0f085291.png",
+    hero: "/manus-storage/Screenshot2026-04-26004756_08326719.png",
     images: [
-      "/manus-storage/Screenshot2026-04-02224143_0f085291.png",
-      "/manus-storage/indigo_exterior_2c60d47b.png",
-      "/manus-storage/indigo_room1_a06f1159.jpg",
-      "/manus-storage/indigo_room2_1e12e341.jpg",
+      "/manus-storage/Screenshot2026-04-26004756_08326719.png",
+      "/manus-storage/09e77881-06bf-42a8-9ace-e73cdb4d4f38_161ba70d.jpg",
+      "/manus-storage/920ead3c-0641-4caf-bc61-606284ff7251_1899784d.jpg",
+      "/manus-storage/d98c97af-4f3f-4da0-ab61-b882f89e5eac_186d275a.jpg",
+      "/manus-storage/2702bb06-56a7-4cb5-81f8-48e81114a91d_f01f658f.jpg",
+      "/manus-storage/Details_1580_d524259d.webp",
       "/manus-storage/indigo_room3_18ec82f6.jpg",
       "/manus-storage/indigo_room4_4adcf44b.jpg",
-      "/manus-storage/indigo_room5_7703a6d8.jpg",
     ],
     stats: [
       { value: "225", label: "Guest Rooms Fitted" },

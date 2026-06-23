@@ -70,8 +70,8 @@ const SERVICES = [
     title: "AV Installations & OS&E Installations",
     subtitle: "Audio Visual & Operating Supplies",
     accent: "oklch(0.65 0.15 280)",
-    img: "/manus-storage/d98c97af-4f3f-4da0-ab61-b882f89e5eac_186d275a.jpg",
-    imgAlt: "Hotel Indigo Auckland completed room — AV and OS&E installation by Specific NZ",
+    img: "/manus-storage/Details_1580_d524259d.webp",
+    imgAlt: "Hotel Indigo Auckland — in-room AV installation, television mounting and OS&E by Specific NZ",
     summary:
       "Audio visual systems and operating supplies & equipment require coordinated delivery, precise placement, and commissioning that integrates with the broader fit-out programme. Specific NZ manages the full AV and OS&E installation scope — from unboxing and placement through to system commissioning and handover documentation.",
     scope: [
