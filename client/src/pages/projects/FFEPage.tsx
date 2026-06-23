@@ -17,6 +17,7 @@ const projects: ProjectItem[] = [
     hero: "/manus-storage/Screenshot2026-04-26004756_08326719.png",
     images: [
       "/manus-storage/Screenshot2026-04-26004756_08326719.png",
+      "/manus-storage/Room_1810_0562_c8661c58.webp",
       "/manus-storage/09e77881-06bf-42a8-9ace-e73cdb4d4f38_161ba70d.jpg",
       "/manus-storage/920ead3c-0641-4caf-bc61-606284ff7251_1899784d.jpg",
       "/manus-storage/d98c97af-4f3f-4da0-ab61-b882f89e5eac_186d275a.jpg",

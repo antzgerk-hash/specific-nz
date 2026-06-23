@@ -106,7 +106,7 @@ export default function Home() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/manus-storage/20250814_115732_9039f12e.webp')",
+            backgroundImage: "url('/manus-storage/Room_1810_0562_c8661c58.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center center",
             opacity: 0.28,
