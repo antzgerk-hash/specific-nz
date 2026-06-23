@@ -38,7 +38,7 @@ const projects = [
     sub: "Te Kaha, Christchurch",
     tag: "FF&E · Stadium",
     stat: "2,740+ items",
-    img: "/manus-storage/hero_stadium_install_a51c5f38.jpg",
+    img: "/manus-storage/20250814_115732_9039f12e.webp",
     imgPosition: "center 40%",
     href: "/projects",
     accent: "oklch(0.63 0.18 38)",
@@ -48,7 +48,7 @@ const projects = [
     sub: "51 Albert Street, CBD",
     tag: "FF&E · Hospitality",
     stat: "225 rooms",
-    img: "/manus-storage/hotel_ffe_install_f61e537e.jpg",
+    img: "/manus-storage/20260305_151235_8e08e8db.webp",
     href: "/projects",
     accent: "oklch(0.60 0.12 185)",
   },
@@ -105,7 +105,7 @@ export default function Home() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/manus-storage/hero_stadium_install_a51c5f38.jpg')",
+            backgroundImage: "url('/manus-storage/20250814_115732_9039f12e.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center center",
             opacity: 0.28,

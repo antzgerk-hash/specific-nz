@@ -1,0 +1,38 @@
+Image audit notes for AI-image regression check
+Date: 2026-06-16
+
+Files visually reviewed so far:
+- /home/ubuntu/webdev-static-assets/hero_stadium_install.jpg
+  Finding: AI-generated / synthetic-looking. Indicators: overly cinematic lighting beams, unrealistically perfect symmetry, overly clean scene, stylised workers. Should NOT be used.
+- /home/ubuntu/webdev-static-assets/hotel_ffe_install.jpg
+  Finding: Appears to be real project photography. Acceptable for use.
+- /home/ubuntu/webdev-static-assets/fleet_trucks.png
+  Finding: Appears to be real photography. Acceptable for use.
+- /home/ubuntu/webdev-static-assets/warehouse_staging.jpg
+  Finding: Appears to be real photography. Acceptable for use.
+- /home/ubuntu/webdev-static-assets/corporate_relocation.jpg
+  Finding: AI-generated / synthetic-looking. Indicators: unrealistically perfect office environment, generic branding/uniforms, stylised scene composition. Should NOT be used.
+
+Immediate action items:
+1. Remove hero_stadium_install from Home hero and project card use.
+2. Remove corporate_relocation from Warehousing/Relocations or any other page use.
+3. Audit codebase for all references to these two assets and any other synthetic-looking replacements.
+4. Introduce a locked approved-image source map using only approved real photography so future edits do not revert to AI images.
+
+Further audit findings:
+- /home/ubuntu/webdev-static-assets/services/ffe_installation.jpg
+  Finding: This is a real hotel lobby/lounge photo (not AI). Acceptable.
+- /home/ubuntu/webdev-static-assets/services/av_installation.jpg
+  Finding: Real AV art installation photo (projected art on wall). Acceptable.
+- /home/ubuntu/upload/20260314_150857.webp
+  Finding: Real Skyline Gondola restaurant completed interior — Queenstown mountain/lake view. This is the REAL photo to use for Skyline project hero.
+- /home/ubuntu/upload/20260309_075804.webp
+  Finding: Real on-site FF&E delivery photo (hotel room with marble table being installed). Real.
+
+AI IMAGES CONFIRMED (must be removed):
+1. hero_stadium_install.jpg — AI generated (symmetrical workers, "LOGISTICS SOLUTIONS" branding, cinematic lighting)
+2. corporate_relocation.jpg — AI generated ("ELITE RELOCATIONS" branding, overly perfect office scene)
+3. warehouse_staging.jpg — AI generated ("LOGISTICS PROS" branding, impossibly perfect warehouse)
+4. hotel_ffe_install.jpg — AI generated ("APEX INSTALLATIONS" branding, overly perfect hotel room)
+
+These 4 files were added by a previous agent session and must be removed from the site entirely.

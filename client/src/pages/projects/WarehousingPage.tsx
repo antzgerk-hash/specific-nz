@@ -14,11 +14,11 @@ const projects: ProjectItem[] = [
     scope: "White-Glove Residential Relocation & Long-Term Specialised Storage",
     description:
       "Specific NZ was engaged to manage the full relocation and specialised storage programme for Tara Iti — a high-end private residential project requiring the highest standard of care, discretion, and handling. The scope encompassed the careful packing, transportation, and secure storage of significant personal property, bespoke furniture, artwork, and high-value assets. Specific NZ's white-glove team operated with full inventory management, climate-controlled storage, and photographic condition reporting at every stage. The project required long-term secure storage with scheduled access and retrieval, coordinated around the client's programme. This project exemplifies Specific's capability to manage sensitive, high-value residential relocations with the same rigour applied to our largest commercial programmes.",
-    hero: "/manus-storage/warehouse_staging_a211a456.jpg",
+    hero: "/manus-storage/20250929_122352_bd7687d3.webp",
     images: [
-      "/manus-storage/warehouse_staging_a211a456.jpg",
+      "/manus-storage/20250929_122352_bd7687d3.webp",
+      "/manus-storage/20250929_122406_1d905b4a.webp",
       "/manus-storage/Screenshot2026-04-08014112_3fe21c4c.png",
-      "/manus-storage/Screenshot2026-04-08014047_ca2ed929.png",
     ],
     stats: [
       { value: "White", label: "Glove Standard" },
@@ -36,10 +36,10 @@ const projects: ProjectItem[] = [
     scope: "Secure FF&E Storage, Receiving, QC & Staged Release",
     description:
       "Specific NZ operates purpose-built secure warehousing facilities for the receipt, quality control, and staged storage of FF&E and joinery prior to installation. Our warehouse capability supports the full project lifecycle — from container receipt and QC inspection through to floor-by-floor staged release to active construction sites. The facility includes dedicated vault storage for high-value items, cage trolley systems for efficient movement, and full inventory tracking. This warehousing capability is integral to Specific NZ's ability to manage complex hotel FF&E programmes where phased delivery and on-site storage are not feasible.",
-    hero: "/manus-storage/corporate_relocation_5470b8f9.jpg",
+    hero: "/manus-storage/VicTeamLoadingequimentatWalkinshawrelocation2025_4183da37.png",
     images: [
-      "/manus-storage/corporate_relocation_5470b8f9.jpg",
-      "/manus-storage/warehouse_staging_a211a456.jpg",
+      "/manus-storage/VicTeamLoadingequimentatWalkinshawrelocation2025_4183da37.png",
+      "/manus-storage/20250929_122352_bd7687d3.webp",
     ],
     stats: [
       { value: "Secure", label: "Purpose-Built Facility" },

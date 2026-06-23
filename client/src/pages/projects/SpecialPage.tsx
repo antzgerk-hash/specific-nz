@@ -14,9 +14,11 @@ const projects: ProjectItem[] = [
     scope: "FF&E Delivery & Installation — $683M Stadium",
     description:
       "Specific NZ was engaged by Statement iD and BESIX Watpac to deliver and install the full FF&E scope across the $683 million One NZ Stadium (Te Kaha) in Christchurch — New Zealand's most significant new public venue in a generation. The project required the coordination of over 2,740 individual items across corporate suites, operational areas, and public spaces, delivered across 55+ truckloads over more than 20 site days. Items included workstations, electricals, refrigeration units, televisions, and specialist joinery. Specific NZ managed the full logistics chain from receipt and QC through to floor-by-floor installation, working to a hard opening deadline for the Super Rugby Pacific Super Round.",
-    hero: "/manus-storage/hero_stadium_install_a51c5f38.jpg",
+    hero: "/manus-storage/20250814_115732_9039f12e.webp",
     images: [
-      "/manus-storage/hero_stadium_install_a51c5f38.jpg",
+      "/manus-storage/20250814_115732_9039f12e.webp",
+      "/manus-storage/20250814_115735_7ce09b74.webp",
+      "/manus-storage/20250814_115737_103b3b66.webp",
       "/manus-storage/stadium_interior_completed_4adfad69.png",
       "/manus-storage/stadium_team_onsite_35ce055f.webp",
       "/manus-storage/stadium_seats_completed_bd8a1a72.png",
@@ -87,9 +89,14 @@ const projects: ProjectItem[] = [
     scope: "FF&E Delivery & Installation — High-Altitude Crane Access",
     description:
       "The Skyline Gondola redevelopment in Queenstown presented one of the most logistically complex FF&E challenges in New Zealand — a high-altitude site accessible only via gondola or crane, with no conventional truck access to the installation floors. Specific NZ coordinated the full FF&E delivery and installation scope including dining chairs, tables, booth seating, bar joinery, and all loose items across the new restaurant and hospitality spaces. Items were delivered by container to the base site and crane-lifted to the installation level, with Specific NZ teams managing the full sequence from ground to completion.",
-    hero: "/manus-storage/20260314_150857_2793dba8.webp",
+    hero: "/manus-storage/20260314_150857_6cb6a853.webp",
     images: [
-      "/manus-storage/20260314_150857_2793dba8.webp",
+      "/manus-storage/20260314_150857_6cb6a853.webp",
+      "/manus-storage/20260314_150831_ed0cf699.webp",
+      "/manus-storage/20260314_150934_ea34a652.webp",
+      "/manus-storage/20260314_151248_63370359.webp",
+      "/manus-storage/20260314_151336_af6bd224.webp",
+      "/manus-storage/20260314_152053_222d601d.webp",
       "/manus-storage/skyline_booths_f24eb5c5.webp",
       "/manus-storage/skyline_joinery_ecfa11c5.webp",
       "/manus-storage/skyline_terrace_crane_9c818d4f.webp",
