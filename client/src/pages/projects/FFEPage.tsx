@@ -3,6 +3,7 @@
  * 12 hotel and commercial FF&E projects across NZ and AU
  */
 import ProjectCategoryPage, { ProjectItem } from "@/components/ProjectCategoryPage";
+import { SEO_CONFIGS } from "@/components/SEOHead";
 
 const projects: ProjectItem[] = [
   {
@@ -277,6 +278,7 @@ export default function FFEPage() {
       categorySubtitle="Hotels · Stadiums · Commercial"
       intro="Full FF&E delivery, placement, and installation across New Zealand's most demanding hotel and commercial developments. From 27-storey towers to high-altitude gondola restaurants — every project delivered by our own trained teams."
       projects={projects}
+      seoConfig={SEO_CONFIGS.projectsFfe}
     />
   );
 }

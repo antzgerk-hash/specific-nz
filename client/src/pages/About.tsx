@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import { Link } from "wouter";
 import { useEffect, useRef, useState } from "react";
 import { trpc } from "@/lib/trpc";
+import { SEOHead, SEO_CONFIGS } from "@/components/SEOHead";
 
 function useInView(threshold = 0.12) {
   const ref = useRef<HTMLDivElement>(null);
@@ -47,6 +48,7 @@ export default function About() {
 
   return (
     <div className="min-h-screen" style={{ background: "oklch(0.16 0.035 240)", overflowX: "hidden" }}>
+      <SEOHead {...SEO_CONFIGS.about} />
       <Navigation />
 
       {/* ─── PAGE HEADER — full-bleed dark with photo overlay ─── */}

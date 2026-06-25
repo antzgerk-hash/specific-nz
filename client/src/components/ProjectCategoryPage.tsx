@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import SiteNav from "@/components/SiteNav";
 import { trpc } from "@/lib/trpc";
+import { SEOHead, SEOProps } from "@/components/SEOHead";
 
 export interface ProjectItem {
   id: string;
@@ -28,6 +29,7 @@ interface Props {
   intro: string;
   projects: ProjectItem[];
   backHref?: string;
+  seoConfig?: SEOProps;
 }
 
 export default function ProjectCategoryPage({
@@ -37,6 +39,7 @@ export default function ProjectCategoryPage({
   intro,
   projects,
   backHref = "/projects",
+  seoConfig,
 }: Props) {
   const [active, setActive] = useState<ProjectItem>(projects[0]);
   const [activeImg, setActiveImg] = useState(0);
@@ -49,6 +52,7 @@ export default function ProjectCategoryPage({
         fontFamily: "'Barlow', sans-serif",
       }}
     >
+      {seoConfig && <SEOHead {...seoConfig} />}
       <SiteNav />
 
       {/* ─── CATEGORY HERO ─── */}

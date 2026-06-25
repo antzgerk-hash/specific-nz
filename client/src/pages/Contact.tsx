@@ -4,6 +4,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { SEOHead, SEO_CONFIGS } from "@/components/SEOHead";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -77,6 +78,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen" style={{ background: "oklch(0.16 0.035 240)" }}>
+      <SEOHead {...SEO_CONFIGS.contact} />
       <Navigation />
 
       {/* Page header */}

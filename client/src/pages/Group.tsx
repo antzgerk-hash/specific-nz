@@ -5,6 +5,7 @@
  * Colours: oklch(0.16 0.035 240) navy | oklch(0.63 0.18 38) orange | oklch(0.60 0.12 185) teal
  */
 import { Link } from "wouter";
+import { SEOHead, SEO_CONFIGS } from "@/components/SEOHead";
 
 const NZ_TEAM = [
   { initials: "DH", name: "Dwyane Hitchens", role: "NZ Branch Manager", phone: "+64 204 243 242", email: "dwyane.h@specificgroup.co.nz" },
@@ -67,6 +68,7 @@ const AU_URL = "https://specific.australia.specgroup.ai";
 export default function Group() {
   return (
     <div style={{ background: "oklch(0.10 0.01 240)", minHeight: "100vh", fontFamily: "'Barlow', sans-serif" }}>
+      <SEOHead {...SEO_CONFIGS.group} />
 
       {/* ─── NAV ─── */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: "oklch(0.07 0.01 240 / 0.96)", backdropFilter: "blur(12px)", borderBottom: "1px solid oklch(0.16 0.02 240)", padding: "0 clamp(1.5rem, 5vw, 4rem)", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>

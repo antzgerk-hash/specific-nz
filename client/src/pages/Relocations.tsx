@@ -5,6 +5,7 @@
  */
 
 import { Link } from "wouter";
+import { SEOHead, SEO_CONFIGS } from "@/components/SEOHead";
 
 // ─── Photo manifest ──────────────────────────────────────────────────────────
 const GALLERY = [
@@ -97,6 +98,7 @@ const PROCESS = [
 export default function Relocations() {
   return (
     <div style={{ background: "oklch(0.09 0.01 240)", minHeight: "100vh", fontFamily: "'Inter', sans-serif" }}>
+      <SEOHead {...SEO_CONFIGS.relocations} />
 
       {/* ─── NAV ─── */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: "oklch(0.07 0.01 240 / 0.95)", backdropFilter: "blur(12px)", borderBottom: "1px solid oklch(0.16 0.02 240)", padding: "0 clamp(1.5rem, 5vw, 4rem)", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>

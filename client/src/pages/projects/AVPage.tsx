@@ -3,6 +3,7 @@
  * Invocare Aged Care, Holiday Inn Express, Voco Auckland, Tryp Wellington
  */
 import ProjectCategoryPage, { ProjectItem } from "@/components/ProjectCategoryPage";
+import { SEO_CONFIGS } from "@/components/SEOHead";
 
 const projects: ProjectItem[] = [
   {
@@ -100,6 +101,7 @@ export default function AVPage() {
       categorySubtitle="Audio Visual · Operating Supplies & Equipment"
       intro="Large-scale AV installation and operating supplies and equipment programmes — from a 1,600-unit national aged care rollout to hotel in-room AV commissioning across New Zealand's leading hospitality brands."
       projects={projects}
+      seoConfig={SEO_CONFIGS.projectsAv}
     />
   );
 }

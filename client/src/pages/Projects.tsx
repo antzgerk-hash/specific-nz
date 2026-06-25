@@ -5,6 +5,7 @@
  */
 import { Link } from "wouter";
 import SiteNav from "@/components/SiteNav";
+import { SEOHead, SEO_CONFIGS } from "@/components/SEOHead";
 
 const CATEGORIES = [
   {
@@ -124,6 +125,7 @@ export default function Projects() {
         fontFamily: "'Barlow', sans-serif",
       }}
     >
+      <SEOHead {...SEO_CONFIGS.projects} />
       <SiteNav />
 
       {/* PAGE HERO */}

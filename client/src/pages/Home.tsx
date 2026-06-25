@@ -10,6 +10,7 @@ import { Link } from "wouter";
 import { useEffect, useRef, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { SEOHead, SEO_CONFIGS } from "@/components/SEOHead";
 
 // Scroll-reveal hook
 function useInView(threshold = 0.15) {
@@ -77,6 +78,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen" style={{ background: "oklch(0.16 0.035 240)", overflowX: "hidden" }}>
+      <SEOHead {...SEO_CONFIGS.home} />
       <Navigation />
 
       {/* ─── HERO ─── full-viewport, photo right, text left, diagonal cut */}

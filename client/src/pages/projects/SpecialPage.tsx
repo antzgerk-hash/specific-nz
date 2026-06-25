@@ -3,6 +3,7 @@
  * Te Kaha, West Footscray Hospital, Walkinshaw, Skyline Gondola
  */
 import ProjectCategoryPage, { ProjectItem } from "@/components/ProjectCategoryPage";
+import { SEO_CONFIGS } from "@/components/SEOHead";
 
 const projects: ProjectItem[] = [
   {
@@ -121,6 +122,7 @@ export default function SpecialPage() {
       categorySubtitle="Complex · High-Profile · Landmark"
       intro="New Zealand and Australia's most complex and high-profile installation projects — requiring specialist logistics, landmark-scale coordination, and teams that perform under pressure. From a $683M stadium to a high-altitude gondola restaurant."
       projects={projects}
+      seoConfig={SEO_CONFIGS.projectsSpecial}
     />
   );
 }

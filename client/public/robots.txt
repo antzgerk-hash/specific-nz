@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block admin and auth routes from indexing
+Disallow: /admin/
+Disallow: /api/
+Disallow: /404
+
+# Sitemap location
+Sitemap: https://specificnz.com/sitemap.xml

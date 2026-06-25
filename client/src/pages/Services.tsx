@@ -4,6 +4,7 @@
  * Design: Barlow Condensed headlines, navy/charcoal base, orange accents
  */
 import { Link } from "wouter";
+import { SEOHead, SEO_CONFIGS } from "@/components/SEOHead";
 
 const SERVICES = [
   {
@@ -117,6 +118,7 @@ const PROCESS_STEPS = [
 export default function Services() {
   return (
     <div style={{ background: "oklch(0.10 0.01 240)", minHeight: "100vh", fontFamily: "'Barlow', sans-serif" }}>
+      <SEOHead {...SEO_CONFIGS.services} />
 
       {/* ─── HERO ─── */}
       <section

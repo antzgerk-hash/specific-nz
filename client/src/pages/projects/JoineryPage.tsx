@@ -3,6 +3,7 @@
  * Millennium Auckland + QT Queenstown
  */
 import ProjectCategoryPage, { ProjectItem } from "@/components/ProjectCategoryPage";
+import { SEO_CONFIGS } from "@/components/SEOHead";
 
 const projects: ProjectItem[] = [
   {
@@ -56,6 +57,7 @@ export default function JoineryPage() {
       categorySubtitle="Precision Installation · Millimetre Tolerances"
       intro="Bespoke joinery installation and high-specification fitout for New Zealand's premier hotel properties. Specific NZ's joinery teams deliver to millimetre tolerances, with zero-defect handover as the standard — not the aspiration."
       projects={projects}
+      seoConfig={SEO_CONFIGS.projectsJoinery}
     />
   );
 }

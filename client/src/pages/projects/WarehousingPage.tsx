@@ -3,6 +3,7 @@
  * Tara ITI + Commercial FF&E Storage
  */
 import ProjectCategoryPage, { ProjectItem } from "@/components/ProjectCategoryPage";
+import { SEO_CONFIGS } from "@/components/SEOHead";
 
 const projects: ProjectItem[] = [
   {
@@ -58,6 +59,7 @@ export default function WarehousingPage() {
       categorySubtitle="Secure Storage · Specialist Handling · White Glove"
       intro="Purpose-built secure warehousing for FF&E, joinery, and high-value assets — including specialised white-glove storage and handling for New Zealand's most discerning residential and commercial clients."
       projects={projects}
+      seoConfig={SEO_CONFIGS.projectsWarehousing}
     />
   );
 }
