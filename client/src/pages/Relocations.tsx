@@ -8,6 +8,33 @@ import { Link } from "wouter";
 import { SEOHead, SEO_CONFIGS } from "@/components/SEOHead";
 
 // ─── Photo manifest ──────────────────────────────────────────────────────────
+// ─── Featured Medical Projects ─────────────────────────────────────────────
+const MEDICAL_PROJECTS = [
+  {
+    id: "ivf-melbourne-2025",
+    title: "IVF Australia — Melbourne Clinic Relocation",
+    client: "IVF Australia",
+    location: "Melbourne, VIC",
+    year: "2025",
+    scope: "Full clinical relocation — operating theatres, cryogenic laboratory, medical consumables",
+    desc: "A highly specialised medical relocation requiring the careful transfer of active IVF operating theatres, cryogenic nitrogen storage tanks (containing viable embryos), and clinical consumables — all executed within strict infection-control protocols and zero-tolerance handling requirements. Specific Relocations managed the complete decommission, transport, and recommission of all clinical equipment across two floors of the new Melbourne facility.",
+    images: [
+      "/manus-storage/20250420_120242_e77c3e83.webp",
+      "/manus-storage/20250420_120317_ca0cec8b.webp",
+      "/manus-storage/20250420_121033_6a628026.webp",
+      "/manus-storage/20250418_145357_72af58f3.webp",
+      "/manus-storage/20250418_091528_5c307835.webp",
+    ],
+    highlights: [
+      "Cryogenic nitrogen tank transfer — live embryo storage",
+      "Operating theatre decommission and recommission",
+      "Infection-control compliant handling throughout",
+      "Branded Specific Relocations crates on every item",
+      "Baxter medical consumables — full chain-of-custody",
+    ],
+  },
+];
+
 const GALLERY = [
   {
     src: "/manus-storage/465152782_1461365497858195_4545629930176207314_n_0bc73ee5.jpg",
@@ -55,6 +82,18 @@ const GALLERY = [
     src: "/manus-storage/515258049_18089207524709834_2841524399219625743_n_cf471aa4.jpg",
     alt: "Specific team member installing hospital bed — West Footscray Hospital project",
     caption: "Hospital Equipment Installation",
+    wide: false,
+  },
+  {
+    src: "/manus-storage/20250420_120242_e77c3e83.webp",
+    alt: "IVF Melbourne 2025 — operating theatre with Specific Relocations crates and Skytron surgical table",
+    caption: "IVF Melbourne — Medical Relocation",
+    wide: true,
+  },
+  {
+    src: "/manus-storage/20250418_145357_72af58f3.webp",
+    alt: "IVF Melbourne 2025 — cryogenic nitrogen storage tanks in laboratory",
+    caption: "Cryogenic Laboratory Transfer",
     wide: false,
   },
 ];
@@ -220,6 +259,59 @@ export default function Relocations() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ─── FEATURED MEDICAL PROJECT ─── */}
+      <section style={{ padding: "clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 6rem)", background: "oklch(0.09 0.01 240)" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.2em", color: "oklch(0.63 0.18 38)", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
+            <span style={{ display: "inline-block", width: "2rem", height: "2px", background: "oklch(0.63 0.18 38)" }} />
+            FEATURED PROJECT — MEDICAL RELOCATIONS
+          </p>
+          <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1, color: "white", marginBottom: "3rem" }}>
+            CLINICAL PRECISION.<br />
+            <span style={{ color: "oklch(0.63 0.18 38)" }}>ZERO TOLERANCE FOR ERROR.</span>
+          </h2>
+          {MEDICAL_PROJECTS.map((proj) => (
+            <div key={proj.id} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start", marginBottom: "5rem" }}>
+              {/* Image grid */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "260px 200px", gap: "4px" }}>
+                <div style={{ gridColumn: "span 2", position: "relative", overflow: "hidden", borderTop: "3px solid oklch(0.63 0.18 38)" }}>
+                  <img src={proj.images[0]} alt={proj.title} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "brightness(0.75) saturate(0.9)" }} />
+                </div>
+                {proj.images.slice(1, 3).map((img, i) => (
+                  <div key={i} style={{ position: "relative", overflow: "hidden" }}>
+                    <img src={img} alt={proj.title} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", filter: "brightness(0.70) saturate(0.85)" }} />
+                  </div>
+                ))}
+              </div>
+              {/* Project details */}
+              <div>
+                <div style={{ display: "flex", gap: "1.5rem", marginBottom: "1.5rem", flexWrap: "wrap" }}>
+                  {[{label: "CLIENT", value: proj.client}, {label: "LOCATION", value: proj.location}, {label: "YEAR", value: proj.year}].map((m) => (
+                    <div key={m.label}>
+                      <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.18em", color: "oklch(0.63 0.18 38)", marginBottom: "0.25rem" }}>{m.label}</p>
+                      <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "1rem", color: "white", lineHeight: 1 }}>{m.value}</p>
+                    </div>
+                  ))}
+                </div>
+                <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: "clamp(1.5rem, 2.5vw, 2.25rem)", color: "white", lineHeight: 1.05, marginBottom: "1rem" }}>{proj.title}</h3>
+                <p style={{ fontSize: "0.875rem", color: "oklch(0.60 0.02 240)", lineHeight: 1.75, marginBottom: "1.5rem" }}>{proj.desc}</p>
+                <div style={{ borderTop: "1px solid oklch(0.16 0.02 240)", paddingTop: "1.25rem" }}>
+                  <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.15em", color: "oklch(0.63 0.18 38)", marginBottom: "0.75rem" }}>PROJECT HIGHLIGHTS</p>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                    {proj.highlights.map((h, i) => (
+                      <li key={i} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", padding: "0.5rem 0", fontSize: "0.8125rem", color: "oklch(0.65 0.02 240)", lineHeight: 1.5 }}>
+                        <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", background: "oklch(0.63 0.18 38)", marginTop: "0.4rem", flexShrink: 0 }} />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
