@@ -172,7 +172,7 @@ export default function ProjectCategoryPage({
           className="cat-grid"
         >
           {/* ── Sidebar project list ── */}
-          <div style={{ position: "sticky", top: "100px" }}>
+          <div className="cat-sidebar" style={{ position: "sticky", top: "100px" }}>
             <p
               style={{
                 fontFamily: "'Barlow Condensed', sans-serif",
@@ -368,6 +368,7 @@ export default function ProjectCategoryPage({
 
             {/* Project metadata */}
             <div
+              className="cat-meta-grid"
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
@@ -418,6 +419,7 @@ export default function ProjectCategoryPage({
             {/* Stats strip */}
             {active.stats && active.stats.length > 0 && (
               <div
+                className="cat-stats-strip"
                 style={{
                   display: "flex",
                   gap: "0",
@@ -436,6 +438,7 @@ export default function ProjectCategoryPage({
                     }}
                   >
                     <div
+                      className="cat-stat-value"
                       style={{
                         fontFamily: "'Barlow Condensed', sans-serif",
                         fontWeight: 900,
@@ -572,6 +575,28 @@ export default function ProjectCategoryPage({
       <style>{`
         @media (max-width: 900px) {
           .cat-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .cat-sidebar {
+            position: static !important;
+          }
+          .cat-meta-grid {
+            grid-template-columns: 1fr 1fr !important;
+          }
+          .cat-stats-strip {
+            flex-direction: column !important;
+          }
+          .cat-stats-strip > div {
+            border-right: none !important;
+            border-bottom: 1px solid oklch(0.16 0.02 240) !important;
+            padding: 1rem 1.5rem !important;
+          }
+          .cat-stat-value {
+            font-size: 1.4rem !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .cat-meta-grid {
             grid-template-columns: 1fr !important;
           }
         }
