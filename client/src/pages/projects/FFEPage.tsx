@@ -86,20 +86,19 @@ const projects: ProjectItem[] = [
     name: "Voco Auckland City Centre",
     client: "Pro-invest Hotels / IHG Hotels & Resorts",
     location: "Corner of Albert & Wyndham Streets, Auckland CBD",
-    year: "2022",
+    year: "2021",
     scope: "Full FF&E Delivery & Installation — 201 rooms",
     description:
-      "Specific NZ delivered the full FF&E installation scope for Voco Auckland City Centre — New Zealand's first Voco branded property and part of the country's first dual-brand hotel development alongside Holiday Inn Express. The 201-room hotel features sustainable bedding, smart in-room technology, curated artworks, and stylish marble bathrooms. Specific NZ managed precision installation of complete room packages across all floors to IHG's exacting brand standards.",
-    hero: "/manus-storage/voco_auckland_room1_b885e8e0.jpg",
+      "Specific NZ delivered the full FF&E installation scope for Voco Auckland City Centre — New Zealand's first Voco branded property, completed during the COVID-19 pandemic in 2021. Part of New Zealand's first dual-brand hotel development alongside Holiday Inn Express, both projects were delivered concurrently by the Specific NZ team. The 201-room hotel features sustainable bedding, smart in-room technology, curated artworks, and stylish marble bathrooms with harbour views over the Auckland CBD. Specific NZ managed precision installation of complete room packages across all floors to IHG's exacting brand standards — delivered on programme despite the significant logistical challenges of operating through COVID lockdowns.",
+    hero: "/manus-storage/Screenshot2023-10-13133403_881429c5.png",
     images: [
-      "/manus-storage/voco_auckland_room1_b885e8e0.jpg",
-      "/manus-storage/voco_auckland_room2_c4befad9.jpg",
-      "/manus-storage/voco_auckland_room3_e055a136.jpg",
+      "/manus-storage/Screenshot2023-10-13133403_881429c5.png",
     ],
     stats: [
       { value: "201", label: "Rooms & Suites" },
-      { value: "May 2022", label: "Opening Date" },
+      { value: "2021", label: "Delivered During COVID" },
       { value: "NZ First", label: "Voco Branded Property" },
+      { value: "Dual-Brand", label: "NZ First Development" },
     ],
   },
   {
@@ -107,19 +106,19 @@ const projects: ProjectItem[] = [
     name: "Holiday Inn Express Auckland City Centre",
     client: "Pro-invest Hotels / IHG Hotels & Resorts",
     location: "58 Albert Street, Auckland CBD",
-    year: "2022",
+    year: "2020",
     scope: "FF&E Delivery & Installation — 294 rooms",
     description:
-      "Specific NZ delivered the full FF&E installation scope for Holiday Inn Express Auckland City Centre — New Zealand's first dual-branded hotel development. The 294-room hotel is part of the same development as Voco Auckland City Centre, forming New Zealand's first dual-brand hotel tower. Specific NZ managed the delivery and precision installation of complete room packages across all floors to IHG brand standards. The hotel opened 26 May 2022.",
-    hero: "/manus-storage/indigo_room3_18ec82f6.jpg",
+      "Specific NZ delivered the full FF&E installation scope for Holiday Inn Express Auckland City Centre — completed in 2020 during the COVID-19 pandemic. The 294-room hotel forms part of New Zealand's first dual-brand hotel tower alongside Voco Auckland City Centre, both delivered concurrently by the Specific NZ team under extraordinary conditions. Specific NZ managed the delivery and precision installation of complete room packages across all floors to IHG brand standards, navigating supply chain disruptions and strict health and safety protocols throughout the programme.",
+    hero: "/manus-storage/Screenshot2023-10-13133906_abb81fcc.png",
     images: [
-      "/manus-storage/indigo_room3_18ec82f6.jpg",
-      "/manus-storage/indigo_room4_4adcf44b.jpg",
+      "/manus-storage/Screenshot2023-10-13133906_abb81fcc.png",
     ],
     stats: [
       { value: "294", label: "Guest Rooms Fitted" },
-      { value: "May 2022", label: "Opening Date" },
+      { value: "2020", label: "Delivered During COVID" },
       { value: "NZ First", label: "Dual-Brand Development" },
+      { value: "IHG", label: "Brand Standards Met" },
     ],
   },
   {
