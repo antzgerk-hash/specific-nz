@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <img
-              src="/manus-storage/specific_gradient_logo_1889c37b.webp"
+              src="/manus-storage/specific_gradient_logo_883421ff.webp"
               alt="specific."
               className="h-10 w-auto mb-6"
             />
