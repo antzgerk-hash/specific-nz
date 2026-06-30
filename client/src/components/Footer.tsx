@@ -44,7 +44,7 @@ export default function Footer() {
                 Instagram
               </a>
               <a
-                href="https://www.facebook.com/specificgroupltd"
+                href="https://www.facebook.com/specificgroup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs uppercase tracking-widest transition-colors"
