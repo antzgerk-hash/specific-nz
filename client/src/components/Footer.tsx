@@ -26,7 +26,7 @@ export default function Footer() {
             </p>
             <div className="mt-6 flex gap-4">
               <a
-                href="https://www.linkedin.com/company/specific-group"
+                href="https://www.linkedin.com/company/specific-group-pty-ltd/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs uppercase tracking-widest transition-colors"
@@ -35,13 +35,22 @@ export default function Footer() {
                 LinkedIn
               </a>
               <a
-                href="https://www.instagram.com/specificgroup"
+                href="https://www.instagram.com/specificgroupltd/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs uppercase tracking-widest transition-colors"
                 style={{ color: "oklch(0.60 0.12 185)", fontFamily: "'DM Sans', sans-serif", fontWeight: 600 }}
               >
                 Instagram
+              </a>
+              <a
+                href="https://www.facebook.com/specificgroupltd"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs uppercase tracking-widest transition-colors"
+                style={{ color: "oklch(0.60 0.12 185)", fontFamily: "'DM Sans', sans-serif", fontWeight: 600 }}
+              >
+                Facebook
               </a>
             </div>
           </div>

@@ -123,8 +123,9 @@ export const SEO_CONFIGS = {
         },
         areaServed: ["New Zealand", "Australia"],
         sameAs: [
-          "https://www.linkedin.com/company/specific-group",
-          "https://www.instagram.com/specificgroup",
+          "https://www.linkedin.com/company/specific-group-pty-ltd/",
+          "https://www.instagram.com/specificgroupltd/",
+          "https://www.facebook.com/specificgroupltd",
           "https://specificgroup.com.au",
           "https://specificgroup.co.nz",
         ],
